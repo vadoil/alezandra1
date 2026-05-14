@@ -72,7 +72,8 @@ function ProgramDetail() {
 
   return (
     <>
-      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 relative overflow-hidden">
+        <Mandala className="absolute -left-32 top-0 w-[480px] h-[480px] text-primary/10 pointer-events-none" petals={18} rings={6} />
         <div className="container-x">
           <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
             <ArrowLeft size={14} /> Все программы

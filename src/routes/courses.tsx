@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { COURSES } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
+import { Mandala } from "@/components/Mandala";
 import courseBeginner from "@/assets/course-beginner.jpg";
 import courseBack from "@/assets/course-back.jpg";
 import courseAntistress from "@/assets/course-antistress.jpg";

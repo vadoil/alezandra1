@@ -68,7 +68,8 @@ function CourseDetail() {
 
   return (
     <>
-      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 relative overflow-hidden">
+        <Mandala className="absolute -right-40 top-10 w-[520px] h-[520px] text-primary/10 pointer-events-none" petals={20} rings={7} />
         <div className="container-x">
           <Link to="/courses" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
             <ArrowLeft size={14} /> Все курсы
