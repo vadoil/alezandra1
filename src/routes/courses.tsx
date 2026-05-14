@@ -30,8 +30,9 @@ export const Route = createFileRoute("/courses")({
 function Courses() {
   return (
     <>
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16">
-        <div className="container-x grid md:grid-cols-12 gap-10 items-end">
+      <section className="pt-16 pb-12 md:pt-24 md:pb-16 relative overflow-hidden">
+        <Mandala className="absolute -right-40 -top-20 w-[560px] h-[560px] text-primary/10 pointer-events-none" petals={22} rings={8} />
+        <div className="container-x grid md:grid-cols-12 gap-10 items-end relative">
           <div className="md:col-span-7">
             <p className="eyebrow mb-5">Короткие курсы</p>
             <h1 className="h-display">Доступный вход <br /><span className="font-serif-italic text-primary">в практику</span></h1>
