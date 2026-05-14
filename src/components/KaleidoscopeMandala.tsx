@@ -49,7 +49,7 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
       {/* Внешний контур-лотос (вращается медленно) */}
       <svg
         viewBox="0 0 200 200"
-        className="absolute inset-0 w-full h-full text-primary/55 animate-[mandala-spin_80s_linear_infinite]"
+        className="absolute inset-[5%] w-[90%] h-[90%] text-primary/55 animate-[mandala-spin_80s_linear_infinite]"
         fill="none"
         stroke="currentColor"
         strokeWidth="0.7"
