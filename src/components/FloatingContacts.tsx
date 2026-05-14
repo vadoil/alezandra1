@@ -81,8 +81,31 @@ export function FloatingContacts() {
         type="button"
         aria-label={open ? "Закрыть контакты" : "Открыть контакты"}
         onClick={() => setOpen((v) => !v)}
-        className="relative w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center justify-center"
+        className="relative w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center justify-center ring-2 ring-cream ring-offset-2 ring-offset-transparent"
       >
+        {/* Декоративный лотос-ободок */}
+        <svg
+          viewBox="0 0 64 64"
+          className="absolute -inset-1 w-[calc(100%+0.5rem)] h-[calc(100%+0.5rem)] text-cream/90 pointer-events-none animate-[mandala-spin_30s_linear_infinite]"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          aria-hidden
+        >
+          <circle cx="32" cy="32" r="31" strokeDasharray="2 3" opacity="0.7" />
+          {Array.from({ length: 8 }).map((_, i) => {
+            const a = (i * 360) / 8;
+            return (
+              <path
+                key={i}
+                d="M32,1 C34,5 34,8 32,11 C30,8 30,5 32,1 Z"
+                transform={`rotate(${a} 32 32)`}
+                strokeWidth="0.8"
+              />
+            );
+          })}
+        </svg>
+
         {open ? (
           <X size={22} />
         ) : (
