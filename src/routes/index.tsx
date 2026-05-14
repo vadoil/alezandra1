@@ -73,6 +73,7 @@ function Home() {
       <GalleryStrip />
       <Courses />
       <Schedule />
+      <VideoBlock />
       <Pricing />
       <TrustBar />
       <Story />
