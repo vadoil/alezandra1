@@ -43,6 +43,9 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
         </defs>
       </svg>
 
+      {/* Серый круг-подложка — чуть меньше внешнего вращающегося кольца */}
+      <div className="absolute inset-[4%] rounded-full bg-ink/10" aria-hidden />
+
       {/* Внешний контур-лотос (вращается медленно) */}
       <svg
         viewBox="0 0 200 200"
