@@ -568,7 +568,7 @@ function FreeFirstBanner() {
 }
 
 function GalleryStrip() {
-  const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, courseAntistress];
+  const imgs = [alex2, alex4, alex5, alex6, alex7, alex8, alex9, alex3];
   return (
     <section className="py-6 md:py-10">
       <div className="container-x">
