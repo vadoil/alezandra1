@@ -77,7 +77,10 @@ function Courses() {
                 </ul>
                 <p className="eyebrow mb-3">Результат</p>
                 <p className="text-ink/80 italic mb-8">{c.result}</p>
-                <Link to="/consultations" className="btn-primary">Записаться на курс</Link>
+                <div className="flex flex-wrap gap-3">
+                  <Link to="/courses/$slug" params={{ slug: c.slug }} className="btn-primary">Подробнее о курсе</Link>
+                  <Link to="/consultations" className="btn-outline">Консультация</Link>
+                </div>
               </div>
             </div>
           ))}

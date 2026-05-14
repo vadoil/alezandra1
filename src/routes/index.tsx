@@ -5,10 +5,19 @@ import aboutImg from "@/assets/about-portrait.jpg";
 import onlineImg from "@/assets/online-practice.jpg";
 import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/consultation.jpg";
+import courseBeginner from "@/assets/course-beginner.jpg";
+import courseBack from "@/assets/course-back.jpg";
+import courseAntistress from "@/assets/course-antistress.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
+
+const COURSE_IMAGES: Record<string, string> = {
+  "yoga-from-scratch": courseBeginner,
+  "healthy-back": courseBack,
+  "anti-stress": courseAntistress,
+};
 import {
   COURSES,
   DIRECTIONS,
@@ -236,28 +245,42 @@ function Courses() {
         <div className="grid md:grid-cols-3 gap-6">
           {COURSES.map((c, i) => (
             <Reveal key={c.slug} delay={i * 0.08}>
-              <div className="bg-cream border border-ink/5 p-8 rounded-sm h-full flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-[10px] uppercase tracking-[0.2em] px-3 py-1 border border-ink/15 rounded-full">
-                    Курс
-                  </span>
-                  <span className="text-xs text-muted-foreground">{c.duration}</span>
+              <Link
+                to="/courses/$slug"
+                params={{ slug: c.slug }}
+                className="bg-cream border border-ink/5 rounded-sm h-full flex flex-col overflow-hidden group hover:border-primary/40 transition-colors"
+              >
+                <div className="overflow-hidden aspect-[4/3]">
+                  <img
+                    src={COURSE_IMAGES[c.slug]}
+                    alt={c.title}
+                    loading="lazy"
+                    width={1280}
+                    height={896}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                  />
                 </div>
-                <h3 className="text-2xl mb-4 leading-tight">{c.title}</h3>
-                <p className="text-sm text-muted-foreground mb-5">{c.forWhom}</p>
-                <ul className="space-y-2 mb-8">
-                  {c.inside.slice(0, 3).map((x) => (
-                    <li key={x} className="text-sm flex items-start gap-2">
-                      <Check size={14} className="text-primary shrink-0 mt-1" />
-                      <span>{x}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-ink/70 mt-auto mb-6 italic">{c.result}</p>
-                <Link to="/courses" className="btn-outline self-start">
-                  Узнать подробнее
-                </Link>
-              </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[10px] uppercase tracking-[0.2em] px-3 py-1 border border-ink/15 rounded-full">Курс</span>
+                    <span className="text-xs text-muted-foreground">{c.duration}</span>
+                  </div>
+                  <h3 className="text-2xl mb-3 leading-tight">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-5">{c.forWhom}</p>
+                  <ul className="space-y-2 mb-6">
+                    {c.inside.slice(0, 3).map((x) => (
+                      <li key={x} className="text-sm flex items-start gap-2">
+                        <Check size={14} className="text-primary shrink-0 mt-1" />
+                        <span>{x}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-ink/70 mt-auto mb-5 italic">{c.result}</p>
+                  <span className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+                    Подробнее о курсе <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>
