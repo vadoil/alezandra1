@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { COURSES, type Course } from "@/lib/site-data";
+import { COURSES, COURSE_LESSONS, type Course } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
+import { LessonsPreview } from "@/components/LessonsPreview";
+import { Mandala } from "@/components/Mandala";
 import courseBeginner from "@/assets/course-beginner.jpg";
 import courseBack from "@/assets/course-back.jpg";
 import courseAntistress from "@/assets/course-antistress.jpg";

@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound, Navigate } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { PROGRAMS, type Program } from "@/lib/site-data";
+import { PROGRAMS, PROGRAM_LESSONS, type Program } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
+import { LessonsPreview } from "@/components/LessonsPreview";
+import { Mandala } from "@/components/Mandala";
 import programBase from "@/assets/program-base.jpg";
 import programRecovery from "@/assets/program-recovery.jpg";
 import programFull from "@/assets/program-full.jpg";
