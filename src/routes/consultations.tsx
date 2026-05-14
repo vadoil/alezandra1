@@ -1,0 +1,78 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Check } from "lucide-react";
+import consultationImg from "@/assets/consultation.jpg";
+import { FinalCta } from "@/components/FinalCta";
+
+export const Route = createFileRoute("/consultations")({
+  head: () => ({
+    meta: [
+      { title: "Консультация по йоге и йогатерапии | Александра Марченко" },
+      { name: "description", content: "Персональная диагностическая встреча: оценка запроса, состояния и подбор безопасного формата практики." },
+      { property: "og:title", content: "Консультация — Александра Марченко" },
+      { property: "og:description", content: "Лучший первый шаг: 60 минут персональной работы с вашим запросом." },
+    ],
+  }),
+  component: Consultations,
+});
+
+function Consultations() {
+  return (
+    <>
+      <section className="pt-16 pb-24 md:py-32">
+        <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6">
+            <p className="eyebrow mb-5">Консультации</p>
+            <h1 className="h-display">Лучший <span className="font-serif-italic text-primary">первый шаг</span></h1>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Персональная встреча онлайн или в «Сфере». Я слушаю запрос, оцениваю состояние и подбираю безопасный формат.
+            </p>
+            <Link to="/consultations" className="btn-primary mt-10">Записаться</Link>
+            <p className="mt-4 text-xs text-muted-foreground">60 минут · онлайн или в «Сфере»</p>
+          </div>
+          <div className="lg:col-span-6">
+            <img src={consultationImg} alt="Консультация" width={1280} height={960} className="w-full aspect-[4/3] object-cover rounded-sm" />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-clay">
+        <div className="container-x grid lg:grid-cols-2 gap-12">
+          <div>
+            <p className="eyebrow mb-4">Структура встречи</p>
+            <h2 className="h-section">Что мы делаем</h2>
+            <ul className="mt-8 space-y-4">
+              {[
+                "Знакомство и обсуждение запроса",
+                "Оценка состояния, образа жизни и ограничений",
+                "Короткая телесная диагностика",
+                "Рекомендации по формату и ритму",
+                "Ответы на ваши вопросы",
+              ].map((x) => (
+                <li key={x} className="flex items-start gap-3"><Check size={18} className="text-primary shrink-0 mt-1" />{x}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow mb-4">После встречи</p>
+            <h2 className="h-section">Что вы получаете</h2>
+            <ul className="mt-8 space-y-4">
+              {[
+                "Понимание, какой формат подходит именно вам",
+                "Чёткий следующий шаг — курс, программа или личная работа",
+                "Базовые рекомендации для самостоятельной практики",
+                "Спокойствие: вы знаете, как двигаться дальше",
+              ].map((x) => (
+                <li key={x} className="flex items-start gap-3"><Check size={18} className="text-primary shrink-0 mt-1" />{x}</li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm text-muted-foreground italic">
+              Если формат не подойдёт — я скажу честно. Без давления и продаж.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <FinalCta />
+    </>
+  );
+}
