@@ -561,11 +561,11 @@ function FreeFirstBanner() {
 }
 
 function GalleryStrip() {
-  const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4];
+  const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, courseAntistress];
   return (
-    <section className="py-6">
+    <section className="py-6 md:py-10">
       <div className="container-x">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
           {imgs.map((src, i) => (
             <img
               key={i}
@@ -574,7 +574,7 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className={`w-full object-cover rounded-sm ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"} ${i > 3 ? "hidden md:block" : ""}`}
+              className="w-full aspect-square object-cover rounded-sm"
             />
           ))}
         </div>
