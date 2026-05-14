@@ -3,8 +3,14 @@
 export const SITE = {
   name: "Александра Марченко",
   role: "Преподаватель йоги и йогатерапии",
-  phone: "+7 (911) 000 00 00",
-  telegram: "@marchenko_yoga",
+  tagline: "Снимаю боли в спине за одну тренировку и возвращаю королевскую осанку",
+  phone: "+7 927 020 41 61",
+  phoneHref: "+79270204161",
+  instagram: "alexandramarchenkoo",
+  instagramUrl: "https://instagram.com/alexandramarchenkoo",
+  telegram: "@alexandramarchenkoo",
+  telegramUrl: "https://t.me/alexandramarchenkoo",
+  whatsappUrl: "https://wa.me/79270204161",
   email: "hello@marchenko.yoga",
   studio: "Центр «Сфера», Санкт-Петербург",
 };
