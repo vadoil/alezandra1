@@ -119,3 +119,13 @@
     @apply text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight;
   }
 }
+
+@keyframes mandala-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes mandala-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
