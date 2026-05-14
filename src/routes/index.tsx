@@ -662,8 +662,10 @@ function Schedule() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="py-24 md:py-32">
-      <div className="container-x">
+    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+      <Mandala className="absolute -top-24 -left-24 w-[420px] h-[420px] text-primary/10 pointer-events-none" petals={12} rings={5} />
+      <Mandala className="absolute -bottom-32 -right-32 w-[480px] h-[480px] text-ink/[0.05] pointer-events-none" petals={18} rings={7} />
+      <div className="container-x relative">
         <div className="max-w-2xl mb-14">
           <p className="eyebrow mb-4">Цены</p>
           <h2 className="h-section">Стоимость занятий</h2>
@@ -719,8 +721,9 @@ function ContactsSection() {
     { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
   ];
   return (
-    <section id="contacts" className="py-24 md:py-32 bg-ink text-cream">
-      <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
+    <section id="contacts" className="relative overflow-hidden py-24 md:py-32 bg-ink text-cream">
+      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-primary/10 pointer-events-none" petals={24} rings={9} />
+      <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="eyebrow text-primary mb-5">Контакты</p>
           <h2 className="h-section text-cream">
