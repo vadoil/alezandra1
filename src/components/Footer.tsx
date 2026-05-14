@@ -15,7 +15,7 @@ export function Footer() {
 
           <div className="md:col-span-3">
             <p className="eyebrow text-primary mb-5">Навигация</p>
-            <ul className="space-y-3 text-sm">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
               <li><Link to="/" className="hover:text-primary transition-colors">Главная</Link></li>
               {NAV.map((n) => (
                 <li key={n.to}>
