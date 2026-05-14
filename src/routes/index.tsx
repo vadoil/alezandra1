@@ -103,7 +103,7 @@ function Hero() {
   ];
 
   return (
-    <section className="pt-12 md:pt-20 pb-24 md:pb-32 relative overflow-hidden">
+    <section className="pt-16 md:pt-28 pb-32 md:pb-40 relative overflow-hidden min-h-[820px] md:min-h-[940px] flex items-center">
       <Mandala className="absolute -left-40 top-20 w-[480px] h-[480px] text-primary/8 pointer-events-none hidden md:block" petals={18} rings={6} />
 
       <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
