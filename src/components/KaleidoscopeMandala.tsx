@@ -96,8 +96,7 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
 
       {/* Стек фото внутри лепестковой маски */}
       <div
-        className="absolute inset-[5%] overflow-hidden"
-        style={{ clipPath: "url(#lotus-clip)", WebkitClipPath: "url(#lotus-clip)" }}
+        className="absolute inset-[7%] overflow-hidden rounded-full"
       >
         {images.map((src, i) => (
           <img
