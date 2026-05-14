@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
-import consultationImg from "@/assets/consultation.jpg";
+import consultationImg from "@/assets/alex-3.jpg";
 import { FinalCta } from "@/components/FinalCta";
 
 export const Route = createFileRoute("/consultations")({
@@ -73,6 +73,22 @@ function Consultations() {
       </section>
 
       <FinalCta />
+
+      <section className="py-20 md:py-28 bg-cream border-t border-ink/5">
+        <div className="container-x grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+          {[
+            { n: "01", t: "Бережно", d: "Без давления и оценки. Темп и нагрузка — по вашему состоянию." },
+            { n: "02", t: "Индивидуально", d: "Программа собирается под ваш запрос, опыт и образ жизни." },
+            { n: "03", t: "С опорой", d: "Вы уходите со встречи с понятным следующим шагом." },
+          ].map((x) => (
+            <div key={x.n} className="flex flex-col">
+              <span className="font-serif-italic text-3xl text-primary">{x.n}</span>
+              <h3 className="mt-3 text-xl">{x.t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{x.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
