@@ -56,9 +56,7 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
         strokeLinejoin="round"
         aria-hidden
       >
-        {/* большой круг рамка */}
-        <circle cx="100" cy="100" r="98" strokeWidth="0.5" />
-        <circle cx="100" cy="100" r="92" strokeWidth="0.4" opacity="0.6" />
+        {/* без видимой рамки — фигуры просто живут внутри круга */}
 
         {/* 12 длинных лепестков лотоса по периметру */}
         {Array.from({ length: 12 }).map((_, i) => {
