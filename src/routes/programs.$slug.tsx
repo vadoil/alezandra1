@@ -4,12 +4,12 @@ import { PROGRAMS, PROGRAM_LESSONS, type Program } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
 import { LessonsPreview } from "@/components/LessonsPreview";
 import { Mandala } from "@/components/Mandala";
-import programBase from "@/assets/program-base.jpg";
-import programRecovery from "@/assets/program-recovery.jpg";
-import programFull from "@/assets/program-full.jpg";
-import studioSpace from "@/assets/studio-space.jpg";
-import practiceRestorative from "@/assets/practice-restorative.jpg";
-import therapyHands from "@/assets/therapy-hands.jpg";
+import programBase from "@/assets/alex-9.jpg";
+import programRecovery from "@/assets/alex-8.jpg";
+import programFull from "@/assets/alex-6.jpg";
+import studioSpace from "@/assets/alex-6.jpg";
+import practiceRestorative from "@/assets/alex-8.jpg";
+import therapyHands from "@/assets/alex-4.jpg";
 
 const PROGRAM_IMAGES: Record<string, string> = {
   base: programBase,
