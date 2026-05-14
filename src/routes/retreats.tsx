@@ -222,4 +222,43 @@ function Retreats() {
                     <ul className="space-y-2.5 mb-8">
                       {r.inside.map((x) => (
                         <li key={x} className="flex items-start gap-2.5 text-sm">
-                          <Check size={14} className="text-primary shrink-0 mt-
+                          <Check size={14} className="text-primary shrink-0 mt-1" />
+                          <span>{x}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex items-end justify-between gap-4 pt-6 border-t border-ink/10">
+                      <div>
+                        <p className="eyebrow mb-1">Стоимость</p>
+                        <p className="font-display text-2xl text-primary">{r.price}</p>
+                      </div>
+                      <Link to="/consultations" className="btn-primary">
+                        Забронировать
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 bg-clay">
+        <div className="container-x max-w-3xl text-center">
+          <p className="eyebrow mb-4">Хотите свой ретрит?</p>
+          <h2 className="h-section">Корпоративные и частные группы</h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Соберу программу под вашу компанию или дружескую группу: место, ритм и фокус — под вас.
+          </p>
+          <Link to="/consultations" className="btn-primary mt-10">
+            Обсудить формат
+          </Link>
+        </div>
+      </section>
+
+      <FinalCta />
+    </>
+  );
+}
