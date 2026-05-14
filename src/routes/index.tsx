@@ -22,6 +22,8 @@ import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
+import { Mandala } from "@/components/Mandala";
+import seaYogaImg from "@/assets/video-sea-yoga.jpg";
 
 const COURSE_IMAGES: Record<string, string> = {
   "yoga-from-scratch": courseBeginner,
