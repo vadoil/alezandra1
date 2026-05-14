@@ -69,11 +69,15 @@ function Home() {
   return (
     <>
       <Hero />
+      <FreeFirstBanner />
+      <GalleryStrip />
+      <Courses />
+      <Schedule />
+      <Pricing />
       <TrustBar />
       <Story />
       <Segments />
       <Directions />
-      <Courses />
       <Programs />
       <Consultations />
       <Quiz />
