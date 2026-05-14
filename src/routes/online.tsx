@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import onlineImg from "@/assets/online-practice.jpg";
 import { FinalCta } from "@/components/FinalCta";
+import { PROGRAMS } from "@/lib/site-data";
 
 export const Route = createFileRoute("/online")({
   head: () => ({
