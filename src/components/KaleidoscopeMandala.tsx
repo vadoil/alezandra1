@@ -7,9 +7,9 @@ type Props = {
 };
 
 /**
- * «Калейдоскоп-мандала»: круглая композиция из фото, замаскированная
- * лепестками индийской мандалы. Кадры медленно перелистываются,
- * сверху вращается орнамент.
+ * Калейдоскоп-мандала в стиле индийского лотоса:
+ * фото проступают сквозь маску из 8 лепестков + центрального круга,
+ * сверху наслаивается орнамент Flower-of-Life и контур лотоса.
  */
 export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" }: Props) {
   const [active, setActive] = useState(0);
@@ -20,25 +20,22 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
     return () => clearInterval(id);
   }, [images.length, intervalMs]);
 
+  // 8-лепестковый лотос: центральный круг + лепестки в форме «капли»
+  const petalsOuter = Array.from({ length: 8 });
+
   return (
-    <div className={`relative aspect-square w-full ${className}`}>
-      {/* SVG defs: маска-мандала и градиент окантовки */}
+    <div className={`relative w-full ${className}`} style={{ aspectRatio: "1 / 1" }}>
       <svg width="0" height="0" className="absolute" aria-hidden>
         <defs>
-          <clipPath id="mandala-clip" clipPathUnits="objectBoundingBox">
-            {/* центральный круг */}
-            <circle cx="0.5" cy="0.5" r="0.46" />
-            {/* 12 лепестков по окружности */}
-            {Array.from({ length: 12 }).map((_, i) => {
-              const angle = (i * 360) / 12;
+          <clipPath id="lotus-clip" clipPathUnits="objectBoundingBox">
+            <circle cx="0.5" cy="0.5" r="0.34" />
+            {petalsOuter.map((_, i) => {
+              const a = (i * 360) / 8;
               return (
-                <ellipse
+                <path
                   key={i}
-                  cx="0.5"
-                  cy="0.08"
-                  rx="0.05"
-                  ry="0.12"
-                  transform={`rotate(${angle} 0.5 0.5)`}
+                  d="M0.5,0.06 C0.58,0.18 0.58,0.32 0.5,0.42 C0.42,0.32 0.42,0.18 0.5,0.06 Z"
+                  transform={`rotate(${a} 0.5 0.5)`}
                 />
               );
             })}
@@ -46,50 +43,56 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
         </defs>
       </svg>
 
-      {/* Внешнее вращающееся кольцо-орнамент */}
+      {/* Внешний контур-лотос (вращается медленно) */}
       <svg
         viewBox="0 0 200 200"
-        className="absolute inset-0 w-full h-full text-primary/40 animate-[mandala-spin_60s_linear_infinite]"
+        className="absolute inset-0 w-full h-full text-primary/55 animate-[mandala-spin_80s_linear_infinite]"
         fill="none"
         stroke="currentColor"
-        strokeWidth="0.4"
+        strokeWidth="0.7"
+        strokeLinejoin="round"
         aria-hidden
       >
-        {[94, 88, 82].map((r) => (
-          <circle key={r} cx="100" cy="100" r={r} />
-        ))}
-        {Array.from({ length: 24 }).map((_, i) => {
-          const a = (i * 360) / 24;
+        {/* большой круг рамка */}
+        <circle cx="100" cy="100" r="98" strokeWidth="0.5" />
+        <circle cx="100" cy="100" r="92" strokeWidth="0.4" opacity="0.6" />
+
+        {/* 12 длинных лепестков лотоса по периметру */}
+        {Array.from({ length: 12 }).map((_, i) => {
+          const a = (i * 360) / 12;
           return (
-            <ellipse
-              key={i}
-              cx="100"
-              cy="14"
-              rx="3"
-              ry="10"
-              transform={`rotate(${a} 100 100)`}
-            />
-          );
-        })}
-        {Array.from({ length: 36 }).map((_, i) => {
-          const a = (i * 360) / 36;
-          return (
-            <line
-              key={i}
-              x1="100"
-              y1="6"
-              x2="100"
-              y2="12"
+            <path
+              key={`pl-${i}`}
+              d="M100,4 C112,28 112,52 100,72 C88,52 88,28 100,4 Z"
               transform={`rotate(${a} 100 100)`}
             />
           );
         })}
       </svg>
 
-      {/* Стек фото внутри маски-мандалы */}
+      {/* Flower-of-life — пересекающиеся круги (статично) */}
+      <svg
+        viewBox="0 0 200 200"
+        className="absolute inset-[10%] w-[80%] h-[80%] text-primary/40 pointer-events-none"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="0.7"
+        aria-hidden
+      >
+        <circle cx="100" cy="100" r="42" />
+        {Array.from({ length: 6 }).map((_, i) => {
+          const a = (i * 360) / 6;
+          const rad = (a * Math.PI) / 180;
+          const cx = 100 + Math.cos(rad - Math.PI / 2) * 42;
+          const cy = 100 + Math.sin(rad - Math.PI / 2) * 42;
+          return <circle key={`fol-${i}`} cx={cx} cy={cy} r="42" />;
+        })}
+      </svg>
+
+      {/* Стек фото внутри лепестковой маски */}
       <div
-        className="absolute inset-[6%] overflow-hidden"
-        style={{ clipPath: "url(#mandala-clip)", WebkitClipPath: "url(#mandala-clip)" }}
+        className="absolute inset-[12%] overflow-hidden"
+        style={{ clipPath: "url(#lotus-clip)", WebkitClipPath: "url(#lotus-clip)" }}
       >
         {images.map((src, i) => (
           <img
@@ -97,41 +100,36 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
             src={src}
             alt=""
             loading={i === 0 ? "eager" : "lazy"}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] ease-in-out ${
-              i === active ? "opacity-100 scale-100" : "opacity-0 scale-110"
-            }`}
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] ease-in-out"
             style={{
-              transform: `${i === active ? "rotate(0deg)" : "rotate(8deg)"} scale(${i === active ? 1 : 1.1})`,
+              opacity: i === active ? 1 : 0,
+              transform: `scale(${i === active ? 1 : 1.12}) rotate(${i === active ? 0 : 6}deg)`,
             }}
           />
         ))}
-        {/* мягкое тонирование */}
         <div className="absolute inset-0 bg-primary/5 mix-blend-multiply pointer-events-none" />
       </div>
 
-      {/* Внутреннее вращающееся кольцо в обратную сторону */}
+      {/* Внутренний цветок-сердцевина (вращается обратно) */}
       <svg
         viewBox="0 0 200 200"
-        className="absolute inset-[8%] w-[84%] h-[84%] text-primary/30 animate-[mandala-spin-rev_45s_linear_infinite] pointer-events-none"
+        className="absolute inset-[36%] w-[28%] h-[28%] text-primary/70 animate-[mandala-spin-rev_50s_linear_infinite] pointer-events-none"
         fill="none"
         stroke="currentColor"
-        strokeWidth="0.5"
+        strokeWidth="1.2"
         aria-hidden
       >
-        <circle cx="100" cy="100" r="98" />
-        {Array.from({ length: 16 }).map((_, i) => {
-          const a = (i * 360) / 16;
+        {Array.from({ length: 6 }).map((_, i) => {
+          const a = (i * 360) / 6;
           return (
-            <ellipse
-              key={i}
-              cx="100"
-              cy="20"
-              rx="2"
-              ry="6"
+            <path
+              key={`core-${i}`}
+              d="M100,40 C115,70 115,100 100,120 C85,100 85,70 100,40 Z"
               transform={`rotate(${a} 100 100)`}
             />
           );
         })}
+        <circle cx="100" cy="100" r="14" />
       </svg>
 
       {/* Точки-индикаторы */}
