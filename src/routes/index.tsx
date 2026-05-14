@@ -298,9 +298,15 @@ function Courses() {
                     ))}
                   </ul>
                   <p className="text-sm text-ink/70 mt-auto mb-5 italic">{c.result}</p>
-                  <span className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
-                    Подробнее о курсе <ArrowRight size={14} />
-                  </span>
+                  <div className="flex items-end justify-between pt-5 border-t border-ink/10">
+                    <div>
+                      <p className="eyebrow mb-1">Стоимость</p>
+                      <p className="font-display text-xl text-primary">{c.price}</p>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+                      Подробнее <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             </Reveal>
