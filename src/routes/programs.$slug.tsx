@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound, Navigate } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { PROGRAMS, type Program } from "@/lib/site-data";
+import { PROGRAMS, PROGRAM_LESSONS, type Program } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
+import { LessonsPreview } from "@/components/LessonsPreview";
+import { Mandala } from "@/components/Mandala";
 import programBase from "@/assets/program-base.jpg";
 import programRecovery from "@/assets/program-recovery.jpg";
 import programFull from "@/assets/program-full.jpg";
@@ -70,7 +72,8 @@ function ProgramDetail() {
 
   return (
     <>
-      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 relative overflow-hidden">
+        <Mandala className="absolute -left-32 top-0 w-[480px] h-[480px] text-primary/10 pointer-events-none" petals={18} rings={6} />
         <div className="container-x">
           <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
             <ArrowLeft size={14} /> Все программы
@@ -147,6 +150,12 @@ function ProgramDetail() {
           </div>
         </div>
       </section>
+
+      <LessonsPreview
+        title={`Уроки программы «${p.title}»`}
+        lessons={PROGRAM_LESSONS[p.slug] ?? []}
+        price={p.price}
+      />
 
       <section className="py-20 md:py-24 bg-clay">
         <div className="container-x grid md:grid-cols-12 gap-10">

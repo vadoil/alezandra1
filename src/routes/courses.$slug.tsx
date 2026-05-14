@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { COURSES, type Course } from "@/lib/site-data";
+import { COURSES, COURSE_LESSONS, type Course } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
+import { LessonsPreview } from "@/components/LessonsPreview";
+import { Mandala } from "@/components/Mandala";
 import courseBeginner from "@/assets/course-beginner.jpg";
 import courseBack from "@/assets/course-back.jpg";
 import courseAntistress from "@/assets/course-antistress.jpg";
@@ -66,7 +68,8 @@ function CourseDetail() {
 
   return (
     <>
-      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 relative overflow-hidden">
+        <Mandala className="absolute -right-40 top-10 w-[520px] h-[520px] text-primary/10 pointer-events-none" petals={20} rings={7} />
         <div className="container-x">
           <Link to="/courses" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
             <ArrowLeft size={14} /> Все курсы
@@ -147,6 +150,12 @@ function CourseDetail() {
           </div>
         </div>
       </section>
+
+      <LessonsPreview
+        title={`Уроки курса «${c.title}»`}
+        lessons={COURSE_LESSONS[c.slug] ?? []}
+        price={c.price}
+      />
 
       <section className="py-20 md:py-24 bg-clay">
         <div className="container-x grid md:grid-cols-12 gap-10">

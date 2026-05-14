@@ -6,6 +6,7 @@ import retreatKarelia from "@/assets/retreat-karelia.jpg";
 import retreatTurkey from "@/assets/retreat-turkey.jpg";
 import retreatAltai from "@/assets/retreat-altai.jpg";
 import { FinalCta } from "@/components/FinalCta";
+import { Mandala } from "@/components/Mandala";
 
 export const Route = createFileRoute("/retreats")({
   head: () => ({
@@ -166,8 +167,10 @@ function Retreats() {
         </div>
       </section>
 
-      <section id="retreats" className="py-24 md:py-32">
-        <div className="container-x">
+      <section id="retreats" className="py-24 md:py-32 relative overflow-hidden">
+        <Mandala className="absolute -left-40 top-20 w-[520px] h-[520px] text-primary/8 pointer-events-none" petals={20} rings={7} />
+        <Mandala className="absolute -right-32 bottom-10 w-[420px] h-[420px] text-primary/8 pointer-events-none" petals={16} rings={6} />
+        <div className="container-x relative">
           <div className="max-w-2xl mb-16">
             <p className="eyebrow mb-4">Ближайшие туры</p>
             <h2 className="h-section">Куда мы едем в этом сезоне</h2>
