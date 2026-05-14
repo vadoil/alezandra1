@@ -92,11 +92,8 @@ export function KaleidoscopeMandala({ images, intervalMs = 3800, className = "" 
         })}
       </svg>
 
-      {/* Стек фото внутри лепестковой маски */}
-      <div
-        className="absolute inset-[12%] overflow-hidden"
-        style={{ clipPath: "url(#lotus-clip)", WebkitClipPath: "url(#lotus-clip)" }}
-      >
+      {/* Стек фото — вписан в серый круг (чуть меньше внешнего кольца) */}
+      <div className="absolute inset-[7%] overflow-hidden rounded-full">
         {images.map((src, i) => (
           <img
             key={src + i}
