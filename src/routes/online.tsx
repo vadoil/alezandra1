@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import onlineImg from "@/assets/online-practice.jpg";
 import { FinalCta } from "@/components/FinalCta";
+import { PROGRAMS } from "@/lib/site-data";
 
 export const Route = createFileRoute("/online")({
   head: () => ({
@@ -60,6 +61,42 @@ function Online() {
               <li key={x} className="flex items-start gap-3"><Check size={18} className="text-primary mt-1.5" />{x}</li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="py-24 bg-clay">
+        <div className="container-x">
+          <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
+            <div>
+              <p className="eyebrow mb-4">Программы онлайн</p>
+              <h2 className="h-section max-w-2xl">Системные программы <span className="font-serif-italic text-primary">в онлайн-формате</span></h2>
+            </div>
+            <Link to="/program" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
+              Все программы <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROGRAMS.map((p) => (
+              <Link
+                key={p.slug}
+                to="/programs/$slug"
+                params={{ slug: p.slug }}
+                className="group bg-cream border border-ink/5 p-8 rounded-sm hover:border-primary/40 transition-colors flex flex-col"
+              >
+                {p.flagship && <span className="eyebrow text-primary mb-3">Флагман</span>}
+                <h3 className="text-2xl mb-3 group-hover:text-primary transition-colors">{p.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6">{p.tagline}</p>
+                <ul className="text-xs text-ink/70 space-y-1 mb-6">
+                  <li>{p.duration}</li>
+                  <li>{p.format}</li>
+                </ul>
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-ink/5">
+                  <span className="text-sm text-ink">{p.price}</span>
+                  <span className="text-xs text-primary inline-flex items-center gap-1">Подробнее <ArrowRight size={12} /></span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
