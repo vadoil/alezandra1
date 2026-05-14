@@ -162,7 +162,7 @@ function Hero() {
         </div>
 
         <div className="lg:col-span-6 order-1 lg:order-2">
-          <div className="relative">
+          <div className="relative max-w-[640px] mx-auto lg:mx-0 lg:scale-110 lg:origin-center">
             <KaleidoscopeMandala images={kaleidoscope} />
 
             <div className="hidden md:block absolute bottom-4 -left-4 lg:-left-8 bg-cream border border-ink/5 p-5 max-w-[240px] rounded-sm shadow-lg">
