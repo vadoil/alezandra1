@@ -22,6 +22,7 @@ const CHANNELS = [
   { icon: Send, label: "Telegram", value: SITE.telegram, href: SITE.telegramUrl, hint: "Самый быстрый ответ" },
   { icon: MessageCircle, label: "WhatsApp", value: SITE.phone, href: SITE.whatsappUrl, hint: "Сообщение или голосовое" },
   { icon: Instagram, label: "Instagram", value: `@${SITE.instagram}`, href: SITE.instagramUrl, hint: "Практика · истории · отзывы" },
+  { icon: MessageCircle, label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl, hint: "Сообщения ВК" },
   { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, hint: "Для подробных вопросов" },
 ];
 
