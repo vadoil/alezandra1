@@ -150,6 +150,12 @@ function CourseDetail() {
         </div>
       </section>
 
+      <LessonsPreview
+        title={`Уроки курса «${c.title}»`}
+        lessons={COURSE_LESSONS[c.slug] ?? []}
+        price={c.price}
+      />
+
       <section className="py-20 md:py-24 bg-clay">
         <div className="container-x grid md:grid-cols-12 gap-10">
           <div className="md:col-span-5">
