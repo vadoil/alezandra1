@@ -173,8 +173,8 @@ function Hero() {
             </div>
 
             <div className="hidden md:block absolute top-4 -right-4 lg:-right-6 bg-primary text-primary-foreground p-4 max-w-[210px] rounded-sm shadow-lg">
-              <p className="text-[10px] uppercase tracking-[0.22em] mb-2 opacity-80">Сейчас идёт набор · скидка 30%</p>
-              <p className="text-sm leading-snug font-display">Курс «Здоровая спина» · старт 1 июня</p>
+              <p className="text-[10px] uppercase tracking-[0.22em] mb-2 opacity-80">Сейчас идёт набор</p>
+              <p className="text-sm leading-snug font-display">Курс «Здоровая спина» · старт 1 числа</p>
             </div>
           </div>
         </div>
