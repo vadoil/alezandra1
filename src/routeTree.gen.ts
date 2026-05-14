@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProgramRouteImport } from './routes/program'
+import { Route as OnlineRouteImport } from './routes/online'
+import { Route as OfflineRouteImport } from './routes/offline'
+import { Route as DirectionsRouteImport } from './routes/directions'
+import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as ConsultationsRouteImport } from './routes/consultations'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ProgramRoute = ProgramRouteImport.update({
+  id: '/program',
+  path: '/program',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnlineRoute = OnlineRouteImport.update({
+  id: '/online',
+  path: '/online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfflineRoute = OfflineRouteImport.update({
+  id: '/offline',
+  path: '/offline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectionsRoute = DirectionsRouteImport.update({
+  id: '/directions',
+  path: '/directions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultationsRoute = ConsultationsRouteImport.update({
+  id: '/consultations',
+  path: '/consultations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/consultations': typeof ConsultationsRoute
+  '/courses': typeof CoursesRoute
+  '/directions': typeof DirectionsRoute
+  '/offline': typeof OfflineRoute
+  '/online': typeof OnlineRoute
+  '/program': typeof ProgramRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/consultations': typeof ConsultationsRoute
+  '/courses': typeof CoursesRoute
+  '/directions': typeof DirectionsRoute
+  '/offline': typeof OfflineRoute
+  '/online': typeof OnlineRoute
+  '/program': typeof ProgramRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/consultations': typeof ConsultationsRoute
+  '/courses': typeof CoursesRoute
+  '/directions': typeof DirectionsRoute
+  '/offline': typeof OfflineRoute
+  '/online': typeof OnlineRoute
+  '/program': typeof ProgramRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/consultations'
+    | '/courses'
+    | '/directions'
+    | '/offline'
+    | '/online'
+    | '/program'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/consultations'
+    | '/courses'
+    | '/directions'
+    | '/offline'
+    | '/online'
+    | '/program'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/consultations'
+    | '/courses'
+    | '/directions'
+    | '/offline'
+    | '/online'
+    | '/program'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConsultationsRoute: typeof ConsultationsRoute
+  CoursesRoute: typeof CoursesRoute
+  DirectionsRoute: typeof DirectionsRoute
+  OfflineRoute: typeof OfflineRoute
+  OnlineRoute: typeof OnlineRoute
+  ProgramRoute: typeof ProgramRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/program': {
+      id: '/program'
+      path: '/program'
+      fullPath: '/program'
+      preLoaderRoute: typeof ProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online': {
+      id: '/online'
+      path: '/online'
+      fullPath: '/online'
+      preLoaderRoute: typeof OnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offline': {
+      id: '/offline'
+      path: '/offline'
+      fullPath: '/offline'
+      preLoaderRoute: typeof OfflineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directions': {
+      id: '/directions'
+      path: '/directions'
+      fullPath: '/directions'
+      preLoaderRoute: typeof DirectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultations': {
+      id: '/consultations'
+      path: '/consultations'
+      fullPath: '/consultations'
+      preLoaderRoute: typeof ConsultationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConsultationsRoute: ConsultationsRoute,
+  CoursesRoute: CoursesRoute,
+  DirectionsRoute: DirectionsRoute,
+  OfflineRoute: OfflineRoute,
+  OnlineRoute: OnlineRoute,
+  ProgramRoute: ProgramRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

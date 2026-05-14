@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import heroImg from "@/assets/hero-portrait.jpg";
-import therapyImg from "@/assets/therapy-hands.jpg";
 import aboutImg from "@/assets/about-portrait.jpg";
-import studioImg from "@/assets/studio-space.jpg";
 import onlineImg from "@/assets/online-practice.jpg";
 import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/consultation.jpg";
