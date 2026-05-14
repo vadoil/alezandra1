@@ -706,3 +706,53 @@ function Pricing() {
     </section>
   );
 }
+
+function ContactsSection() {
+  const items = [
+    { label: "Telegram", value: "@alexandramarchenkoo", href: "https://t.me/alexandramarchenkoo" },
+    { label: "WhatsApp", value: "+7 927 020 41 61", href: "https://wa.me/79270204161" },
+    { label: "Instagram", value: "@alexandramarchenkoo", href: "https://instagram.com/alexandramarchenkoo" },
+    { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
+  ];
+  return (
+    <section id="contacts" className="py-24 md:py-32 bg-ink text-cream">
+      <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
+        <div className="lg:col-span-5">
+          <p className="eyebrow text-primary mb-5">Контакты</p>
+          <h2 className="h-section text-cream">
+            Напишите <span className="font-serif-italic text-primary">в любой</span> мессенджер
+          </h2>
+          <p className="mt-6 text-cream/70 text-lg max-w-md">
+            Я отвечаю лично. Подскажу формат, расписание и помогу записаться на бесплатное первое занятие.
+          </p>
+          <p className="mt-8 text-sm text-cream/50">Центр «Сфера», Санкт-Петербург · Пн–Вс 08:00–21:00</p>
+          <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-primary hover:gap-3 transition-all">
+            Все контакты <ArrowRight size={14} />
+          </Link>
+        </div>
+        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-3">
+          {items.map((it) => {
+            const ext = it.href.startsWith("http");
+            return (
+              <a
+                key={it.label}
+                href={it.href}
+                target={ext ? "_blank" : undefined}
+                rel={ext ? "noreferrer" : undefined}
+                className="group bg-cream/5 border border-cream/10 rounded-sm p-6 hover:bg-cream/10 hover:border-primary transition-all"
+              >
+                <p className="eyebrow text-primary mb-2">{it.label}</p>
+                <p className="font-display text-xl text-cream group-hover:text-primary transition-colors break-all">
+                  {it.value}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-xs text-cream/60 group-hover:gap-3 transition-all">
+                  Открыть <ArrowRight size={12} />
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
