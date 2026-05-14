@@ -22,6 +22,8 @@ import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
+import { Mandala } from "@/components/Mandala";
+import seaYogaImg from "@/assets/video-sea-yoga.jpg";
 
 const COURSE_IMAGES: Record<string, string> = {
   "yoga-from-scratch": courseBeginner,
@@ -73,6 +75,7 @@ function Home() {
       <GalleryStrip />
       <Courses />
       <Schedule />
+      <VideoBlock />
       <Pricing />
       <TrustBar />
       <Story />
@@ -585,8 +588,9 @@ function GalleryStrip() {
 
 function Schedule() {
   return (
-    <section id="schedule" className="py-24 md:py-32 bg-clay">
-      <div className="container-x">
+    <section id="schedule" className="relative overflow-hidden py-24 md:py-32 bg-clay">
+      <Mandala className="absolute -top-40 -right-40 w-[560px] h-[560px] text-ink/[0.06] pointer-events-none" petals={20} rings={8} />
+      <div className="container-x relative">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
             <p className="eyebrow mb-4">Расписание</p>
@@ -658,8 +662,10 @@ function Schedule() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="py-24 md:py-32">
-      <div className="container-x">
+    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+      <Mandala className="absolute -top-24 -left-24 w-[420px] h-[420px] text-primary/10 pointer-events-none" petals={12} rings={5} />
+      <Mandala className="absolute -bottom-32 -right-32 w-[480px] h-[480px] text-ink/[0.05] pointer-events-none" petals={18} rings={7} />
+      <div className="container-x relative">
         <div className="max-w-2xl mb-14">
           <p className="eyebrow mb-4">Цены</p>
           <h2 className="h-section">Стоимость занятий</h2>
@@ -715,8 +721,9 @@ function ContactsSection() {
     { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
   ];
   return (
-    <section id="contacts" className="py-24 md:py-32 bg-ink text-cream">
-      <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
+    <section id="contacts" className="relative overflow-hidden py-24 md:py-32 bg-ink text-cream">
+      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-primary/10 pointer-events-none" petals={24} rings={9} />
+      <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="eyebrow text-primary mb-5">Контакты</p>
           <h2 className="h-section text-cream">
@@ -751,6 +758,56 @@ function ContactsSection() {
               </a>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VideoBlock() {
+  return (
+    <section className="relative overflow-hidden bg-ink text-cream">
+      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-primary/20 pointer-events-none" />
+      <Mandala className="absolute -bottom-40 -right-40 w-[520px] h-[520px] text-cream/10 pointer-events-none" petals={20} rings={7} />
+
+      <div className="container-x relative py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-5">
+          <p className="eyebrow text-primary mb-5">Видео · скоро</p>
+          <h2 className="h-section text-cream">
+            Дыхание <span className="font-serif-italic text-primary">моря</span> в&nbsp;вашей практике
+          </h2>
+          <p className="mt-6 text-cream/70 text-lg max-w-md leading-relaxed">
+            Короткое кино о том, как звучит йога у воды — медленные восходы, мягкие движения и тишина между волнами.
+          </p>
+          <p className="mt-8 text-xs text-cream/40 tracking-[0.2em] uppercase">Видео появится здесь</p>
+        </div>
+
+        <div className="lg:col-span-7">
+          <div className="relative group rounded-sm overflow-hidden aspect-video shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)]">
+            <img
+              src={seaYogaImg}
+              alt="Йога на берегу моря — превью видео"
+              loading="lazy"
+              width={1920}
+              height={896}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <button
+                type="button"
+                aria-label="Воспроизвести видео"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cream/15 backdrop-blur border border-cream/40 flex items-center justify-center text-cream group-hover:bg-primary group-hover:border-primary transition-all"
+              >
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" className="ml-1">
+                  <path d="M8 5v14l11-7L8 5z" />
+                </svg>
+              </button>
+            </div>
+            <div className="absolute bottom-5 left-6 text-cream text-xs tracking-[0.2em] uppercase opacity-80">
+              Превью · место для видео
+            </div>
+          </div>
         </div>
       </div>
     </section>
