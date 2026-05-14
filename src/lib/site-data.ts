@@ -109,7 +109,24 @@ export const DIRECTIONS = [
   },
 ];
 
-export const COURSES = [
+export type Course = {
+  slug: string;
+  title: string;
+  tagline: string;
+  duration: string;
+  format: string;
+  price: string;
+  forWhom: string;
+  problem: string;
+  inside: string[];
+  result: string;
+  tone: string;
+  weeks: { title: string; text: string }[];
+  bonuses: string[];
+  faq: { q: string; a: string }[];
+};
+
+export const COURSES: Course[] = [
   {
     slug: "yoga-from-scratch",
     title: "Йога с нуля",
