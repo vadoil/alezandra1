@@ -11,7 +11,6 @@ import courseAntistress from "@/assets/alex-5.jpg";
 import programBase from "@/assets/program-base.jpg";
 import programRecovery from "@/assets/program-recovery.jpg";
 import programFull from "@/assets/program-full.jpg";
-import practiceRestorative from "@/assets/practice-restorative.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
