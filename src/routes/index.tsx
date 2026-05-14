@@ -84,6 +84,7 @@ function Home() {
       <Formats />
       <Testimonials />
       <FaqSection />
+      <ContactsSection />
       <FinalCta />
     </>
   );
