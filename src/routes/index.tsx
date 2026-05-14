@@ -588,8 +588,9 @@ function GalleryStrip() {
 
 function Schedule() {
   return (
-    <section id="schedule" className="py-24 md:py-32 bg-clay">
-      <div className="container-x">
+    <section id="schedule" className="relative overflow-hidden py-24 md:py-32 bg-clay">
+      <Mandala className="absolute -top-40 -right-40 w-[560px] h-[560px] text-ink/[0.06] pointer-events-none" petals={20} rings={8} />
+      <div className="container-x relative">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
             <p className="eyebrow mb-4">Расписание</p>
