@@ -14,6 +14,7 @@ import { Route as OnlineRouteImport } from './routes/online'
 import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as DirectionsRouteImport } from './routes/directions'
 import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as ConsultationsRouteImport } from './routes/consultations'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const DirectionsRoute = DirectionsRouteImport.update({
 const CoursesRoute = CoursesRouteImport.update({
   id: '/courses',
   path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultationsRoute = ConsultationsRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/consultations': typeof ConsultationsRoute
+  '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
   '/offline': typeof OfflineRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/consultations': typeof ConsultationsRoute
+  '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
   '/offline': typeof OfflineRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/consultations': typeof ConsultationsRoute
+  '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
   '/offline': typeof OfflineRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/consultations'
+    | '/contacts'
     | '/courses'
     | '/directions'
     | '/offline'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/consultations'
+    | '/contacts'
     | '/courses'
     | '/directions'
     | '/offline'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/consultations'
+    | '/contacts'
     | '/courses'
     | '/directions'
     | '/offline'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ConsultationsRoute: typeof ConsultationsRoute
+  ContactsRoute: typeof ContactsRoute
   CoursesRoute: typeof CoursesRouteWithChildren
   DirectionsRoute: typeof DirectionsRoute
   OfflineRoute: typeof OfflineRoute
@@ -194,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/courses'
       fullPath: '/courses'
       preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consultations': {
@@ -249,6 +269,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ConsultationsRoute: ConsultationsRoute,
+  ContactsRoute: ContactsRoute,
   CoursesRoute: CoursesRouteWithChildren,
   DirectionsRoute: DirectionsRoute,
   OfflineRoute: OfflineRoute,
@@ -259,3 +280,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
