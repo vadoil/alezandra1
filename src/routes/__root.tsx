@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FloatingContacts } from "@/components/FloatingContacts";
 
 function NotFoundComponent() {
   return (
@@ -119,6 +120,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <FloatingContacts />
     </QueryClientProvider>
   );
 }

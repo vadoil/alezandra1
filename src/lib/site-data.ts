@@ -113,6 +113,8 @@ export const DIRECTIONS = [
   },
 ];
 
+export type Lesson = { title: string; duration: string; free?: boolean };
+
 export type Course = {
   slug: string;
   title: string;
@@ -128,6 +130,41 @@ export type Course = {
   weeks: { title: string; text: string }[];
   bonuses: string[];
   faq: { q: string; a: string }[];
+};
+
+/**
+ * Превью уроков курсов и программ. Доступ только после оплаты —
+ * на сайте показываем заголовки и хронометраж, без видео.
+ */
+export const COURSE_LESSONS: Record<string, Lesson[]> = {
+  "yoga-from-scratch": [
+    { title: "Знакомство · принципы безопасной практики", duration: "18 мин", free: true },
+    { title: "Дыхание уджайи и базовый ритм", duration: "32 мин" },
+    { title: "Стопы, опора и устойчивость", duration: "45 мин" },
+    { title: "Таз, крестец и мобилизация суставов", duration: "45 мин" },
+    { title: "Здоровая спина: грудной отдел", duration: "50 мин" },
+    { title: "Раскрытие плеч и работа с осанкой", duration: "45 мин" },
+    { title: "Сборка комфортного личного комплекса", duration: "55 мин" },
+    { title: "Финальная практика и чек-лист", duration: "60 мин" },
+  ],
+  "healthy-back": [
+    { title: "Диагностика: где живёт ваше напряжение", duration: "20 мин", free: true },
+    { title: "Шейно-воротниковая зона · мягкое снятие", duration: "40 мин" },
+    { title: "Дыхание для нервной системы", duration: "30 мин" },
+    { title: "Грудной отдел: раскрытие и мобилизация", duration: "50 мин" },
+    { title: "Восстановление осанки", duration: "45 мин" },
+    { title: "Поясница: безопасная нагрузка", duration: "50 мин" },
+    { title: "Мышцы-стабилизаторы кора", duration: "45 мин" },
+    { title: "Ежедневный 15-минутный ритуал для спины", duration: "20 мин" },
+  ],
+  "anti-stress": [
+    { title: "Удлинённый выдох · базовая техника", duration: "15 мин", free: true },
+    { title: "Дыхание для тревоги и пульса", duration: "25 мин" },
+    { title: "Restorative с поддержкой подушек", duration: "40 мин" },
+    { title: "Йога-нидра · 1", duration: "30 мин" },
+    { title: "Йога-нидра · 2", duration: "30 мин" },
+    { title: "Вечерний 20-минутный ритуал для сна", duration: "20 мин" },
+  ],
 };
 
 export const COURSES: Course[] = [
@@ -358,6 +395,35 @@ export const PROGRAMS: Program[] = [
     flagship: true,
   },
 ];
+
+export const PROGRAM_LESSONS: Record<string, Lesson[]> = {
+  base: [
+    { title: "Диагностика тела и личного запроса", duration: "30 мин", free: true },
+    { title: "Принципы выравнивания · модуль 1", duration: "55 мин" },
+    { title: "Принципы выравнивания · модуль 2", duration: "55 мин" },
+    { title: "Дыхание и работа с вниманием", duration: "40 мин" },
+    { title: "Базовые блоки практики · стоя", duration: "60 мин" },
+    { title: "Базовые блоки практики · сидя и лёжа", duration: "60 мин" },
+    { title: "Личная сборка последовательности", duration: "50 мин" },
+    { title: "Самостоятельная практика и дневник", duration: "45 мин" },
+  ],
+  recovery: [
+    { title: "Глубокая диагностика · видео-разбор", duration: "35 мин", free: true },
+    { title: "Снятие острого напряжения", duration: "45 мин" },
+    { title: "Восстановление подвижности", duration: "50 мин" },
+    { title: "Стабилизация и опора", duration: "50 мин" },
+    { title: "Дыхательная коррекция", duration: "30 мин" },
+    { title: "Персональный 20-минутный комплекс", duration: "25 мин" },
+  ],
+  "full-path": [
+    { title: "Старт · диагностика и ориентир", duration: "40 мин", free: true },
+    { title: "Онлайн-фундамент · принципы", duration: "60 мин" },
+    { title: "Онлайн-фундамент · ежедневная мини-практика", duration: "20 мин" },
+    { title: "Оффлайн-погружение · хатха в «Сфере»", duration: "75 мин" },
+    { title: "Оффлайн-погружение · йогатерапия", duration: "75 мин" },
+    { title: "Personal flow · ваша зрелая практика", duration: "60 мин" },
+  ],
+};
 
 export const TESTIMONIALS = [
   {
