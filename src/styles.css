@@ -32,9 +32,9 @@
   --color-sand: var(--sand);
   --color-clay: var(--clay);
   --color-ink: var(--ink);
-  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
 }
 
 :root {
