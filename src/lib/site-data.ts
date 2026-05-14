@@ -382,6 +382,34 @@ export const TESTIMONIALS = [
   },
 ];
 
+export type ScheduleItem = {
+  day: string;
+  time: string;
+  title: string;
+  format: "Онлайн" | "Сфера";
+  level: string;
+  duration: string;
+};
+
+export const SCHEDULE: ScheduleItem[] = [
+  { day: "Понедельник", time: "08:00", title: "Утренний пробуждающий поток", format: "Онлайн", level: "Все уровни", duration: "60 мин" },
+  { day: "Вторник", time: "19:30", title: "Здоровая спина · йогатерапия", format: "Сфера", level: "Терапевтический", duration: "75 мин" },
+  { day: "Среда", time: "07:30", title: "Мягкая практика и дыхание", format: "Онлайн", level: "Начинающие", duration: "45 мин" },
+  { day: "Четверг", time: "20:00", title: "Хатха для восстановления", format: "Сфера", level: "Все уровни", duration: "75 мин" },
+  { day: "Пятница", time: "19:00", title: "Антистресс · нидра", format: "Онлайн", level: "Все уровни", duration: "60 мин" },
+  { day: "Суббота", time: "10:30", title: "Глубокий класс в «Сфере»", format: "Сфера", level: "С опытом", duration: "90 мин" },
+  { day: "Воскресенье", time: "11:00", title: "Restorative · мягкое восстановление", format: "Сфера", level: "Все уровни", duration: "75 мин" },
+];
+
+export const PRICING = [
+  { title: "Первое занятие", price: "Бесплатно", note: "Знакомство и подбор формата", highlight: true },
+  { title: "Разовое онлайн-занятие", price: "1 200 ₽", note: "Любая открытая группа онлайн" },
+  { title: "Разовое в «Сфере»", price: "1 800 ₽", note: "Оффлайн-класс в Санкт-Петербурге" },
+  { title: "Абонемент 4 занятия", price: "4 400 ₽", note: "Действует 1 месяц · онлайн или оффлайн" },
+  { title: "Абонемент 8 занятий", price: "7 900 ₽", note: "Действует 2 месяца · оптимальный ритм" },
+  { title: "Персональная сессия", price: "от 4 500 ₽", note: "Индивидуально под ваш запрос" },
+];
+
 export const FAQ = [
   {
     q: "Я новичок — мне подойдёт?",
