@@ -51,6 +51,11 @@ export function Footer() {
                   WhatsApp
                 </a>
               </li>
+              <li>
+                <a href={SITE.vkUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                  ВКонтакте
+                </a>
+              </li>
             </ul>
           </div>
         </div>
