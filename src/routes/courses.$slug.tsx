@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { COURSES } from "@/lib/site-data";
+import { COURSES, type Course } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
 import courseBeginner from "@/assets/course-beginner.jpg";
 import courseBack from "@/assets/course-back.jpg";
@@ -58,7 +58,8 @@ export const Route = createFileRoute("/courses/$slug")({
 });
 
 function CourseDetail() {
-  const { course: c } = Route.useLoaderData();
+  const { course } = Route.useLoaderData() as { course: Course };
+  const c = course;
   const heroImg = COURSE_IMAGES[c.slug];
   const gallery = COURSE_GALLERY[c.slug] ?? [];
   const otherCourses = COURSES.filter((x) => x.slug !== c.slug);
