@@ -5,10 +5,19 @@ import aboutImg from "@/assets/about-portrait.jpg";
 import onlineImg from "@/assets/online-practice.jpg";
 import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/consultation.jpg";
+import courseBeginner from "@/assets/course-beginner.jpg";
+import courseBack from "@/assets/course-back.jpg";
+import courseAntistress from "@/assets/course-antistress.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
+
+const COURSE_IMAGES: Record<string, string> = {
+  "yoga-from-scratch": courseBeginner,
+  "healthy-back": courseBack,
+  "anti-stress": courseAntistress,
+};
 import {
   COURSES,
   DIRECTIONS,
