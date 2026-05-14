@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
-import aboutImg from "@/assets/about-portrait.jpg";
-import therapyImg from "@/assets/therapy-hands.jpg";
+import aboutImg from "@/assets/alex-10.jpg";
+import therapyImg from "@/assets/alex-4.jpg";
 import { FinalCta } from "@/components/FinalCta";
 
 export const Route = createFileRoute("/about")({

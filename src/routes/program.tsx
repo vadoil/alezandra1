@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
-import studioImg from "@/assets/studio-space.jpg";
-import practiceImg from "@/assets/practice-restorative.jpg";
+import studioImg from "@/assets/alex-6.jpg";
+import practiceImg from "@/assets/alex-8.jpg";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { TESTIMONIALS } from "@/lib/site-data";

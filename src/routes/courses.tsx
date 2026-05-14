@@ -3,11 +3,11 @@ import { Check } from "lucide-react";
 import { COURSES } from "@/lib/site-data";
 import { FinalCta } from "@/components/FinalCta";
 import { Mandala } from "@/components/Mandala";
-import courseBeginner from "@/assets/course-beginner.jpg";
-import courseBack from "@/assets/course-back.jpg";
-import courseAntistress from "@/assets/course-antistress.jpg";
-import studioSpace from "@/assets/studio-space.jpg";
-import practiceRestorative from "@/assets/practice-restorative.jpg";
+import courseBeginner from "@/assets/alex-2.jpg";
+import courseBack from "@/assets/alex-7.jpg";
+import courseAntistress from "@/assets/alex-5.jpg";
+import studioSpace from "@/assets/alex-6.jpg";
+import practiceRestorative from "@/assets/alex-8.jpg";
 
 const COURSE_IMAGES: Record<string, string> = {
   "yoga-from-scratch": courseBeginner,
