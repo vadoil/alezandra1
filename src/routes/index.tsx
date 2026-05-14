@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Calendar, Sparkles, Heart, Leaf, Shield } from "lucide-react";
+import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import onlineImg from "@/assets/online-practice.jpg";
@@ -94,46 +95,86 @@ function Home() {
 }
 
 function Hero() {
+  const kaleidoscope = [heroImg, aboutImg, consultationImg, courseBeginner, courseBack, courseAntistress];
+  const benefits = [
+    { icon: <Heart size={14} />, text: "Без боли и насилия над телом" },
+    { icon: <Leaf size={14} />, text: "Бережно к нервной системе" },
+    { icon: <Shield size={14} />, text: "Безопасно при болях в спине" },
+  ];
+
   return (
-    <section className="pt-12 md:pt-20 pb-24 md:pb-32">
-      <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section className="pt-12 md:pt-20 pb-24 md:pb-32 relative overflow-hidden">
+      <Mandala className="absolute -left-40 top-20 w-[480px] h-[480px] text-primary/8 pointer-events-none hidden md:block" petals={18} rings={6} />
+
+      <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
         <div className="lg:col-span-6 order-2 lg:order-1">
-          <p className="eyebrow mb-6">Александра Марченко · йогатерапия</p>
+          <p className="eyebrow mb-6">Александра Марченко · йогатерапия · Санкт-Петербург</p>
           <h1 className="h-display">
             Бережная йога <br />
             и <span className="font-serif-italic text-primary">возвращение</span> <br />
             к телу
           </h1>
           <p className="mt-7 text-lg text-muted-foreground max-w-lg leading-relaxed">
-            Системная практика для восстановления, снятия напряжения и спокойного входа в йогу. Без перегруза, давления и сравнения.
+            Системная практика для восстановления, снятия напряжения и спокойного входа в йогу.
+            Снимаю боли в спине за одну тренировку и возвращаю королевскую осанку — без перегруза,
+            давления и сравнения.
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+
+          <ul className="mt-7 space-y-2.5 max-w-md">
+            {benefits.map((b) => (
+              <li key={b.text} className="flex items-center gap-3 text-sm text-ink/80">
+                <span className="w-7 h-7 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center shrink-0">
+                  {b.icon}
+                </span>
+                {b.text}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
             <a href="#quiz" className="btn-primary">
               Подобрать программу <ArrowRight size={16} />
             </a>
             <Link to="/consultations" className="btn-outline">
-              Записаться на консультацию
+              Бесплатная консультация
             </Link>
           </div>
-          <p className="mt-5 text-xs text-muted-foreground">
+          <p className="mt-5 text-xs text-muted-foreground flex items-center gap-2">
+            <Sparkles size={12} className="text-primary" />
             Первичная встреча 20 минут · бесплатно · без обязательств
           </p>
+
+          {/* Социальные доказательства */}
+          <div className="mt-10 pt-8 border-t border-ink/10 grid grid-cols-3 gap-6 max-w-md">
+            <div>
+              <p className="font-display text-3xl text-primary leading-none">5+</p>
+              <p className="text-xs text-muted-foreground mt-2 leading-snug">лет в практике и фитнесе</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl text-primary leading-none">200+</p>
+              <p className="text-xs text-muted-foreground mt-2 leading-snug">учеников онлайн и оффлайн</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl text-primary leading-none">98%</p>
+              <p className="text-xs text-muted-foreground mt-2 leading-snug">отмечают облегчение после 1 встречи</p>
+            </div>
+          </div>
         </div>
 
         <div className="lg:col-span-6 order-1 lg:order-2">
           <div className="relative">
-            <img
-              src={heroImg}
-              alt="Александра Марченко — преподаватель йоги и йогатерапии"
-              width={1280}
-              height={1600}
-              className="w-full aspect-[4/5] object-cover rounded-sm"
-            />
-            <div className="hidden md:block absolute -bottom-6 -left-6 bg-cream border border-ink/5 p-5 max-w-[240px] rounded-sm shadow-sm">
+            <KaleidoscopeMandala images={kaleidoscope} />
+
+            <div className="hidden md:block absolute bottom-4 -left-4 lg:-left-8 bg-cream border border-ink/5 p-5 max-w-[240px] rounded-sm shadow-lg">
               <p className="eyebrow mb-2">Сертификация</p>
               <p className="text-sm leading-snug">
                 Йогатерапия · 5+ лет в фитнесе и йоге
               </p>
+            </div>
+
+            <div className="hidden md:block absolute top-4 -right-4 lg:-right-6 bg-primary text-primary-foreground p-4 max-w-[210px] rounded-sm shadow-lg">
+              <p className="text-[10px] uppercase tracking-[0.22em] mb-2 opacity-80">Сейчас идёт набор</p>
+              <p className="text-sm leading-snug font-display">Курс «Здоровая спина» · старт 1 числа</p>
             </div>
           </div>
         </div>
