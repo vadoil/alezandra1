@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Calendar, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-portrait.jpg";
 import aboutImg from "@/assets/about-portrait.jpg";
 import onlineImg from "@/assets/online-practice.jpg";
@@ -11,6 +11,13 @@ import courseAntistress from "@/assets/course-antistress.jpg";
 import programBase from "@/assets/program-base.jpg";
 import programRecovery from "@/assets/program-recovery.jpg";
 import programFull from "@/assets/program-full.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import practiceRestorative from "@/assets/practice-restorative.jpg";
+import studioSpace from "@/assets/studio-space.jpg";
+import therapyHands from "@/assets/therapy-hands.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
@@ -34,6 +41,8 @@ import {
   SEGMENTS,
   TESTIMONIALS,
   TRUST,
+  SCHEDULE,
+  PRICING,
 } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -60,11 +69,15 @@ function Home() {
   return (
     <>
       <Hero />
+      <FreeFirstBanner />
+      <GalleryStrip />
+      <Courses />
+      <Schedule />
+      <Pricing />
       <TrustBar />
       <Story />
       <Segments />
       <Directions />
-      <Courses />
       <Programs />
       <Consultations />
       <Quiz />
@@ -285,9 +298,15 @@ function Courses() {
                     ))}
                   </ul>
                   <p className="text-sm text-ink/70 mt-auto mb-5 italic">{c.result}</p>
-                  <span className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
-                    Подробнее о курсе <ArrowRight size={14} />
-                  </span>
+                  <div className="flex items-end justify-between pt-5 border-t border-ink/10">
+                    <div>
+                      <p className="eyebrow mb-1">Стоимость</p>
+                      <p className="font-display text-xl text-primary">{c.price}</p>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+                      Подробнее <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             </Reveal>
@@ -513,6 +532,175 @@ function Testimonials() {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function FreeFirstBanner() {
+  return (
+    <section className="bg-primary text-cream">
+      <div className="container-x py-6 md:py-7 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Sparkles size={20} className="shrink-0" />
+          <p className="text-sm md:text-base">
+            <span className="font-display text-lg md:text-xl">Первое занятие — бесплатно.</span>{" "}
+            <span className="opacity-80">Знакомство, диагностика и подбор формата.</span>
+          </p>
+        </div>
+        <Link
+          to="/consultations"
+          className="inline-flex items-center gap-2 bg-cream text-ink px-5 py-3 text-sm font-medium rounded-sm hover:bg-cream/90 transition-colors"
+        >
+          Забронировать <ArrowRight size={14} />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+function GalleryStrip() {
+  const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4];
+  return (
+    <section className="py-6">
+      <div className="container-x">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3">
+          {imgs.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt="Атмосфера практики"
+              loading="lazy"
+              width={1280}
+              height={896}
+              className={`w-full object-cover rounded-sm ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"} ${i > 3 ? "hidden md:block" : ""}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Schedule() {
+  return (
+    <section id="schedule" className="py-24 md:py-32 bg-clay">
+      <div className="container-x">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <p className="eyebrow mb-4">Расписание</p>
+            <h2 className="h-section">Регулярные тренировки на неделю</h2>
+            <p className="mt-5 text-lg text-muted-foreground">
+              Онлайн и в центре «Сфера». Группы небольшие — место бронируется заранее.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Calendar size={16} className="text-primary" /> Обновлено еженедельно
+          </div>
+        </div>
+
+        <div className="bg-cream border border-ink/5 rounded-sm overflow-hidden">
+          <div className="hidden md:grid grid-cols-12 gap-4 px-8 py-4 text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-ink/10 bg-clay/40">
+            <div className="col-span-2">День</div>
+            <div className="col-span-1">Время</div>
+            <div className="col-span-4">Класс</div>
+            <div className="col-span-2">Формат</div>
+            <div className="col-span-2">Уровень</div>
+            <div className="col-span-1 text-right">Запись</div>
+          </div>
+          {SCHEDULE.map((s) => (
+            <div
+              key={s.day + s.time}
+              className="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4 px-6 md:px-8 py-5 md:py-6 items-center border-b border-ink/5 last:border-0 hover:bg-clay/30 transition-colors"
+            >
+              <div className="md:col-span-2">
+                <p className="font-display text-base md:text-lg">{s.day}</p>
+              </div>
+              <div className="md:col-span-1 text-right md:text-left">
+                <p className="font-display text-base md:text-lg text-primary">{s.time}</p>
+              </div>
+              <div className="md:col-span-4 col-span-2">
+                <p className="text-base leading-snug">{s.title}</p>
+                <p className="text-xs text-muted-foreground mt-1">{s.duration}</p>
+              </div>
+              <div className="md:col-span-2">
+                <span
+                  className={`inline-block text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full border ${
+                    s.format === "Сфера"
+                      ? "border-ink/15 bg-ink text-cream"
+                      : "border-ink/15 text-ink"
+                  }`}
+                >
+                  {s.format}
+                </span>
+              </div>
+              <div className="md:col-span-2 text-xs text-muted-foreground">{s.level}</div>
+              <div className="md:col-span-1 md:text-right col-span-2">
+                <Link
+                  to="/consultations"
+                  className="inline-flex items-center gap-1 text-sm text-primary hover:gap-2 transition-all"
+                >
+                  Записаться <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-6 text-xs text-muted-foreground">
+          Первое занятие бесплатно · отмена за 12 часов · можно перенести запись
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="pricing" className="py-24 md:py-32">
+      <div className="container-x">
+        <div className="max-w-2xl mb-14">
+          <p className="eyebrow mb-4">Цены</p>
+          <h2 className="h-section">Стоимость занятий</h2>
+          <p className="mt-5 text-lg text-muted-foreground">
+            Прозрачные цены на разовые занятия и абонементы. Курсы и программы — отдельно.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {PRICING.map((p) => (
+            <div
+              key={p.title}
+              className={`p-8 rounded-sm border flex flex-col ${
+                p.highlight
+                  ? "bg-ink text-cream border-ink"
+                  : "bg-cream border-ink/5"
+              }`}
+            >
+              <p className={`eyebrow mb-3 ${p.highlight ? "text-primary" : ""}`}>{p.title}</p>
+              <p
+                className={`font-display text-3xl md:text-4xl mb-3 ${
+                  p.highlight ? "text-primary" : "text-ink"
+                }`}
+              >
+                {p.price}
+              </p>
+              <p className={`text-sm flex-1 ${p.highlight ? "text-cream/70" : "text-muted-foreground"}`}>
+                {p.note}
+              </p>
+              <Link
+                to="/consultations"
+                className={`mt-6 inline-flex items-center gap-2 text-sm transition-all hover:gap-3 ${
+                  p.highlight ? "text-primary" : "text-primary"
+                }`}
+              >
+                {p.highlight ? "Забронировать бесплатно" : "Записаться"} <ArrowRight size={14} />
+              </Link>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-xs text-muted-foreground">
+          Стоимость курсов и программ указана на их страницах. Возможна оплата частями.
+        </p>
       </div>
     </section>
   );
