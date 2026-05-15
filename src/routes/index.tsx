@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
 import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
@@ -166,13 +167,24 @@ function Hero() {
           {/* Правая колонка — текст и CTA */}
           <div className="lg:col-span-3 order-3 relative z-10">
             <p className="eyebrow mb-5">Body Frame · Авторский метод</p>
-            <p className="text-base text-ink/75 leading-relaxed mb-7 whitespace-pre-line">
-              Тело — твоя главная визитка. {"\n"}
-              Я учу чувствовать каждый миллиметр каркаса, убирать зажимы и выстраивать осанку, которая заставляет оборачиваться.
+            <p className="text-base text-ink/80 leading-relaxed mb-5">
+              Это не медитации и не «мягкая йога». Это жёсткая работа над каркасом твоего тела.
             </p>
-            <p className="text-sm italic text-ink/60 leading-relaxed mb-8 border-l-2 border-ink pl-4">
-              Синтез силовой статики, критического выравнивания и перепрошивки биомеханики.
+            <p className="text-base text-ink/75 leading-relaxed mb-5">
+              Силовая статика, МФР и глубокий стретчинг. Авторская методика на стыке силовой йоги и фасциального релиза. Избавляемся от зажимов, выстраиваем идеальную осанку и возвращаем мышцам функциональность.
             </p>
+            <p className="text-sm italic text-ink/65 leading-relaxed mb-6 border-l-2 border-ink pl-4">
+              Никакой воды — только глубокая проработка каждой линии твоего тела.
+            </p>
+
+            <div className="mb-7">
+              <p className="eyebrow mb-3">В курс входит</p>
+              <ul className="space-y-2 text-sm text-ink/80">
+                <li className="flex gap-2"><span>🔥</span>3 онлайн-урока</li>
+                <li className="flex gap-2"><span>🔥</span>обратная связь в течение 2 недель</li>
+                <li className="flex gap-2"><span>🔥</span>персональные рекомендации по питанию</li>
+              </ul>
+            </div>
 
             <div className="flex flex-col gap-3">
               <a href="#quiz" className="btn-primary w-full">
@@ -637,10 +649,29 @@ function FreeFirstBanner() {
 
 function GalleryStrip() {
   const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, onlineImg];
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section className="py-6 md:py-10">
       <div className="container-x">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
+        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
           {imgs.map((src, i) => (
             <img
               key={i}
@@ -649,8 +680,11 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className="w-full aspect-square object-cover rounded-sm grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-[filter] duration-500 ease-out"
-              tabIndex={0}
+              className="w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0"
+              style={{
+                filter: active ? "grayscale(1)" : "grayscale(0)",
+                transitionDelay: active ? `${i * 350}ms` : "0ms",
+              }}
             />
           ))}
         </div>
