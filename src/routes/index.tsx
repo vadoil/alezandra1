@@ -76,7 +76,7 @@ function Home() {
       <Hero />
       <FreeFirstBanner />
       <GalleryStrip />
-      <Courses />
+      {/* <Courses /> — временно скрыт */}
       <Schedule />
       <VideoBlock />
       <Pricing />
