@@ -648,10 +648,29 @@ function FreeFirstBanner() {
 
 function GalleryStrip() {
   const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, onlineImg];
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section className="py-6 md:py-10">
       <div className="container-x">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
+        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
           {imgs.map((src, i) => (
             <img
               key={i}
@@ -660,8 +679,11 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className="w-full aspect-square object-cover rounded-sm grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-[filter] duration-500 ease-out"
-              tabIndex={0}
+              className="w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0"
+              style={{
+                filter: active ? "grayscale(1)" : "grayscale(0)",
+                transitionDelay: active ? `${i * 350}ms` : "0ms",
+              }}
             />
           ))}
         </div>
