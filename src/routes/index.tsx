@@ -154,15 +154,14 @@ function Hero() {
             />
           </div>
 
-          {/* Скульптура — точно по высоте заголовка */}
-          <div className="hidden lg:flex lg:col-span-4 order-2 items-stretch justify-center relative z-0">
-            <img
-              src={heroSculpture}
-              alt="Александра Марченко — скульптура в позе йоги"
-              className="h-full w-auto object-contain pointer-events-none select-none"
-              draggable={false}
-            />
-          </div>
+          {/* Скульптура — точно по центру экрана, по высоте заголовка */}
+          <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
+          <img
+            src={heroSculpture}
+            alt="Александра Марченко — скульптура в позе йоги"
+            className="hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-auto object-contain z-0"
+            draggable={false}
+          />
 
           {/* Правая колонка — текст и CTA */}
           <div className="lg:col-span-3 order-3 relative z-10">
