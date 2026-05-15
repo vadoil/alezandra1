@@ -33,7 +33,7 @@ const COURSE_IMAGES: Record<string, string> = {
 };
 
 const PROGRAM_IMAGES: Record<string, string> = {
-  "base": programBase,
+  "vip-architect": programBase,
   "recovery": programRecovery,
   "full-path": programFull,
 };
