@@ -865,14 +865,14 @@ function ContactsSection() {
 function VideoBlock() {
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
-      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-primary/20 pointer-events-none" />
+      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-cream/10 pointer-events-none" />
       <Mandala className="absolute -bottom-40 -right-40 w-[520px] h-[520px] text-cream/10 pointer-events-none" petals={20} rings={7} />
 
       <div className="container-x relative py-14 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-primary mb-5">Видео · скоро</p>
+          <p className="eyebrow text-cream mb-5">Видео · скоро</p>
           <h2 className="h-section text-cream">
-            Дыхание <span className="font-serif-italic text-primary">моря</span> в&nbsp;вашей практике
+            Дыхание <span className="font-serif-italic text-cream/70">моря</span> в&nbsp;вашей практике
           </h2>
           <p className="mt-6 text-cream/70 text-lg max-w-md leading-relaxed">
             Короткое кино о том, как звучит йога у воды — медленные восходы, мягкие движения и тишина между волнами.
