@@ -7,14 +7,16 @@ export function FaqSection() {
   return (
     <section className="py-24 md:py-32">
       <div className="container-x grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-5">
           <p className="eyebrow mb-4">Вопросы</p>
-          <h2 className="h-section">Что часто спрашивают</h2>
+          <h2 className="h-section text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl break-words hyphens-auto">
+            Что часто<br />спрашивают
+          </h2>
           <p className="mt-5 text-muted-foreground max-w-sm">
             Если не нашли ответ — напишите в Telegram или приходите на консультацию.
           </p>
         </div>
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-7">
           <div className="border-t border-ink/10">
             {FAQ.map((item, i) => {
               const isOpen = open === i;
