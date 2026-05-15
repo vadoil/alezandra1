@@ -5,6 +5,7 @@ import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
 import heroSculpture from "@/assets/hero-sculpture.png";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
+import statueAesthetic from "@/assets/statue-aesthetic.png";
 import onlineImg from "@/assets/online-practice.jpg";
 import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/alex-3.jpg";
@@ -232,14 +233,16 @@ function Story() {
     <section className="py-14 md:py-20">
       <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-5">
-          <img
-            src={aboutImg}
-            alt="Александра у окна студии"
-            loading="lazy"
-            width={1080}
-            height={1440}
-            className="w-full aspect-[3/4] object-cover rounded-sm"
-          />
+          <div className="relative w-full aspect-[3/4] flex items-center justify-center">
+            <img
+              src={statueAesthetic}
+              alt="Мраморная скульптура — эстетика красивого тела"
+              loading="lazy"
+              width={860}
+              height={1280}
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
         <div className="lg:col-span-7 lg:pl-8">
           <p className="eyebrow mb-5">История</p>
