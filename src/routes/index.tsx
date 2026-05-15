@@ -691,14 +691,6 @@ function GalleryStrip() {
     </section>
   );
 }
-              }}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Schedule() {
   return (
