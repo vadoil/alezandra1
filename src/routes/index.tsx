@@ -33,7 +33,7 @@ const COURSE_IMAGES: Record<string, string> = {
 };
 
 const PROGRAM_IMAGES: Record<string, string> = {
-  "base": programBase,
+  "vip-architect": programBase,
   "recovery": programRecovery,
   "full-path": programFull,
 };
@@ -46,6 +46,7 @@ import {
   TRUST,
   SCHEDULE,
   PRICING,
+  SITE,
 } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -375,56 +376,66 @@ function Programs() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {PROGRAMS.map((p, i) => {
-            const dark = !!p.flagship;
+            const dark = !!p.flagship || !!p.vip;
+            const cardContent = (
+              <>
+                <div className="overflow-hidden aspect-[4/3] relative">
+                  <img
+                    src={PROGRAM_IMAGES[p.slug]}
+                    alt={p.title}
+                    loading="lazy"
+                    width={1280}
+                    height={896}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                  />
+                  {dark && <div className="absolute inset-0 bg-ink/30" />}
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-5">
+                    <span
+                      className={`text-[10px] uppercase tracking-[0.2em] px-3 py-1 border rounded-full ${
+                        dark ? "border-cream/30 text-cream" : "border-ink/15"
+                      }`}
+                    >
+                      {p.vip ? "VIP" : p.flagship ? "Флагман" : "Программа"}
+                    </span>
+                    <span className={`text-xs ${dark ? "text-cream/60" : "text-muted-foreground"}`}>{p.duration}</span>
+                  </div>
+                  <h3 className={`text-2xl mb-3 leading-tight ${dark ? "text-cream" : ""}`}>{p.title}</h3>
+                  <p className={`text-sm mb-5 ${dark ? "text-cream/70" : "text-muted-foreground"}`}>{p.tagline}</p>
+                  <ul className="space-y-2 mb-6">
+                    {p.structure.slice(0, p.vip ? 4 : 3).map((x) => (
+                      <li key={x} className={`text-sm flex items-start gap-2 ${dark ? "text-cream/85" : ""}`}>
+                        <Check size={14} className="text-primary shrink-0 mt-1" />
+                        <span>{x}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className={`text-sm italic mt-auto mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
+                  <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all text-primary`}>
+                    {p.vip ? "Отправить анкету" : p.flagship ? "О программе «Полный путь»" : "Подробнее"} <ArrowRight size={14} />
+                  </span>
+                </div>
+              </>
+            );
+            const className = `rounded-sm h-full flex flex-col border overflow-hidden group transition-colors ${
+              dark ? "bg-ink text-cream border-ink hover:border-primary" : "bg-cream border-ink/5 hover:border-primary/40"
+            }`;
             return (
               <Reveal key={p.slug} delay={i * 0.08}>
-                <Link
-                  to={p.flagship ? "/program" : "/programs/$slug"}
-                  params={p.flagship ? undefined : { slug: p.slug }}
-                  className={`rounded-sm h-full flex flex-col border overflow-hidden group transition-colors ${
-                    dark
-                      ? "bg-ink text-cream border-ink hover:border-primary"
-                      : "bg-cream border-ink/5 hover:border-primary/40"
-                  }`}
-                >
-                  <div className="overflow-hidden aspect-[4/3] relative">
-                    <img
-                      src={PROGRAM_IMAGES[p.slug]}
-                      alt={p.title}
-                      loading="lazy"
-                      width={1280}
-                      height={896}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                    />
-                    {dark && <div className="absolute inset-0 bg-ink/30" />}
-                  </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <div className="flex items-center justify-between mb-5">
-                      <span
-                        className={`text-[10px] uppercase tracking-[0.2em] px-3 py-1 border rounded-full ${
-                          dark ? "border-cream/30 text-cream" : "border-ink/15"
-                        }`}
-                      >
-                        {dark ? "Флагман" : "Программа"}
-                      </span>
-                      <span className={`text-xs ${dark ? "text-cream/60" : "text-muted-foreground"}`}>{p.duration}</span>
-                    </div>
-                    <h3 className={`text-2xl mb-3 leading-tight ${dark ? "text-cream" : ""}`}>{p.title}</h3>
-                    <p className={`text-sm mb-5 ${dark ? "text-cream/70" : "text-muted-foreground"}`}>{p.tagline}</p>
-                    <ul className="space-y-2 mb-6">
-                      {p.structure.slice(0, 3).map((x) => (
-                        <li key={x} className="text-sm flex items-start gap-2">
-                          <Check size={14} className="text-primary shrink-0 mt-1" />
-                          <span>{x}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className={`text-sm italic mt-auto mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
-                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all ${dark ? "text-primary" : "text-primary"}`}>
-                      {dark ? "О программе «Полный путь»" : "Подробнее"} <ArrowRight size={14} />
-                    </span>
-                  </div>
-                </Link>
+                {p.vip ? (
+                  <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className={className}>
+                    {cardContent}
+                  </a>
+                ) : (
+                  <Link
+                    to={p.flagship ? "/program" : "/programs/$slug"}
+                    params={p.flagship ? undefined : { slug: p.slug }}
+                    className={className}
+                  >
+                    {cardContent}
+                  </Link>
+                )}
               </Reveal>
             );
           })}
