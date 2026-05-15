@@ -98,26 +98,34 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative bg-cream pt-12 md:pt-20 pb-20 md:pb-28 overflow-hidden">
+    <section className="relative bg-cream pt-12 md:pt-16 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
       {/* Гигантская фоновая типографика */}
-      <div className="pointer-events-none absolute inset-x-0 top-[55%] -translate-y-1/2 select-none hidden md:block">
-        <p className="text-[22vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none hidden md:block">
+        <p className="text-[18vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
           BODY&nbsp;FRAME
         </p>
       </div>
 
-      <div className="container-x relative">
+      {/* Скульптура — на всю высоту hero, по центру */}
+      <img
+        src={heroSculpture}
+        alt="Александра Марченко — скульптура в позе йоги"
+        className="hidden lg:block pointer-events-none select-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[88vh] w-auto object-contain z-0"
+        draggable={false}
+      />
+
+      <div className="container-x relative flex-1 flex flex-col">
         {/* Верхний бар */}
-        <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-12">
+        <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-10">
           <span>Александра Марченко</span>
           <span className="font-mono">№ 001 / Body Frame</span>
           <span>Saint Petersburg · 2026</span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-4 items-center relative">
+        <div className="grid lg:grid-cols-12 gap-8 items-center relative flex-1">
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative z-10">
-            <h1 className="h-display">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[0.95] tracking-[-0.035em] font-bold uppercase">
               Сила.<br />
               Гибкость.<br />
               <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">Тело,</span><br />
@@ -127,17 +135,18 @@ function Hero() {
             </h1>
           </div>
 
-          {/* Центр — скульптура */}
-          <div className="lg:col-span-4 order-1 lg:order-2 relative z-0">
-            <div className="relative mx-auto max-w-[460px] lg:max-w-none">
-              <img
-                src={heroSculpture}
-                alt="Александра Марченко — скульптура в позе йоги"
-                className="w-full h-auto select-none drop-shadow-[0_30px_60px_rgba(0,0,0,0.18)]"
-                draggable={false}
-              />
-            </div>
+          {/* Скульптура для mobile/tablet */}
+          <div className="lg:hidden order-1 relative z-0">
+            <img
+              src={heroSculpture}
+              alt="Александра Марченко — скульптура в позе йоги"
+              className="w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              draggable={false}
+            />
           </div>
+
+          {/* Spacer для центра на десктопе (под скульптурой) */}
+          <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
 
           {/* Правая колонка — текст и CTA */}
           <div className="lg:col-span-3 order-3 relative z-10">
