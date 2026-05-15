@@ -79,7 +79,7 @@ function Home() {
       <GalleryStrip />
       {/* <Courses /> — временно скрыт */}
       <Programs />
-      <Schedule />
+      <BookingSchedule />
       <VideoBlock />
       {/* <Pricing /> — временно скрыт */}
       <TrustBar />
