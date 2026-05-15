@@ -114,9 +114,9 @@ function Hero() {
           <span>Saint Petersburg · 2026</span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-center relative flex-1">
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10">
+          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex items-center">
             <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[0.95] tracking-[-0.035em] font-bold uppercase">
               Сила.<br />
               Гибкость.<br />
@@ -137,8 +137,15 @@ function Hero() {
             />
           </div>
 
-          {/* Spacer для центра на десктопе (под скульптурой) */}
-          <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
+          {/* Скульптура — точно по высоте заголовка */}
+          <div className="hidden lg:flex lg:col-span-4 order-2 items-stretch justify-center relative z-0">
+            <img
+              src={heroSculpture}
+              alt="Александра Марченко — скульптура в позе йоги"
+              className="h-full w-auto object-contain pointer-events-none select-none"
+              draggable={false}
+            />
+          </div>
 
           {/* Правая колонка — текст и CTA */}
           <div className="lg:col-span-3 order-3 relative z-10">
