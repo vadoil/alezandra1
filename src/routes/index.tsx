@@ -151,7 +151,7 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко — скульптура в позе йоги"
-              className="hero-pulse w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              className="hero-pulse scale-x-[-1] w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
