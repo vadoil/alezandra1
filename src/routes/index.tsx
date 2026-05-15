@@ -46,6 +46,7 @@ import {
   TRUST,
   SCHEDULE,
   PRICING,
+  SITE,
 } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
