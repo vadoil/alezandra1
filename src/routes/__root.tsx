@@ -122,6 +122,7 @@ function RootComponent() {
       </main>
       <Footer />
       <FloatingContacts />
+      <Toaster position="top-center" />
     </QueryClientProvider>
   );
 }
