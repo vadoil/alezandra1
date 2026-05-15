@@ -128,6 +128,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <ScrollToTop />
       <Header />
       <main className="pt-[72px]">
         <Outlet />
