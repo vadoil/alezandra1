@@ -397,24 +397,27 @@ function Programs() {
                         dark ? "border-cream/30 text-cream" : "border-ink/15"
                       }`}
                     >
-                      {p.vip ? "VIP" : p.flagship ? "Флагман" : "Программа"}
+                      {p.vip ? "VIP" : "Курс"}
                     </span>
                     <span className={`text-xs ${dark ? "text-cream/60" : "text-muted-foreground"}`}>{p.duration}</span>
                   </div>
                   <h3 className={`text-2xl mb-3 leading-tight ${dark ? "text-cream" : ""}`}>{p.title}</h3>
                   <p className={`text-sm mb-5 ${dark ? "text-cream/70" : "text-muted-foreground"}`}>{p.tagline}</p>
                   <ul className="space-y-2 mb-6">
-                    {p.structure.slice(0, p.vip ? 4 : 3).map((x) => (
+                    {p.structure.slice(0, p.vip ? 4 : 4).map((x) => (
                       <li key={x} className={`text-sm flex items-start gap-2 ${dark ? "text-cream/85" : ""}`}>
                         <Check size={14} className="text-primary shrink-0 mt-1" />
                         <span>{x}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className={`text-sm italic mt-auto mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
-                  <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all text-primary`}>
-                    {p.vip ? "Отправить анкету" : p.flagship ? "О программе «Полный путь»" : "Подробнее"} <ArrowRight size={14} />
-                  </span>
+                  <p className={`text-sm italic mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
+                  <div className="mt-auto flex items-center justify-between gap-4">
+                    <span className={`text-xl ${dark ? "text-cream" : "text-ink"}`}>{p.price}</span>
+                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all text-primary`}>
+                      {p.vip ? "Отправить анкету" : "Принять участие"} <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </div>
               </>
             );
@@ -423,19 +426,9 @@ function Programs() {
             }`;
             return (
               <Reveal key={p.slug} delay={i * 0.08}>
-                {p.vip ? (
-                  <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className={className}>
-                    {cardContent}
-                  </a>
-                ) : (
-                  <Link
-                    to={p.flagship ? "/program" : "/programs/$slug"}
-                    params={p.flagship ? undefined : { slug: p.slug }}
-                    className={className}
-                  >
-                    {cardContent}
-                  </Link>
-                )}
+                <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className={className}>
+                  {cardContent}
+                </a>
               </Reveal>
             );
           })}
