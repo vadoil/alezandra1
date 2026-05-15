@@ -79,7 +79,7 @@ function Home() {
       {/* <Courses /> — временно скрыт */}
       <Schedule />
       <VideoBlock />
-      <Pricing />
+      {/* <Pricing /> — временно скрыт */}
       <TrustBar />
       <Story />
       <Segments />
