@@ -368,10 +368,10 @@ function Programs() {
     <section className="py-24 md:py-32">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
-          <p className="eyebrow mb-4">Полные программы</p>
-          <h2 className="h-section">Глубже и системнее</h2>
+          <p className="eyebrow mb-4">Тарифы и курсы</p>
+          <h2 className="h-section">Выбери свой формат</h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Когда короткого курса мало и нужна структура, поддержка и глубина.
+            От быстрого онлайн-урока до личного наставничества — три уровня погружения в работу с телом.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
