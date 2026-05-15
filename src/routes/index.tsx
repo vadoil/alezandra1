@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Calendar, Sparkles, Heart, Leaf, Shield } from "lucide-react";
+import { ArrowRight, Check, Calendar, Sparkles } from "lucide-react";
 import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
 import heroSculpture from "@/assets/hero-sculpture.png";
 import heroImg from "@/assets/alex-1.jpg";
