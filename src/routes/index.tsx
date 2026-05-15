@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
 import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
