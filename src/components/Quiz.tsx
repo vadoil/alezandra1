@@ -172,8 +172,9 @@ function getResult(score: number): Result {
 
 export function Quiz() {
   const [answers, setAnswers] = useState<Record<string, "A" | "B" | "V">>({});
-  const answeredCount = Object.keys(answers).length;
-  const allAnswered = answeredCount === questions.length;
+  const [step, setStep] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+
   const score = useMemo(
     () => Object.values(answers).reduce((sum, v) => sum + SCORE[v], 0),
     [answers],
@@ -182,14 +183,23 @@ export function Quiz() {
   const indexPct = Math.round((score / maxScore) * 100);
 
   const choose = (qid: string, val: "A" | "B" | "V") => {
-    setAnswers((prev) => ({ ...prev, [qid]: val }));
+    const next = { ...answers, [qid]: val };
+    setAnswers(next);
+    if (step < questions.length - 1) {
+      setTimeout(() => setStep(step + 1), 220);
+    } else {
+      setTimeout(() => setShowResult(true), 280);
+    }
   };
 
   const reset = () => {
     setAnswers({});
+    setStep(0);
+    setShowResult(false);
   };
 
-  const result = allAnswered ? getResult(score) : null;
+  const result = showResult ? getResult(score) : null;
+  const current = questions[step];
 
   return (
     <section id="quiz" className="py-24 md:py-32 bg-clay scroll-mt-24">
@@ -198,64 +208,90 @@ export function Quiz() {
           <p className="eyebrow mb-4">Биомеханическая диагностика</p>
           <h2 className="h-section">Твой индекс телесной свободы</h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            5 честных вопросов о теле — и ты увидишь, в каком режиме оно живёт. Без давления, без диагнозов: только зеркало.
+            5 честных вопросов о теле — и ты увидишь, в каком режиме оно живёт.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-cream border border-ink/5 p-6 md:p-12 rounded-sm">
+        <div className="max-w-3xl mx-auto bg-cream border border-ink/5 p-6 md:p-12 rounded-sm min-h-[420px]">
           {!result && (
             <>
               <div className="flex items-center justify-between mb-6 text-xs text-muted-foreground">
                 <span>
-                  Отвечено {answeredCount} из {questions.length}
+                  Вопрос {step + 1} из {questions.length}
                 </span>
-                {answeredCount > 0 && (
-                  <button onClick={reset} className="hover:text-primary transition-colors">
-                    Сбросить
-                  </button>
-                )}
-              </div>
-              <div className="h-px bg-ink/10 mb-10 relative">
-                <div
-                  className="absolute inset-y-0 left-0 bg-primary transition-all duration-500"
-                  style={{ width: `${(answeredCount / questions.length) * 100}%` }}
-                />
+                <div className="flex items-center gap-1.5">
+                  {questions.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setStep(i)}
+                      aria-label={`К вопросу ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === step
+                          ? "w-8 bg-ink"
+                          : i < step
+                          ? "w-4 bg-ink/60"
+                          : "w-4 bg-ink/15"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div className="space-y-12">
-                {questions.map((q) => (
-                  <div key={q.id}>
-                    <h3 className="text-xl md:text-2xl mb-5 leading-snug">{q.question}</h3>
-                    <div className="grid gap-3">
-                      {q.options.map((opt) => {
-                        const selected = answers[q.id] === opt.value;
-                        return (
-                          <button
-                            key={opt.value}
-                            onClick={() => choose(q.id, opt.value)}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  initial={{ opacity: 0, x: 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -24 }}
+                  transition={{ duration: 0.32, ease: "easeOut" }}
+                >
+                  <h3 className="text-xl md:text-2xl mb-7 leading-snug">
+                    {current.question}
+                  </h3>
+                  <div className="grid gap-3">
+                    {current.options.map((opt) => {
+                      const selected = answers[current.id] === opt.value;
+                      return (
+                        <button
+                          key={opt.value}
+                          onClick={() => choose(current.id, opt.value)}
+                          className={
+                            "text-left p-4 md:p-5 border rounded-sm transition-all text-sm leading-relaxed flex gap-4 items-start " +
+                            (selected
+                              ? "border-ink bg-ink/5"
+                              : "border-ink/15 hover:border-ink hover:bg-ink/5")
+                          }
+                        >
+                          <span
                             className={
-                              "text-left p-4 border rounded-sm transition-all text-sm leading-relaxed " +
+                              "shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full border text-xs font-semibold " +
                               (selected
-                                ? "border-primary bg-primary/10"
-                                : "border-ink/15 hover:border-primary hover:bg-primary/5")
+                                ? "bg-ink text-cream border-ink"
+                                : "border-ink/30 text-ink")
                             }
                           >
-                            {opt.label}
-                          </button>
-                        );
-                      })}
-                    </div>
+                            {opt.value === "V" ? "В" : opt.value === "B" ? "Б" : "А"}
+                          </span>
+                          <span className="flex-1 pt-1">{opt.label.replace(/^[АБВA-Z]:\s*/, "")}</span>
+                        </button>
+                      );
+                    })}
                   </div>
-                ))}
-              </div>
+                </motion.div>
+              </AnimatePresence>
 
-              {!allAnswered && (
-                <div className="mt-12 pt-8 border-t border-ink/10 text-center">
-                  <p className="text-xs text-muted-foreground">
-                    Ответьте на все {questions.length} вопросов — результат появится автоматически
-                  </p>
-                </div>
-              )}
+              <div className="mt-8 flex items-center justify-between text-xs text-muted-foreground">
+                <button
+                  onClick={() => setStep(Math.max(0, step - 1))}
+                  disabled={step === 0}
+                  className="hover:text-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                  ← Назад
+                </button>
+                <button onClick={reset} className="hover:text-ink transition-colors">
+                  Сбросить
+                </button>
+              </div>
             </>
           )}
 
