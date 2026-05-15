@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A premium wellness website for yoga and yoga therapy, designed to attract clients and drive sales for courses and sessions." },
       { property: "og:description", content: "A premium wellness website for yoga and yoga therapy, designed to attract clients and drive sales for courses and sessions." },
       { name: "twitter:description", content: "A premium wellness website for yoga and yoga therapy, designed to attract clients and drive sales for courses and sessions." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e3ee1c13-e4ef-4e41-acaf-92e801780398/id-preview-75cda19d--14da0283-916b-4c79-986e-ea9fb8287218.lovable.app-1778754369904.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e3ee1c13-e4ef-4e41-acaf-92e801780398/id-preview-75cda19d--14da0283-916b-4c79-986e-ea9fb8287218.lovable.app-1778754369904.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99d24938-2ab1-483a-b735-cfe99c0ab95b/id-preview-5e3ae598--14da0283-916b-4c79-986e-ea9fb8287218.lovable.app-1778832840151.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99d24938-2ab1-483a-b735-cfe99c0ab95b/id-preview-5e3ae598--14da0283-916b-4c79-986e-ea9fb8287218.lovable.app-1778832840151.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
