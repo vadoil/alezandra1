@@ -34,7 +34,7 @@ const COURSE_IMAGES: Record<string, string> = {
 
 const PROGRAM_IMAGES: Record<string, string> = {
   "vip-architect": programBase,
-  "recovery": programRecovery,
+  "body-frame": programRecovery,
   "full-path": programFull,
 };
 import {
