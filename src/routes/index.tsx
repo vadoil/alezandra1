@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
-import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
 import heroSculpture from "@/assets/hero-sculpture-2.png";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
@@ -15,18 +14,19 @@ import courseAntistress from "@/assets/alex-5.jpg";
 import programBase from "@/assets/alex-6.jpg";
 import programRecovery from "@/assets/alex-8.jpg";
 import programFull from "@/assets/alex-9.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import practiceRestorative from "@/assets/practice-restorative.jpg";
-import studioSpace from "@/assets/studio-space.jpg";
-import therapyHands from "@/assets/therapy-hands.jpg";
+import galleryNew1 from "@/assets/gallery-new-1.jpg";
+import galleryNew2 from "@/assets/gallery-new-2.jpg";
+import galleryNew3 from "@/assets/gallery-new-3.jpg";
+import galleryNew4 from "@/assets/gallery-new-4.jpg";
+import galleryNew5 from "@/assets/gallery-new-5.jpg";
+import galleryNew6 from "@/assets/gallery-new-6.jpg";
+import galleryNew7 from "@/assets/gallery-new-7.jpg";
+import galleryNew8 from "@/assets/gallery-new-8.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
-import { Mandala } from "@/components/Mandala";
+import { SculptureOrnament } from "@/components/SculptureOrnament";
 import { BookingSchedule } from "@/components/BookingSchedule";
 import seaYogaImg from "@/assets/video-sea-yoga.jpg";
 
@@ -639,7 +639,7 @@ function FreeFirstBanner() {
 }
 
 function GalleryStrip() {
-  const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, onlineImg];
+  const imgs = [galleryNew1, galleryNew2, galleryNew3, galleryNew4, galleryNew5, galleryNew6, galleryNew7, galleryNew8];
   const ref = useRef<HTMLDivElement>(null);
   const [bwCount, setBwCount] = useState(0);
 
@@ -687,7 +687,7 @@ function GalleryStrip() {
 function Schedule() {
   return (
     <section id="schedule" className="relative overflow-hidden py-14 md:py-20 bg-clay">
-      <Mandala className="absolute -top-40 -right-40 w-[560px] h-[560px] text-ink/[0.06] pointer-events-none" petals={20} rings={8} />
+      <SculptureOrnament className="absolute -top-20 -right-20 w-[420px] h-[560px]" opacity={0.07} />
       <div className="container-x relative">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
@@ -761,8 +761,8 @@ function Schedule() {
 function Pricing() {
   return (
     <section id="pricing" className="relative overflow-hidden py-14 md:py-20">
-      <Mandala className="absolute -top-24 -left-24 w-[420px] h-[420px] text-primary/10 pointer-events-none" petals={12} rings={5} />
-      <Mandala className="absolute -bottom-32 -right-32 w-[480px] h-[480px] text-ink/[0.05] pointer-events-none" petals={18} rings={7} />
+      <SculptureOrnament className="absolute -top-16 -left-16 w-[340px] h-[460px]" opacity={0.08} flip />
+      <SculptureOrnament className="absolute -bottom-20 -right-20 w-[380px] h-[500px]" opacity={0.06} />
       <div className="container-x relative">
         <div className="max-w-2xl mb-14">
           <p className="eyebrow mb-4">Цены</p>
@@ -820,7 +820,7 @@ function ContactsSection() {
   ];
   return (
     <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">
-      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-cream/10 pointer-events-none" petals={24} rings={9} />
+      <SculptureOrnament className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[760px]" opacity={0.08} invert />
       <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="eyebrow text-cream mb-5">Контакты</p>
@@ -865,8 +865,8 @@ function ContactsSection() {
 function VideoBlock() {
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
-      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-cream/10 pointer-events-none" />
-      <Mandala className="absolute -bottom-40 -right-40 w-[520px] h-[520px] text-cream/10 pointer-events-none" petals={20} rings={7} />
+      <SculptureOrnament className="absolute -top-20 -left-20 w-[340px] h-[460px]" opacity={0.08} invert flip />
+      <SculptureOrnament className="absolute -bottom-24 -right-24 w-[380px] h-[520px]" opacity={0.07} invert />
 
       <div className="container-x relative py-14 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
