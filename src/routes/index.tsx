@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
 import { KaleidoscopeMandala } from "@/components/KaleidoscopeMandala";
-import heroSculpture from "@/assets/hero-sculpture.png";
+import heroSculpture from "@/assets/hero-sculpture-2.png";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
@@ -151,7 +151,7 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко — скульптура в позе йоги"
-              className="w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              className="hero-pulse w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
@@ -161,7 +161,7 @@ function Hero() {
           <img
             src={heroSculpture}
             alt="Александра Марченко — скульптура в позе йоги"
-            className="hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
+            className="hero-pulse hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
             draggable={false}
           />
 
