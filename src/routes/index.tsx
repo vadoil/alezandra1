@@ -436,7 +436,7 @@ function Programs() {
                   <ul className="space-y-2 mb-6">
                     {p.structure.slice(0, p.vip ? 4 : 4).map((x) => (
                       <li key={x} className={`text-sm flex items-start gap-2 ${dark ? "text-cream/85" : ""}`}>
-                        <Check size={14} className="text-primary shrink-0 mt-1" />
+                        <Check size={14} className={`shrink-0 mt-1 ${dark ? "text-cream" : "text-primary"}`} />
                         <span>{x}</span>
                       </li>
                     ))}
@@ -444,7 +444,7 @@ function Programs() {
                   <p className={`text-sm italic mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
                   <div className="mt-auto flex items-center justify-between gap-4">
                     <span className={`text-xl ${dark ? "text-cream" : "text-ink"}`}>{p.price}</span>
-                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all text-primary`}>
+                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all ${dark ? "text-cream" : "text-primary"}`}>
                       {p.vip ? "Отправить анкету" : "Принять участие"} <ArrowRight size={14} />
                     </span>
                   </div>
@@ -820,18 +820,18 @@ function ContactsSection() {
   ];
   return (
     <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">
-      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-primary/10 pointer-events-none" petals={24} rings={9} />
+      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-cream/10 pointer-events-none" petals={24} rings={9} />
       <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-primary mb-5">Контакты</p>
+          <p className="eyebrow text-cream mb-5">Контакты</p>
           <h2 className="h-section text-cream">
-            Напишите <span className="font-serif-italic text-primary">в любой</span> мессенджер
+            Напишите <span className="font-serif-italic text-cream/70">в любой</span> мессенджер
           </h2>
           <p className="mt-6 text-cream/70 text-lg max-w-md">
             Я отвечаю лично. Подскажу формат, расписание и помогу записаться на бесплатное первое занятие.
           </p>
           <p className="mt-8 text-sm text-cream/50">Центр «Сфера», Санкт-Петербург · Пн–Вс 08:00–21:00</p>
-          <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-primary hover:gap-3 transition-all">
+          <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-cream hover:gap-3 transition-all">
             Все контакты <ArrowRight size={14} />
           </Link>
         </div>
@@ -844,10 +844,10 @@ function ContactsSection() {
                 href={it.href}
                 target={ext ? "_blank" : undefined}
                 rel={ext ? "noreferrer" : undefined}
-                className="group bg-cream/5 border border-cream/10 rounded-sm p-6 hover:bg-cream/10 hover:border-primary transition-all"
+                className="group bg-cream/5 border border-cream/10 rounded-sm p-6 hover:bg-cream/10 hover:border-cream transition-all"
               >
-                <p className="eyebrow text-primary mb-2">{it.label}</p>
-                <p className="font-display text-xl text-cream group-hover:text-primary transition-colors break-all">
+                <p className="eyebrow text-cream/70 mb-2">{it.label}</p>
+                <p className="font-display text-xl text-cream transition-colors break-all">
                   {it.value}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-2 text-xs text-cream/60 group-hover:gap-3 transition-all">
@@ -865,14 +865,14 @@ function ContactsSection() {
 function VideoBlock() {
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
-      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-primary/20 pointer-events-none" />
+      <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-cream/10 pointer-events-none" />
       <Mandala className="absolute -bottom-40 -right-40 w-[520px] h-[520px] text-cream/10 pointer-events-none" petals={20} rings={7} />
 
       <div className="container-x relative py-14 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-primary mb-5">Видео · скоро</p>
+          <p className="eyebrow text-cream mb-5">Видео · скоро</p>
           <h2 className="h-section text-cream">
-            Дыхание <span className="font-serif-italic text-primary">моря</span> в&nbsp;вашей практике
+            Дыхание <span className="font-serif-italic text-cream/70">моря</span> в&nbsp;вашей практике
           </h2>
           <p className="mt-6 text-cream/70 text-lg max-w-md leading-relaxed">
             Короткое кино о том, как звучит йога у воды — медленные восходы, мягкие движения и тишина между волнами.
@@ -895,7 +895,7 @@ function VideoBlock() {
               <button
                 type="button"
                 aria-label="Воспроизвести видео"
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cream/15 backdrop-blur border border-cream/40 flex items-center justify-center text-cream group-hover:bg-primary group-hover:border-primary transition-all"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cream/15 backdrop-blur border border-cream/40 flex items-center justify-center text-cream group-hover:bg-cream group-hover:text-ink group-hover:border-cream transition-all"
               >
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" className="ml-1">
                   <path d="M8 5v14l11-7L8 5z" />
