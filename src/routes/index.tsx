@@ -633,7 +633,8 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className="w-full aspect-square object-cover rounded-sm"
+              className="w-full aspect-square object-cover rounded-sm grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-[filter] duration-500 ease-out"
+              tabIndex={0}
             />
           ))}
         </div>
