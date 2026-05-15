@@ -10,9 +10,9 @@ import consultationImg from "@/assets/alex-3.jpg";
 import courseBeginner from "@/assets/alex-2.jpg";
 import courseBack from "@/assets/alex-7.jpg";
 import courseAntistress from "@/assets/alex-5.jpg";
-import programBase from "@/assets/program-base.jpg";
-import programRecovery from "@/assets/program-recovery.jpg";
-import programFull from "@/assets/program-full.jpg";
+import programBase from "@/assets/alex-6.jpg";
+import programRecovery from "@/assets/alex-8.jpg";
+import programFull from "@/assets/alex-9.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -77,6 +77,7 @@ function Home() {
       <FreeFirstBanner />
       <GalleryStrip />
       {/* <Courses /> — временно скрыт */}
+      <Programs />
       <Schedule />
       <VideoBlock />
       {/* <Pricing /> — временно скрыт */}
@@ -84,7 +85,6 @@ function Home() {
       <Story />
       <Segments />
       <Directions />
-      <Programs />
       <Consultations />
       <Quiz />
       <Formats />
