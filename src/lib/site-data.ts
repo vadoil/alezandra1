@@ -288,6 +288,7 @@ export type Program = {
   bonuses: string[];
   faq: { q: string; a: string }[];
   flagship?: boolean;
+  vip?: boolean;
 };
 
 export const PROGRAMS: Program[] = [
