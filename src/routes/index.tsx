@@ -105,79 +105,88 @@ function Hero() {
   ];
 
   return (
-    <section className="pt-16 md:pt-28 pb-32 md:pb-40 relative overflow-hidden min-h-[820px] md:min-h-[940px] flex items-center">
-      <Mandala className="absolute -left-40 top-20 w-[480px] h-[480px] text-primary/8 pointer-events-none hidden md:block" petals={18} rings={6} />
+    <section className="relative bg-cream pt-12 md:pt-20 pb-20 md:pb-28 overflow-hidden">
+      {/* Гигантская фоновая типографика */}
+      <div className="pointer-events-none absolute inset-x-0 top-[55%] -translate-y-1/2 select-none hidden md:block">
+        <p className="text-[22vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
+          BODY&nbsp;FRAME
+        </p>
+      </div>
 
-      <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
-        <div className="lg:col-span-6 order-2 lg:order-1">
-          <p className="eyebrow mb-6">Александра Марченко · построение тела · body frame</p>
-          <h1 className="h-display">
-            Сила. Гибкость. <br />
-            Тело, которое <br />
-            <span className="font-serif-italic text-primary">диктует правила.</span>
-          </h1>
-          <p className="mt-7 text-lg text-muted-foreground max-w-lg leading-relaxed">
-            Тело — это твоя главная визитка. Я учу чувствовать каждый миллиметр своего каркаса,
-            убирать зажимы и выстраивать осанку, которая заставляет людей оборачиваться.
-            Мой метод — это синтез силовой статики, критического выравнивания и перепрошивки твоей биомеханики.
-          </p>
+      <div className="container-x relative">
+        {/* Верхний бар */}
+        <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-12">
+          <span>Александра Марченко</span>
+          <span className="font-mono">№ 001 / Body Frame</span>
+          <span>Saint Petersburg · 2026</span>
+        </div>
 
-          <ul className="mt-7 space-y-2.5 max-w-md">
-            {benefits.map((b) => (
-              <li key={b.text} className="flex items-center gap-3 text-sm text-ink/80">
-                <span className="w-7 h-7 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center shrink-0">
-                  {b.icon}
-                </span>
-                {b.text}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#quiz" className="btn-primary">
-              Подобрать программу <ArrowRight size={16} />
-            </a>
-            <Link to="/consultations" className="btn-outline">
-              Бесплатная консультация
-            </Link>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-4 items-center relative">
+          {/* Левая колонка — заголовок */}
+          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10">
+            <h1 className="h-display">
+              Сила.<br />
+              Гибкость.<br />
+              <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">Тело,</span><br />
+              которое<br />
+              <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">диктует</span><br />
+              правила.
+            </h1>
           </div>
-          <p className="mt-5 text-xs text-muted-foreground flex items-center gap-2">
-            <Sparkles size={12} className="text-primary" />
-            Первичная встреча 20 минут · бесплатно · без обязательств
-          </p>
 
-          {/* Социальные доказательства */}
-          <div className="mt-10 pt-8 border-t border-ink/10 grid grid-cols-3 gap-6 max-w-md">
-            <div>
-              <p className="font-display text-3xl text-primary leading-none">5+</p>
-              <p className="text-xs text-muted-foreground mt-2 leading-snug">лет в практике и фитнесе</p>
+          {/* Центр — скульптура */}
+          <div className="lg:col-span-4 order-1 lg:order-2 relative z-0">
+            <div className="relative mx-auto max-w-[460px] lg:max-w-none">
+              <img
+                src={heroSculpture}
+                alt="Александра Марченко — скульптура в позе йоги"
+                className="w-full h-auto select-none drop-shadow-[0_30px_60px_rgba(0,0,0,0.18)]"
+                draggable={false}
+              />
             </div>
-            <div>
-              <p className="font-display text-3xl text-primary leading-none">200+</p>
-              <p className="text-xs text-muted-foreground mt-2 leading-snug">учеников онлайн и оффлайн</p>
-            </div>
-            <div>
-              <p className="font-display text-3xl text-primary leading-none">98%</p>
-              <p className="text-xs text-muted-foreground mt-2 leading-snug">отмечают облегчение после 1 встречи</p>
+          </div>
+
+          {/* Правая колонка — текст и CTA */}
+          <div className="lg:col-span-3 order-3 relative z-10">
+            <p className="eyebrow mb-5">Body Frame · Авторский метод</p>
+            <p className="text-base text-ink/75 leading-relaxed mb-7">
+              Тело — твоя главная визитка. Я учу чувствовать каждый миллиметр каркаса,
+              убирать зажимы и выстраивать осанку, которая заставляет оборачиваться.
+            </p>
+            <p className="text-sm italic text-ink/60 leading-relaxed mb-8 border-l-2 border-ink pl-4">
+              Синтез силовой статики, критического выравнивания и перепрошивки биомеханики.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <a href="#quiz" className="btn-primary w-full">
+                Подобрать программу <ArrowRight size={14} />
+              </a>
+              <Link to="/consultations" className="btn-outline w-full">
+                Бесплатная консультация
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-6 order-1 lg:order-2">
-          <div className="relative">
-            <KaleidoscopeMandala images={kaleidoscope} className="scale-110 md:scale-125 lg:scale-[1.32] origin-center" />
-
-            <div className="hidden md:block absolute bottom-4 -left-4 lg:-left-8 bg-cream border border-ink/5 p-5 max-w-[240px] rounded-sm shadow-lg">
-              <p className="eyebrow mb-2">Авторский метод</p>
-              <p className="text-sm leading-snug">
-                Работа на стыке силовой статики и йоги критического выравнивания
-              </p>
-            </div>
-
-            <div className="hidden md:block absolute top-4 -right-4 lg:-right-6 bg-primary text-primary-foreground p-4 max-w-[210px] rounded-sm shadow-lg">
-              <p className="text-[10px] uppercase tracking-[0.22em] mb-2 opacity-80">Сейчас идёт набор · скидка 30%</p>
-              <p className="text-sm leading-snug font-display">Курс «Здоровая спина» · старт 1 июля</p>
-            </div>
+        {/* Нижняя метрика-полоса */}
+        <div className="mt-16 md:mt-24 pt-10 border-t border-ink/15 grid grid-cols-3 gap-6">
+          <div>
+            <p className="font-display font-bold text-4xl md:text-5xl leading-none">8</p>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-3 leading-snug">
+              лет практики<br />в йоге и фитнесе
+            </p>
+          </div>
+          <div className="md:text-center md:border-x md:border-ink/15 md:px-6">
+            <p className="font-display font-bold text-4xl md:text-5xl leading-none">400+</p>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-3 leading-snug">
+              клиентов онлайн<br />и оффлайн
+            </p>
+          </div>
+          <div className="md:text-right">
+            <p className="font-display font-bold text-4xl md:text-5xl leading-none">98%</p>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-3 leading-snug">
+              отмечают облегчение<br />после практики
+            </p>
           </div>
         </div>
       </div>
