@@ -116,8 +116,8 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex items-center">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[0.95] tracking-[-0.035em] font-bold uppercase">
+          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex flex-col justify-center gap-7">
+            <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] leading-[0.95] tracking-[-0.035em] font-bold uppercase">
               Сила.<br />
               Гибкость.<br />
               <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">Тело,</span><br />
@@ -125,6 +125,13 @@ function Hero() {
               <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">диктует</span><br />
               правила.
             </h1>
+            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] md:text-xs uppercase tracking-[0.28em] text-ink/70">
+              <li>Ликвидация боли</li>
+              <li aria-hidden className="w-1.5 h-1.5 rotate-45 bg-ink/40" />
+              <li>Ресурс из нуля</li>
+              <li aria-hidden className="w-1.5 h-1.5 rotate-45 bg-ink/40" />
+              <li>Инвестиция в твою стать</li>
+            </ul>
           </div>
 
           {/* Скульптура для mobile/tablet */}
