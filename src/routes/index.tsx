@@ -106,14 +106,6 @@ function Hero() {
         </p>
       </div>
 
-      {/* Скульптура — на всю высоту hero, по центру */}
-      <img
-        src={heroSculpture}
-        alt="Александра Марченко — скульптура в позе йоги"
-        className="hidden lg:block pointer-events-none select-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[88vh] w-auto object-contain z-0"
-        draggable={false}
-      />
-
       <div className="container-x relative flex-1 flex flex-col">
         {/* Верхний бар */}
         <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-10">
