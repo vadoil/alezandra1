@@ -143,3 +143,14 @@ img[src*="hero-sculpture"] {
   filter: none;
 }
 
+/* Hero — пульсация цвет ↔ ч/б каждые 5 секунд */
+@keyframes hero-bw-pulse {
+  0%, 40% { filter: grayscale(0%); }
+  50%, 90% { filter: grayscale(100%); }
+  100% { filter: grayscale(0%); }
+}
+img.hero-pulse {
+  filter: grayscale(0%);
+  animation: hero-bw-pulse 10s ease-in-out infinite;
+}
+
