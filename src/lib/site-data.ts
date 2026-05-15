@@ -30,10 +30,9 @@ export const NAV = [
 ] as const;
 
 export const TRUST = [
-  { kicker: "Опыт", value: "5+ лет в практике" },
-  { kicker: "Квалификация", value: "Сертифицированная йогатерапия" },
-  { kicker: "Подход", value: "Бережно и системно" },
-  { kicker: "Формат", value: "Онлайн и в центре «Сфера»" },
+  { kicker: "Опыт", value: "8 лет практики в йоге и фитнесе" },
+  { kicker: "Клиенты", value: "400+ онлайн и офлайн" },
+  { kicker: "Результат", value: "98% отмечают облегчение после практики" },
 ];
 
 export const SEGMENTS = [
