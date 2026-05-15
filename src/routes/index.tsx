@@ -895,7 +895,7 @@ function VideoBlock() {
               <button
                 type="button"
                 aria-label="Воспроизвести видео"
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cream/15 backdrop-blur border border-cream/40 flex items-center justify-center text-cream group-hover:bg-primary group-hover:border-primary transition-all"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cream/15 backdrop-blur border border-cream/40 flex items-center justify-center text-cream group-hover:bg-cream group-hover:text-ink group-hover:border-cream transition-all"
               >
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" className="ml-1">
                   <path d="M8 5v14l11-7L8 5z" />
