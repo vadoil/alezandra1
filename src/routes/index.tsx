@@ -820,18 +820,18 @@ function ContactsSection() {
   ];
   return (
     <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">
-      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-primary/10 pointer-events-none" petals={24} rings={9} />
+      <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-cream/10 pointer-events-none" petals={24} rings={9} />
       <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-primary mb-5">Контакты</p>
+          <p className="eyebrow text-cream mb-5">Контакты</p>
           <h2 className="h-section text-cream">
-            Напишите <span className="font-serif-italic text-primary">в любой</span> мессенджер
+            Напишите <span className="font-serif-italic text-cream/70">в любой</span> мессенджер
           </h2>
           <p className="mt-6 text-cream/70 text-lg max-w-md">
             Я отвечаю лично. Подскажу формат, расписание и помогу записаться на бесплатное первое занятие.
           </p>
           <p className="mt-8 text-sm text-cream/50">Центр «Сфера», Санкт-Петербург · Пн–Вс 08:00–21:00</p>
-          <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-primary hover:gap-3 transition-all">
+          <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-cream hover:gap-3 transition-all">
             Все контакты <ArrowRight size={14} />
           </Link>
         </div>
@@ -844,10 +844,10 @@ function ContactsSection() {
                 href={it.href}
                 target={ext ? "_blank" : undefined}
                 rel={ext ? "noreferrer" : undefined}
-                className="group bg-cream/5 border border-cream/10 rounded-sm p-6 hover:bg-cream/10 hover:border-primary transition-all"
+                className="group bg-cream/5 border border-cream/10 rounded-sm p-6 hover:bg-cream/10 hover:border-cream transition-all"
               >
-                <p className="eyebrow text-primary mb-2">{it.label}</p>
-                <p className="font-display text-xl text-cream group-hover:text-primary transition-colors break-all">
+                <p className="eyebrow text-cream/70 mb-2">{it.label}</p>
+                <p className="font-display text-xl text-cream transition-colors break-all">
                   {it.value}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-2 text-xs text-cream/60 group-hover:gap-3 transition-all">
