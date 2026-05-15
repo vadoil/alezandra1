@@ -249,20 +249,13 @@ export function Quiz() {
                 ))}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-ink/10 flex flex-col items-center gap-3">
-                <button
-                  onClick={() => setSubmitted(true)}
-                  disabled={!allAnswered}
-                  className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  Узнать индекс телесной свободы
-                </button>
-                {!allAnswered && (
+              {!allAnswered && (
+                <div className="mt-12 pt-8 border-t border-ink/10 text-center">
                   <p className="text-xs text-muted-foreground">
-                    Ответьте на все {questions.length} вопросов, чтобы получить результат
+                    Ответьте на все {questions.length} вопросов — результат появится автоматически
                   </p>
-                )}
-              </div>
+                </div>
+              )}
             </>
           )}
 
