@@ -255,8 +255,7 @@ function Story() {
         <div className="lg:col-span-7 lg:pl-8">
           <p className="eyebrow mb-5">История</p>
           <h2 className="h-section">
-            От фитнеса — <br />
-            к <span className="font-serif-italic text-primary">бережной</span> йогатерапии
+            Эстетика <span className="font-serif-italic text-primary">красивого</span> тела
           </h2>
           <div className="mt-7 space-y-5 text-muted-foreground text-lg leading-relaxed max-w-xl">
             <p>
