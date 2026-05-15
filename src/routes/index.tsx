@@ -219,7 +219,7 @@ function TrustBar() {
 
 function Story() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-20">
       <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-5">
           <img
@@ -259,7 +259,7 @@ function Story() {
 
 function Segments() {
   return (
-    <section className="py-24 md:py-32 bg-clay">
+    <section className="py-14 md:py-20 bg-clay">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
           <p className="eyebrow mb-4">Для кого</p>
@@ -291,7 +291,7 @@ function Segments() {
 
 function Directions() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-20">
       <div className="container-x">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
@@ -319,7 +319,7 @@ function Directions() {
 
 function Courses() {
   return (
-    <section className="py-24 md:py-32 bg-clay">
+    <section className="py-14 md:py-20 bg-clay">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
           <p className="eyebrow mb-4">Короткие курсы</p>
@@ -383,7 +383,7 @@ function Courses() {
 
 function Programs() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-20">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
           <p className="eyebrow mb-4">Тарифы и курсы</p>
@@ -458,7 +458,7 @@ function Programs() {
 
 function Consultations() {
   return (
-    <section className="py-24 md:py-32 bg-clay">
+    <section className="py-14 md:py-20 bg-clay">
       <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6">
           <img
@@ -506,7 +506,7 @@ function Consultations() {
 
 function Formats() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-20">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
           <p className="eyebrow mb-4">Формат</p>
@@ -576,7 +576,7 @@ function Formats() {
 
 function Testimonials() {
   return (
-    <section className="py-24 md:py-32 bg-clay">
+    <section className="py-14 md:py-20 bg-clay">
       <div className="container-x">
         <div className="max-w-2xl mb-16">
           <p className="eyebrow mb-4">Отзывы</p>
@@ -652,7 +652,7 @@ function GalleryStrip() {
 
 function Schedule() {
   return (
-    <section id="schedule" className="relative overflow-hidden py-24 md:py-32 bg-clay">
+    <section id="schedule" className="relative overflow-hidden py-14 md:py-20 bg-clay">
       <Mandala className="absolute -top-40 -right-40 w-[560px] h-[560px] text-ink/[0.06] pointer-events-none" petals={20} rings={8} />
       <div className="container-x relative">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
@@ -726,7 +726,7 @@ function Schedule() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+    <section id="pricing" className="relative overflow-hidden py-14 md:py-20">
       <Mandala className="absolute -top-24 -left-24 w-[420px] h-[420px] text-primary/10 pointer-events-none" petals={12} rings={5} />
       <Mandala className="absolute -bottom-32 -right-32 w-[480px] h-[480px] text-ink/[0.05] pointer-events-none" petals={18} rings={7} />
       <div className="container-x relative">
@@ -785,7 +785,7 @@ function ContactsSection() {
     { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
   ];
   return (
-    <section id="contacts" className="relative overflow-hidden py-24 md:py-32 bg-ink text-cream">
+    <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">
       <Mandala className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] text-primary/10 pointer-events-none" petals={24} rings={9} />
       <div className="container-x relative grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
@@ -834,7 +834,7 @@ function VideoBlock() {
       <Mandala className="absolute -top-32 -left-32 w-[420px] h-[420px] text-primary/20 pointer-events-none" />
       <Mandala className="absolute -bottom-40 -right-40 w-[520px] h-[520px] text-cream/10 pointer-events-none" petals={20} rings={7} />
 
-      <div className="container-x relative py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container-x relative py-14 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
           <p className="eyebrow text-primary mb-5">Видео · скоро</p>
           <h2 className="h-section text-cream">
