@@ -25,6 +25,7 @@ import { Quiz } from "@/components/Quiz";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { Mandala } from "@/components/Mandala";
+import { BookingSchedule } from "@/components/BookingSchedule";
 import seaYogaImg from "@/assets/video-sea-yoga.jpg";
 
 const COURSE_IMAGES: Record<string, string> = {
