@@ -97,9 +97,9 @@ function Home() {
 function Hero() {
   const kaleidoscope = [heroImg, aboutImg, consultationImg, courseBeginner, courseBack, courseAntistress];
   const benefits = [
-    { icon: <Heart size={14} />, text: "Без боли и насилия над телом" },
-    { icon: <Leaf size={14} />, text: "Бережно к нервной системе" },
-    { icon: <Shield size={14} />, text: "Безопасно при болях в спине" },
+    { icon: <Heart size={14} />, text: "Ликвидация боли" },
+    { icon: <Leaf size={14} />, text: "Ресурс из нуля" },
+    { icon: <Shield size={14} />, text: "Инвестиция в твою стать" },
   ];
 
   return (
