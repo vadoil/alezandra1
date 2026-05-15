@@ -116,21 +116,31 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex flex-col justify-center gap-7">
-            <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] leading-[0.95] tracking-[-0.035em] font-bold uppercase">
+          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex flex-col justify-center gap-8">
+            <h1
+              className="text-5xl md:text-6xl lg:text-[5rem] xl:text-[6rem] leading-[0.92] tracking-[0.005em] uppercase"
+              style={{ fontFamily: "'Anton', 'Montserrat', system-ui, sans-serif", fontWeight: 400 }}
+            >
               Сила.<br />
               Гибкость.<br />
-              <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">Тело,</span><br />
+              Тело,<br />
               которое<br />
-              <span className="font-serif-italic font-normal normal-case tracking-[-0.02em]">диктует</span><br />
+              диктует<br />
               правила.
             </h1>
-            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] md:text-xs uppercase tracking-[0.28em] text-ink/70">
-              <li>Ликвидация боли</li>
-              <li aria-hidden className="w-1.5 h-1.5 rotate-45 bg-ink/40" />
-              <li>Ресурс из нуля</li>
-              <li aria-hidden className="w-1.5 h-1.5 rotate-45 bg-ink/40" />
-              <li>Инвестиция в твою стать</li>
+            <ul className="flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
+              {[
+                { icon: Flame, label: "Ликвидация боли" },
+                { icon: Sunrise, label: "Ресурс из нуля" },
+                { icon: Crown, label: "Инвестиция в твою стать" },
+              ].map(({ icon: Icon, label }, i) => (
+                <li key={label} className="group flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-9 h-9 border border-ink/30 rounded-full transition-all duration-500 group-hover:bg-ink group-hover:text-cream group-hover:rotate-[360deg]">
+                    <Icon size={16} strokeWidth={1.5} className="transition-transform duration-500 group-hover:scale-110" style={{ animation: `pulse 2.4s ease-in-out ${i * 0.4}s infinite` }} />
+                  </span>
+                  <span className="transition-all duration-300 group-hover:tracking-[0.32em]">{label}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
