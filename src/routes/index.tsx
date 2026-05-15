@@ -176,7 +176,7 @@ function Hero() {
 
             <div className="flex flex-col gap-3">
               <a href="#quiz" className="btn-primary w-full">
-                Подобрать программу <ArrowRight size={14} />
+                Пройти биомеханическую диагностику <ArrowRight size={14} />
               </a>
               <Link to="/consultations" className="btn-outline w-full">
                 Бесплатная консультация
