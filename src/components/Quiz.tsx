@@ -172,8 +172,6 @@ function getResult(score: number): Result {
 
 export function Quiz() {
   const [answers, setAnswers] = useState<Record<string, "A" | "B" | "V">>({});
-  const [submitted, setSubmitted] = useState(false);
-
   const answeredCount = Object.keys(answers).length;
   const allAnswered = answeredCount === questions.length;
   const score = useMemo(
@@ -189,10 +187,9 @@ export function Quiz() {
 
   const reset = () => {
     setAnswers({});
-    setSubmitted(false);
   };
 
-  const result = submitted && allAnswered ? getResult(score) : null;
+  const result = allAnswered ? getResult(score) : null;
 
   return (
     <section id="quiz" className="py-24 md:py-32 bg-clay scroll-mt-24">
