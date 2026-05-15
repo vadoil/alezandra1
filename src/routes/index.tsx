@@ -77,6 +77,7 @@ function Home() {
       <FreeFirstBanner />
       <GalleryStrip />
       {/* <Courses /> — временно скрыт */}
+      <Programs />
       <Schedule />
       <VideoBlock />
       {/* <Pricing /> — временно скрыт */}
@@ -84,7 +85,6 @@ function Home() {
       <Story />
       <Segments />
       <Directions />
-      <Programs />
       <Consultations />
       <Quiz />
       <Formats />
