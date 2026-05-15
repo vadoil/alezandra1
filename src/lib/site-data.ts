@@ -21,7 +21,7 @@ export const NAV = [
   { to: "/about", label: "Обо мне" },
   { to: "/directions", label: "Направления" },
   { to: "/courses", label: "Курсы" },
-  { to: "/program", label: "Программа" },
+  { to: "/program", label: "МШЗ" },
   { to: "/consultations", label: "Консультации" },
   { to: "/online", label: "Онлайн" },
   { to: "/offline", label: "Оффлайн" },
