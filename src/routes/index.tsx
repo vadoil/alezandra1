@@ -150,9 +150,9 @@ function Hero() {
           {/* Правая колонка — текст и CTA */}
           <div className="lg:col-span-3 order-3 relative z-10">
             <p className="eyebrow mb-5">Body Frame · Авторский метод</p>
-            <p className="text-base text-ink/75 leading-relaxed mb-7">
-              Тело — твоя главная визитка. Я учу чувствовать каждый миллиметр каркаса,
-              убирать зажимы и выстраивать осанку, которая заставляет оборачиваться.
+            <p className="text-base text-ink/75 leading-relaxed mb-7 whitespace-pre-line">
+              Тело — твоя главная визитка. {"\n"}
+              Я учу чувствовать каждый миллиметр каркаса, убирать зажимы и выстраивать осанку, которая заставляет оборачиваться.
             </p>
             <p className="text-sm italic text-ink/60 leading-relaxed mb-8 border-l-2 border-ink pl-4">
               Синтез силовой статики, критического выравнивания и перепрошивки биомеханики.
