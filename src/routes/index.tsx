@@ -160,7 +160,7 @@ function Hero() {
           <img
             src={heroSculpture}
             alt="Александра Марченко — скульптура в позе йоги"
-            className="hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-auto object-contain z-0"
+            className="hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
             draggable={false}
           />
 
