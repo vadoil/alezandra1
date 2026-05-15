@@ -118,8 +118,8 @@ function Hero() {
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex flex-col justify-center gap-8">
             <h1
-              className="text-5xl md:text-6xl lg:text-[5rem] xl:text-[6rem] leading-[0.92] tracking-[0.005em] uppercase"
-              style={{ fontFamily: "'Anton', 'Montserrat', system-ui, sans-serif", fontWeight: 400 }}
+              className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[0.95] tracking-[0.02em] uppercase"
+              style={{ fontFamily: "'Bebas Neue', 'Montserrat', system-ui, sans-serif", fontWeight: 400 }}
             >
               Сила.<br />
               Гибкость.<br />
