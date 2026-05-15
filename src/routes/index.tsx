@@ -649,7 +649,7 @@ function FreeFirstBanner() {
 function GalleryStrip() {
   const imgs = [gallery1, practiceRestorative, gallery3, studioSpace, gallery2, therapyHands, gallery4, onlineImg];
   const ref = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(false);
+  const [bwCount, setBwCount] = useState(0);
 
   useEffect(() => {
     const el = ref.current;
@@ -657,8 +657,10 @@ function GalleryStrip() {
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setActive(true);
           io.disconnect();
+          imgs.forEach((_, i) => {
+            setTimeout(() => setBwCount((c) => Math.max(c, i + 1)), i * 350);
+          });
         }
       },
       { threshold: 0.25 }
@@ -679,11 +681,9 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className="w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0"
-              style={{
-                filter: active ? "grayscale(1)" : "grayscale(0)",
-                transitionDelay: active ? `${i * 350}ms` : "0ms",
-              }}
+              className={`w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0 ${
+                i < bwCount ? "grayscale" : ""
+              }`}
             />
           ))}
         </div>
