@@ -436,7 +436,7 @@ function Programs() {
                   <ul className="space-y-2 mb-6">
                     {p.structure.slice(0, p.vip ? 4 : 4).map((x) => (
                       <li key={x} className={`text-sm flex items-start gap-2 ${dark ? "text-cream/85" : ""}`}>
-                        <Check size={14} className="text-primary shrink-0 mt-1" />
+                        <Check size={14} className={`shrink-0 mt-1 ${dark ? "text-cream" : "text-primary"}`} />
                         <span>{x}</span>
                       </li>
                     ))}
@@ -444,7 +444,7 @@ function Programs() {
                   <p className={`text-sm italic mb-5 ${dark ? "text-cream/60" : "text-ink/60"}`}>{p.result}</p>
                   <div className="mt-auto flex items-center justify-between gap-4">
                     <span className={`text-xl ${dark ? "text-cream" : "text-ink"}`}>{p.price}</span>
-                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all text-primary`}>
+                    <span className={`inline-flex items-center gap-2 text-sm group-hover:gap-3 transition-all ${dark ? "text-cream" : "text-primary"}`}>
                       {p.vip ? "Отправить анкету" : "Принять участие"} <ArrowRight size={14} />
                     </span>
                   </div>
