@@ -108,11 +108,11 @@ function Hero() {
 
       <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
         <div className="lg:col-span-6 order-2 lg:order-1">
-          <p className="eyebrow mb-6">Александра Марченко · йогатерапия · Санкт-Петербург</p>
+          <p className="eyebrow mb-6">Александра Марченко · построение тела · body frame</p>
           <h1 className="h-display">
-            Бережная йога <br />
-            и <span className="font-serif-italic text-primary">возвращение</span> <br />
-            к телу
+            Сила. Гибкость. <br />
+            Тело, которое <br />
+            <span className="font-serif-italic text-primary">диктует правила.</span>
           </h1>
           <p className="mt-7 text-lg text-muted-foreground max-w-lg leading-relaxed">
             Системная практика для восстановления, снятия напряжения и спокойного входа в йогу.
