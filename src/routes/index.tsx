@@ -167,9 +167,9 @@ function Hero() {
             <KaleidoscopeMandala images={kaleidoscope} className="scale-110 md:scale-125 lg:scale-[1.32] origin-center" />
 
             <div className="hidden md:block absolute bottom-4 -left-4 lg:-left-8 bg-cream border border-ink/5 p-5 max-w-[240px] rounded-sm shadow-lg">
-              <p className="eyebrow mb-2">Сертификация</p>
+              <p className="eyebrow mb-2">Авторский метод</p>
               <p className="text-sm leading-snug">
-                Йогатерапия · 5+ лет в фитнесе и йоге
+                Работа на стыке силовой статики и йоги критического выравнивания
               </p>
             </div>
 
