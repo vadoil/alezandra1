@@ -97,13 +97,6 @@ function Home() {
 }
 
 function Hero() {
-  const kaleidoscope = [heroImg, aboutImg, consultationImg, courseBeginner, courseBack, courseAntistress];
-  const benefits = [
-    { icon: <Heart size={14} />, text: "Ликвидация боли" },
-    { icon: <Leaf size={14} />, text: "Ресурс из нуля" },
-    { icon: <Shield size={14} />, text: "Инвестиция в твою стать" },
-  ];
-
   return (
     <section className="relative bg-cream pt-12 md:pt-20 pb-20 md:pb-28 overflow-hidden">
       {/* Гигантская фоновая типографика */}
