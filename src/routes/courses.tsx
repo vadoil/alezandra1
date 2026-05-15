@@ -89,17 +89,6 @@ function Courses() {
         </div>
       </section>
 
-      <section className="pb-24 md:pb-32">
-        <div className="container-x">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            <img src={practiceRestorative} alt="Восстановительная практика" loading="lazy" width={1280} height={896} className="w-full h-48 md:h-64 object-cover rounded-sm" />
-            <img src={courseBeginner} alt="Утренняя медитация" loading="lazy" width={1280} height={896} className="w-full h-48 md:h-64 object-cover rounded-sm" />
-            <img src={courseBack} alt="Работа со спиной" loading="lazy" width={1280} height={896} className="w-full h-48 md:h-64 object-cover rounded-sm" />
-            <img src={courseAntistress} alt="Глубокое расслабление" loading="lazy" width={1280} height={896} className="w-full h-48 md:h-64 object-cover rounded-sm" />
-          </div>
-        </div>
-      </section>
-
       <FinalCta />
     </>
   );
