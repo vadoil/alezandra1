@@ -110,12 +110,6 @@ function Hero() {
       </div>
 
       <div className="container-x relative flex-1 flex flex-col">
-        {/* Верхний бар */}
-        <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-10">
-          <span>{"\n"}</span>
-          <span className="font-mono">№ 001 / Body Frame</span>
-          <span>Saint Petersburg · 2026</span>
-        </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
