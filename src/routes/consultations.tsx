@@ -27,7 +27,7 @@ function Consultations() {
             <p className="mt-6 text-lg text-muted-foreground">
               Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
             </p>
-            <Link to="/consultations" className="btn-primary mt-10">Пройти вводную консультацию</Link>
+            <ConsultationDialog trigger={<button className="btn-primary mt-10">Пройти вводную консультацию</button>} />
             <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
           </div>
           <div className="lg:col-span-6">
