@@ -9,11 +9,11 @@ export function FinalCta() {
           Начните спокойно. <span className="font-serif-italic">Без перегруза и сравнения.</span>
         </h2>
         <p className="mt-6 text-cream/70 text-lg">
-          Запишитесь на первичную консультацию или пройдите квиз — я помогу подобрать формат, который подходит именно вам.
+          Запишитесь на вводную консультацию или пройдите квиз — я помогу подобрать формат, который подходит именно вам.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Link to="/consultations" className="btn-primary">
-            Записаться на консультацию
+            Пройти вводную консультацию
           </Link>
           <a
             href="#quiz"
@@ -23,7 +23,7 @@ export function FinalCta() {
           </a>
         </div>
         <p className="mt-6 text-xs text-cream/40">
-          Бесплатная установочная встреча · 20 минут · без обязательств
+          Вводная консультация · 1 час · 3 000 ₽
         </p>
       </div>
     </section>
