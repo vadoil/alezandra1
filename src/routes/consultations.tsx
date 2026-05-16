@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import consultationImg from "@/assets/alex-3.jpg";
 import { FinalCta } from "@/components/FinalCta";
+import { ConsultationDialog } from "@/components/ConsultationDialog";
 
 export const Route = createFileRoute("/consultations")({
   head: () => ({
@@ -26,7 +27,7 @@ function Consultations() {
             <p className="mt-6 text-lg text-muted-foreground">
               Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
             </p>
-            <Link to="/consultations" className="btn-primary mt-10">Пройти вводную консультацию</Link>
+            <ConsultationDialog trigger={<button className="btn-primary mt-10">Пройти вводную консультацию</button>} />
             <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
           </div>
           <div className="lg:col-span-6">

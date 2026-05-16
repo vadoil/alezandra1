@@ -151,17 +151,17 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="hero-pulse w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              className="w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
 
-          {/* Фото — по центру экрана, по высоте заголовка */}
+          {/* Фото — по центру экрана, привязано к нижней линии */}
           <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
           <img
             src={heroSculpture}
             alt="Александра Марченко"
-            className="hero-pulse hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
+            className="hidden lg:block pointer-events-none select-none absolute left-1/2 bottom-0 -translate-x-1/2 h-[125%] xl:h-[135%] w-auto object-contain object-bottom z-0"
             draggable={false}
           />
 
@@ -181,7 +181,7 @@ function Hero() {
                 Пройти биомеханическую диагностику <ArrowRight size={14} />
               </a>
               <Link to="/consultations" className="btn-outline w-full">
-                ​
+                Пройти вводную консультацию · 3 000 ₽
               </Link>
             </div>
           </div>
