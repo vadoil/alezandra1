@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contacts")({
       { title: "Контакты — Александра Марченко · йога и йогатерапия" },
       { name: "description", content: "Связаться с Александрой Марченко: телефон, Telegram, WhatsApp, Instagram. Центр «Сфера», Санкт-Петербург." },
       { property: "og:title", content: "Контакты — Александра Марченко" },
-      { property: "og:description", content: "Запишитесь на бесплатное первое занятие или консультацию." },
+      { property: "og:description", content: "Запишитесь на вводную онлайн-консультацию — 1 час, 3 000 ₽." },
       { property: "og:image", content: studioSpace },
     ],
   }),
@@ -38,7 +38,7 @@ function Contacts() {
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
               Напишите в любом удобном мессенджере. Я отвечаю лично — обычно в течение нескольких часов.
-              Первое знакомство и подбор формата — бесплатно.
+              Вводная онлайн-консультация — 1 час, 3 000 ₽.
             </p>
 
             <div className="mt-12 grid sm:grid-cols-2 gap-4">
@@ -100,7 +100,7 @@ function Contacts() {
                 to="/consultations"
                 className="mt-7 inline-flex items-center justify-center w-full gap-2 bg-primary text-cream px-5 py-3 text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
               >
-                Записаться на бесплатное занятие
+                Пройти вводную консультацию
               </Link>
             </div>
           </aside>

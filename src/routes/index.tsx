@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
-import heroSculpture from "@/assets/hero-sculpture-2.png";
+import heroSculpture from "@/assets/alex-hero-cutout.png";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
@@ -146,22 +146,22 @@ function Hero() {
             </ul>
           </div>
 
-          {/* Скульптура для mobile/tablet */}
+          {/* Фото для mobile/tablet */}
           <div className="lg:hidden order-1 relative z-0">
             <img
               src={heroSculpture}
-              alt="Александра Марченко — скульптура в позе йоги"
-              className="hero-pulse scale-x-[-1] w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              alt="Александра Марченко"
+              className="hero-pulse w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
 
-          {/* Скульптура — точно по центру экрана, по высоте заголовка */}
+          {/* Фото — по центру экрана, по высоте заголовка */}
           <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
           <img
             src={heroSculpture}
-            alt="Александра Марченко — скульптура в позе йоги"
-            className="hero-pulse scale-x-[-1] hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
+            alt="Александра Марченко"
+            className="hero-pulse hidden lg:block pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[130%] xl:h-[140%] w-auto object-contain z-0"
             draggable={false}
           />
 
@@ -623,8 +623,8 @@ function FreeFirstBanner() {
         <div className="flex items-center gap-4">
           <Sparkles size={20} className="shrink-0" />
           <p className="text-sm md:text-base">
-            <span className="font-display text-lg md:text-xl">Первое занятие — бесплатно.</span>{" "}
-            <span className="opacity-80">Знакомство, диагностика и подбор формата.</span>
+            <span className="font-display text-lg md:text-xl">Вводная консультация · 3 000 ₽.</span>{" "}
+            <span className="opacity-80">1 час · знакомство, диагностика и стратегия.</span>
           </p>
         </div>
         <Link
@@ -673,9 +673,7 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className={`w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0 ${
-                i < bwCount ? "grayscale" : ""
-              }`}
+              className="w-full aspect-square object-cover rounded-sm"
             />
           ))}
         </div>
@@ -751,7 +749,7 @@ function Schedule() {
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground">
-          Первое занятие бесплатно · отмена за 12 часов · можно перенести запись
+          Вводная консультация 3 000 ₽ · отмена за 12 часов · можно перенести запись
         </p>
       </div>
     </section>
@@ -798,7 +796,7 @@ function Pricing() {
                   p.highlight ? "text-primary" : "text-primary"
                 }`}
               >
-                {p.highlight ? "Забронировать бесплатно" : "Записаться"} <ArrowRight size={14} />
+                {p.highlight ? "Записаться на консультацию" : "Записаться"} <ArrowRight size={14} />
               </Link>
             </div>
           ))}
@@ -828,7 +826,7 @@ function ContactsSection() {
             Напишите <span className="font-serif-italic text-cream/70">в любой</span> мессенджер
           </h2>
           <p className="mt-6 text-cream/70 text-lg max-w-md">
-            Я отвечаю лично. Подскажу формат, расписание и помогу записаться на бесплатное первое занятие.
+            Я отвечаю лично. Подскажу формат, расписание и помогу записаться на вводную консультацию.
           </p>
           <p className="mt-8 text-sm text-cream/50">Центр «Сфера», Санкт-Петербург · Пн–Вс 08:00–21:00</p>
           <Link to="/contacts" className="mt-8 inline-flex items-center gap-2 text-sm text-cream hover:gap-3 transition-all">

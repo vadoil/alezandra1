@@ -183,7 +183,7 @@ export function BookingSchedule() {
         </Tabs>
 
         <p className="mt-6 text-xs text-muted-foreground">
-          Первое занятие бесплатно · отмена за 12 часов · можно перенести запись
+          Вводная консультация 3 000 ₽ · отмена за 12 часов · можно перенести запись
         </p>
       </div>
 
