@@ -174,8 +174,8 @@ function Hero() {
               <a href="#quiz" className="btn-primary w-full">
                 Пройти биомеханическую диагностику <ArrowRight size={14} />
               </a>
-              <Link to="/consultations" className="btn-outline w-full text-center py-4 px-6 flex flex-col items-center justify-center leading-tight">
-                <span>Пройти вводную консультацию</span>
+              <Link to="/consultations" className="btn-outline w-full text-left py-4 px-6 flex flex-col items-start justify-center leading-tight">
+                <span>Пройти вводную консультацию<br />3 000 ₽</span>
               </Link>
             </div>
           </div>
