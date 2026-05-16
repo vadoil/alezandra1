@@ -479,23 +479,14 @@ function Consultations() {
         <div className="lg:col-span-6 lg:pl-8">
           <p className="eyebrow mb-4">Консультации</p>
           <h2 className="h-section">
-            Лучший <span className="font-serif-italic text-primary">первый шаг</span>
+            Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Персональная диагностическая встреча — онлайн или в «Сфере». Я слушаю запрос, оцениваю состояние и подбираю безопасный формат практики.
+            Персональная встреча онлайн.
           </p>
-          <ul className="mt-8 space-y-3">
-            {[
-              "Оценка тела, образа жизни и ограничений",
-              "Чёткий следующий шаг — курс, программа или индивидуальные занятия",
-              "Персональные рекомендации для самостоятельной практики",
-            ].map((x) => (
-              <li key={x} className="flex items-start gap-3 text-sm">
-                <Check size={16} className="text-primary shrink-0 mt-1" />
-                <span>{x}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
+          </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link to="/consultations" className="btn-primary">
               Записаться на консультацию
