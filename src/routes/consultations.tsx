@@ -22,9 +22,9 @@ function Consultations() {
         <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <p className="eyebrow mb-5">Консультации</p>
-            <h1 className="h-display">Лучший <span className="font-serif-italic text-primary">первый шаг</span></h1>
+            <h1 className="h-display">Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты</h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние и подбираю безопасный формат.
+              Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
             </p>
             <Link to="/consultations" className="btn-primary mt-10">Пройти вводную консультацию</Link>
             <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
