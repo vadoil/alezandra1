@@ -14,14 +14,14 @@ export function FinalCta() {
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ConsultationDialog
             trigger={
-              <button className="btn-primary">
+              <button className="inline-flex items-center justify-center gap-2 bg-cream text-ink px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] rounded-none border border-cream transition-all duration-300 hover:bg-transparent hover:text-cream">
                 Пройти вводную консультацию
               </button>
             }
           />
           <a
             href="/#quiz"
-            className="inline-flex items-center justify-center gap-2 bg-transparent text-cream px-7 py-4 text-sm font-medium rounded-sm border border-cream/20 hover:border-primary hover:text-primary transition-all"
+            className="inline-flex items-center justify-center gap-2 bg-transparent text-cream px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] rounded-none border border-cream/40 transition-all duration-300 hover:bg-cream hover:text-ink hover:border-cream"
           >
             Пройти биомеханическую диагностику
           </a>
