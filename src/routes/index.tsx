@@ -110,12 +110,6 @@ function Hero() {
       </div>
 
       <div className="container-x relative flex-1 flex flex-col">
-        {/* Верхний бар */}
-        <div className="hidden md:flex items-center justify-between text-[10px] uppercase tracking-[0.32em] text-ink/60 mb-10">
-          <span>{"\n"}</span>
-          <span className="font-mono">№ 001 / Body Frame</span>
-          <span>Saint Petersburg · 2026</span>
-        </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
@@ -188,7 +182,7 @@ function Hero() {
         </div>
 
         {/* Нижняя метрика-полоса */}
-        <div className="mt-16 md:mt-24 pt-10 border-t border-ink/15 grid grid-cols-3 gap-6">
+        <div className="mt-0 pt-10 border-t border-ink/15 grid grid-cols-3 gap-6">
           <div>
             <p className="font-display font-bold text-4xl md:text-5xl leading-none">8</p>
             <p className="text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-3 leading-snug">
