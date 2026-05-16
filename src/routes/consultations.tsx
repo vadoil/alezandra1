@@ -22,7 +22,7 @@ function Consultations() {
         <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <p className="eyebrow mb-5">Консультации</p>
-            <h1 className="h-display">Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты</h1>
+            <h1 className="font-display font-bold uppercase tracking-[0.01em] leading-[0.95] text-4xl md:text-5xl lg:text-6xl">Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты</h1>
             <p className="mt-6 text-lg text-muted-foreground">
               Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
             </p>
@@ -30,7 +30,7 @@ function Consultations() {
             <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
           </div>
           <div className="lg:col-span-6">
-            <img src={consultationImg} alt="Консультация" width={1280} height={960} className="w-full aspect-[4/3] object-cover rounded-sm" />
+            <img src={consultationImg} alt="Консультация" width={1280} height={1600} className="w-full aspect-[4/5] object-cover rounded-sm" />
           </div>
         </div>
       </section>
