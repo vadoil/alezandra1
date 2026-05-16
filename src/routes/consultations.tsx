@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import consultationImg from "@/assets/alex-3.jpg";
 import { FinalCta } from "@/components/FinalCta";
+import { ConsultationDialog } from "@/components/ConsultationDialog";
 
 export const Route = createFileRoute("/consultations")({
   head: () => ({
