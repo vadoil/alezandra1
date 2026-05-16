@@ -176,7 +176,6 @@ function Hero() {
               </a>
               <Link to="/consultations" className="btn-outline w-full text-center py-4 px-6 flex flex-col items-center justify-center leading-tight">
                 <span>Пройти вводную консультацию</span>
-                <span className="text-sm opacity-80 mt-1">· 3 000 ₽</span>
               </Link>
             </div>
           </div>
