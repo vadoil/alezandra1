@@ -181,7 +181,7 @@ function Hero() {
                 Пройти биомеханическую диагностику <ArrowRight size={14} />
               </a>
               <Link to="/consultations" className="btn-outline w-full">
-                Пройти вводную консультацию · 3 000 ₽
+                ​
               </Link>
             </div>
           </div>
