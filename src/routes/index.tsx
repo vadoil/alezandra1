@@ -673,9 +673,7 @@ function GalleryStrip() {
               loading="lazy"
               width={1280}
               height={896}
-              className={`w-full aspect-square object-cover rounded-sm transition-[filter] duration-700 ease-out hover:grayscale-0 ${
-                i < bwCount ? "grayscale" : ""
-              }`}
+              className="w-full aspect-square object-cover rounded-sm"
             />
           ))}
         </div>
