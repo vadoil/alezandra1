@@ -324,7 +324,7 @@ export function Quiz() {
                     {result.cta}
                   </Link>
                   <Link to="/consultations" className="btn-outline">
-                    Бесплатная консультация
+                    Вводная консультация · 3 000 ₽
                   </Link>
                 </div>
                 <button
