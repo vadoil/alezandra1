@@ -182,7 +182,7 @@ function Hero() {
         </div>
 
         {/* Нижняя метрика-полоса */}
-        <div className="mt-16 md:mt-24 pt-10 border-t border-ink/15 grid grid-cols-3 gap-6">
+        <div className="mt-0 pt-10 border-t border-ink/15 grid grid-cols-3 gap-6">
           <div>
             <p className="font-display font-bold text-4xl md:text-5xl leading-none">8</p>
             <p className="text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-3 leading-snug">
