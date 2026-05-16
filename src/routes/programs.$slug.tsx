@@ -103,7 +103,7 @@ function ProgramDetail() {
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link to="/consultations" className="btn-primary">Записаться на программу</Link>
-                <Link to="/consultations" className="btn-outline">Бесплатная консультация</Link>
+                <Link to="/consultations" className="btn-outline">Вводная консультация · 3 000 ₽</Link>
               </div>
             </div>
             <div className="lg:col-span-6">

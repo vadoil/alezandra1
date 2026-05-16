@@ -9,7 +9,7 @@ export const Route = createFileRoute("/consultations")({
       { title: "Консультация по йоге и йогатерапии | Александра Марченко" },
       { name: "description", content: "Персональная диагностическая встреча: оценка запроса, состояния и подбор безопасного формата практики." },
       { property: "og:title", content: "Консультация — Александра Марченко" },
-      { property: "og:description", content: "Лучший первый шаг: 60 минут персональной работы с вашим запросом." },
+      { property: "og:description", content: "Вводная онлайн-консультация: 1 час персональной работы с вашим запросом за 3 000 ₽." },
     ],
   }),
   component: Consultations,
@@ -24,10 +24,10 @@ function Consultations() {
             <p className="eyebrow mb-5">Консультации</p>
             <h1 className="h-display">Лучший <span className="font-serif-italic text-primary">первый шаг</span></h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Персональная встреча онлайн или в «Сфере». Я слушаю запрос, оцениваю состояние и подбираю безопасный формат.
+              Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние и подбираю безопасный формат.
             </p>
-            <Link to="/consultations" className="btn-primary mt-10">Записаться</Link>
-            <p className="mt-4 text-xs text-muted-foreground">60 минут · онлайн или в «Сфере»</p>
+            <Link to="/consultations" className="btn-primary mt-10">Пройти вводную консультацию</Link>
+            <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
           </div>
           <div className="lg:col-span-6">
             <img src={consultationImg} alt="Консультация" width={1280} height={960} className="w-full aspect-[4/3] object-cover rounded-sm" />
