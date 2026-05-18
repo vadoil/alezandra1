@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
 import heroSculpture from "@/assets/alex-hero-cutout.png";
+import alexReclining from "@/assets/alex-reclining.jpg";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
@@ -160,6 +161,16 @@ function Hero() {
               </li>
             ))}
           </ul>
+
+          {/* Доп. фото для mobile под иконками */}
+          <div className="lg:hidden order-[4] mt-2">
+            <img
+              src={alexReclining}
+              alt="Александра Марченко — практика"
+              className="w-full h-auto object-cover select-none rounded-sm"
+              draggable={false}
+            />
+          </div>
 
           {/* Фото — по центру экрана, привязано к нижней линии */}
           <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
