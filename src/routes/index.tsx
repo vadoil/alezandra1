@@ -113,7 +113,7 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-center gap-5 lg:gap-8">
+          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-3 lg:gap-8">
             <h1
               className="font-display font-bold text-[1.35rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full"
             >
