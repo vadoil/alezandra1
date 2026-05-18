@@ -28,7 +28,7 @@ export function Header() {
             {SITE.name}
           </span>
           <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
-            йога · йогатерапия
+            сила • гибкость • body frame
           </span>
         </Link>
 
