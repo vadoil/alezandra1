@@ -102,7 +102,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative bg-cream pt-[60px] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
+    <section className="relative bg-cream pt-[20px] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
       {/* Гигантская фоновая типографика */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none hidden md:block">
         <p className="text-[18vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
