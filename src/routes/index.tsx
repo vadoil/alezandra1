@@ -113,9 +113,9 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-2 lg:order-1 relative z-10 flex flex-col justify-center gap-8">
+          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-center gap-5 lg:gap-8">
             <h1
-              className="font-display font-bold text-[2.8rem] md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.02em] uppercase"
+              className="font-display font-bold text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.02em] uppercase"
             >
               Сила.<br />
               Гибкость.<br />
@@ -124,7 +124,7 @@ function Hero() {
               диктует<br />
               правила.
             </h1>
-            <ul className="flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
+            <ul className="hidden lg:flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
               {[
                 { icon: Flame, label: "Ликвидация боли" },
                 { icon: Sunrise, label: "Ресурс из нуля" },
@@ -141,14 +141,30 @@ function Hero() {
           </div>
 
           {/* Фото для mobile/tablet */}
-          <div className="lg:hidden order-1 relative z-0">
+          <div className="lg:hidden order-2 relative z-0">
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="w-full h-auto max-h-[60vh] object-contain mx-auto select-none"
+              className="w-full h-auto max-h-[45vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
+
+          {/* Иконки-преимущества для mobile */}
+          <ul className="lg:hidden order-3 flex flex-col gap-2.5 text-[11px] uppercase tracking-[0.22em] text-ink/80">
+            {[
+              { icon: Flame, label: "Ликвидация боли" },
+              { icon: Sunrise, label: "Ресурс из нуля" },
+              { icon: Crown, label: "Инвестиция в твою стать" },
+            ].map(({ icon: Icon, label }, i) => (
+              <li key={label} className="flex items-center gap-3">
+                <span className="inline-flex items-center justify-center w-8 h-8 border border-ink/30 rounded-full">
+                  <Icon size={14} strokeWidth={1.5} style={{ animation: `pulse 2.4s ease-in-out ${i * 0.4}s infinite` }} />
+                </span>
+                <span>{label}</span>
+              </li>
+            ))}
+          </ul>
 
           {/* Фото — по центру экрана, привязано к нижней линии */}
           <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
