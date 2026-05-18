@@ -286,28 +286,43 @@ function Story() {
 }
 
 function Segments() {
+  const items = [
+    {
+      num: "01",
+      title: "Женщинам, которые потеряли свою стать",
+      text: "Если ты видишь в зеркале уставшую женщину, а не манкую кошечку (как раньше) — мы вернём твою «ось власти».",
+    },
+    {
+      num: "02",
+      title: "Тем, кто хочет «дорогое тело»",
+      text: "Не нужны лишние мышцы, но мечтаешь о стройном, рельефном теле с женственными линиями.",
+    },
+    {
+      num: "03",
+      title: "Тем, кто хочет вызывать восхищение (и зависть)",
+      text: "Красиво упакованное тело — самый прямой путь к высокому чеку в жизни, отношениях и карьере.",
+    },
+    {
+      num: "04",
+      title: "Женщинам, застрявшим в быту и дне сурка",
+      text: "Мой метод — не просто тренировки. Это возвращение себе состояния «львицы», которая управляет своей жизнью и вниманием окружающих.",
+    },
+  ];
+
   return (
     <section className="py-14 md:py-20 bg-clay">
       <div className="container-x">
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-12 md:mb-16">
           <p className="eyebrow mb-4">Для кого</p>
-          <h2 className="h-section">Узнайте свой формат</h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Шесть запросов, с которыми чаще всего приходят. Выберите свой — подскажу следующий шаг.
-          </p>
+          <h2 className="h-section">Кому нужно заниматься со мной:</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SEGMENTS.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.05}>
-              <div className="bg-cream border border-ink/5 p-8 rounded-sm h-full flex flex-col group hover:border-primary/40 transition-colors">
-                <h3 className="text-xl mb-3">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-1">{s.text}</p>
-                <Link
-                  to={s.to}
-                  className="mt-6 inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all"
-                >
-                  {s.cta} <ArrowRight size={14} />
-                </Link>
+        <div className="grid sm:grid-cols-2 gap-px bg-ink/10 border border-ink/10 rounded-sm overflow-hidden">
+          {items.map((item, i) => (
+            <Reveal key={item.num} delay={i * 0.05}>
+              <div className="bg-cream p-6 md:p-10 h-full flex flex-col group hover:bg-clay transition-colors">
+                <span className="font-display text-3xl md:text-4xl text-ink/15 mb-4 md:mb-6 leading-none">{item.num}</span>
+                <h3 className="text-lg md:text-xl leading-snug mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-1">{item.text}</p>
               </div>
             </Reveal>
           ))}
