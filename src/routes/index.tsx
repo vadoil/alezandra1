@@ -163,7 +163,7 @@ function Hero() {
           </ul>
 
           {/* Доп. фото для mobile под иконками */}
-          <div className="lg:hidden order-[4] mt-2">
+          <div className="lg:hidden order-3 mt-2">
             <img
               src={alexReclining}
               alt="Александра Марченко — практика"
