@@ -161,6 +161,16 @@ function Hero() {
             ))}
           </ul>
 
+          {/* Доп. фото для mobile под иконками */}
+          <div className="lg:hidden order-[4] mt-2">
+            <img
+              src={alexReclining}
+              alt="Александра Марченко — практика"
+              className="w-full h-auto object-cover select-none rounded-sm"
+              draggable={false}
+            />
+          </div>
+
           {/* Фото — по центру экрана, привязано к нижней линии */}
           <div className="hidden lg:block lg:col-span-4 order-2" aria-hidden />
           <img
