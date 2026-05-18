@@ -102,7 +102,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative bg-cream pt-[60px] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
+    <section className="relative bg-cream pt-[20px] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
       {/* Гигантская фоновая типографика */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none hidden md:block">
         <p className="text-[18vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
@@ -137,11 +137,11 @@ function Hero() {
           </div>
 
           {/* Фото для mobile/tablet */}
-          <div className="lg:hidden order-2 relative z-0 border-b border-ink/15 pb-2">
+          <div className="lg:hidden order-2 relative z-0 border-b border-ink/15">
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="w-full h-auto max-h-[95vh] object-contain mx-auto select-none"
+              className="block w-full h-auto max-h-[110vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
