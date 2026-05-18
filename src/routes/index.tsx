@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Calendar, Sparkles, Flame, Sunrise, Crown } from "lucide-react";
 import heroSculpture from "@/assets/alex-hero-cutout.png";
+import alexReclining from "@/assets/alex-reclining.jpg";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
