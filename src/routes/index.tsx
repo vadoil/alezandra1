@@ -101,7 +101,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative bg-cream pt-20 md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
+    <section className="relative bg-cream pt-[calc(56px+1rem)] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
       {/* Гигантская фоновая типографика */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none hidden md:block">
         <p className="text-[18vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
@@ -113,9 +113,9 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-center gap-5 lg:gap-8">
+          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-3 lg:gap-8">
             <h1
-              className="font-display font-bold text-[2.4rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.01em] uppercase w-full"
+              className="font-display font-bold text-[1.35rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full"
             >
               Сила. Гибкость. Тело, которое диктует правила.
             </h1>
