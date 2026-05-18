@@ -115,14 +115,9 @@ function Hero() {
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-center gap-5 lg:gap-8">
             <h1
-              className="font-display font-bold text-[1.3rem] sm:text-2xl md:text-3xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.02em] uppercase"
+              className="font-display font-bold text-[2.4rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.01em] uppercase w-full"
             >
-              Сила.<br />
-              Гибкость.<br />
-              Тело,<br />
-              которое<br />
-              диктует<br />
-              правила.
+              Сила. Гибкость. Тело, которое диктует правила.
             </h1>
             <ul className="hidden lg:flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
               {[
