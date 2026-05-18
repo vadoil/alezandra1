@@ -82,16 +82,16 @@ function Home() {
       <GalleryStrip />
       {/* <Courses /> — временно скрыт */}
       <Programs />
-      <BookingSchedule />
-      <VideoBlock />
+      {/* <BookingSchedule /> — в архив */}
+      {/* <VideoBlock /> — в архив */}
       {/* <Pricing /> — временно скрыт */}
       <TrustBar />
-      <Story />
+      {/* <Story /> — в архив */}
       <Segments />
       <Directions />
       <Consultations />
       <Quiz />
-      <Formats />
+      {/* <Formats /> — в архив */}
       <Testimonials />
       <FaqSection />
       <ContactsSection />
