@@ -232,7 +232,7 @@ function Hero() {
 function TrustBar() {
   return (
     <section className="py-12 md:py-16 bg-clay border-y border-ink/5">
-      <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="container-x grid grid-cols-3 gap-4 md:gap-8">
         {TRUST.map((t) => (
           <div key={t.kicker} className="space-y-2">
             <p className="eyebrow">{t.kicker}</p>
