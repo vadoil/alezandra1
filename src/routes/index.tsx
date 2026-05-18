@@ -145,7 +145,7 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="w-full h-auto max-h-[45vh] object-contain mx-auto select-none"
+              className="w-full h-auto max-h-[65vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
