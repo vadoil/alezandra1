@@ -102,7 +102,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative bg-cream pt-[calc(56px+1rem)] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
+    <section className="relative bg-cream pt-[60px] md:pt-28 pb-16 md:pb-20 overflow-hidden min-h-[88vh] flex flex-col">
       {/* Гигантская фоновая типографика */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none hidden md:block">
         <p className="text-[18vw] leading-[0.8] font-bold uppercase tracking-[-0.06em] text-ink/[0.04] text-center whitespace-nowrap">
@@ -112,7 +112,7 @@ function Hero() {
 
       <div className="container-x relative flex-1 flex flex-col">
 
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch relative flex-1">
+        <div className="grid lg:grid-cols-12 gap-2 lg:gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-3 lg:gap-8">
             <h1
