@@ -236,7 +236,7 @@ function TrustBar() {
         {TRUST.map((t) => (
           <div key={t.kicker} className="space-y-2">
             <p className="eyebrow">{t.kicker}</p>
-            <p className="font-display text-lg md:text-xl leading-snug">{t.value}</p>
+            <p className="font-display text-sm md:text-xl leading-snug">{t.value}</p>
           </div>
         ))}
       </div>
