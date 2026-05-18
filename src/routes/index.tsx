@@ -115,7 +115,7 @@ function Hero() {
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-center gap-5 lg:gap-8">
             <h1
-              className="font-display font-bold text-[2.6rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.02em] uppercase"
+              className="font-display font-bold text-[1.3rem] sm:text-2xl md:text-3xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[0.02em] uppercase"
             >
               Сила.<br />
               Гибкость.<br />
@@ -145,7 +145,7 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="w-full h-auto max-h-[65vh] object-contain mx-auto select-none"
+              className="w-full h-auto max-h-[80vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
