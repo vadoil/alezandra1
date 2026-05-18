@@ -83,45 +83,28 @@ export function FloatingContacts() {
         onClick={() => setOpen((v) => !v)}
         className="relative w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center justify-center ring-2 ring-cream ring-offset-2 ring-offset-transparent"
       >
-        {/* Декоративный лотос-ободок */}
-        <svg
-          viewBox="0 0 64 64"
-          className="absolute -inset-1 w-[calc(100%+0.5rem)] h-[calc(100%+0.5rem)] text-cream/90 pointer-events-none animate-[mandala-spin_30s_linear_infinite]"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          aria-hidden
-        >
-          <circle cx="32" cy="32" r="31" strokeDasharray="2 3" opacity="0.7" />
-          {Array.from({ length: 8 }).map((_, i) => {
-            const a = (i * 360) / 8;
-            return (
-              <path
-                key={i}
-                d="M32,1 C34,5 34,8 32,11 C30,8 30,5 32,1 Z"
-                transform={`rotate(${a} 32 32)`}
-                strokeWidth="0.8"
-              />
-            );
-          })}
-        </svg>
-
         {open ? (
           <X size={22} />
         ) : (
-          // Силуэт йоги (лотос/медитация)
-          <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-            {/* голова */}
-            <circle cx="32" cy="14" r="4.2" />
-            {/* туловище и руки в намасте */}
-            <path d="M32 19c-3.5 4-3.5 9 0 13 3.5-4 3.5-9 0-13z" />
-            <path d="M32 32c-7 0-14 3-18 9 6 4 12 5 18 5s12-1 18-5c-4-6-11-9-18-9z" />
-            {/* колени-лотос */}
-            <path d="M14 41c-1 2-1 4 0 5" />
-            <path d="M50 41c1 2 1 4 0 5" />
+          // Изящный конверт-письмо с переворотом каждые 7с
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 64 64"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="animate-[envelope-flip_7s_ease-in-out_infinite]"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <rect x="8" y="16" width="48" height="32" rx="2" />
+            <path d="M8 18l24 18 24-18" />
+            <path d="M8 46l18-14" opacity="0.6" />
+            <path d="M56 46L38 32" opacity="0.6" />
           </svg>
         )}
-        <span className="sr-only">Контакты</span>
       </button>
     </div>
   );
