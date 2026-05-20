@@ -18,10 +18,11 @@ export const SITE = {
 };
 
 export const NAV = [
+  { to: "/", label: "Главная", icon: "home" as const },
   { to: "/about", label: "Обо мне" },
   { to: "/directions", label: "Направления" },
   { to: "/courses", label: "Курсы" },
-  { to: "/program", label: "VIP" },
+  { to: "/program", label: "VIP", icon: "crown" as const },
   { to: "/consultations", label: "Консультации" },
   { to: "/contacts", label: "Контакты" },
 ] as const;
