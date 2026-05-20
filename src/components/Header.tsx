@@ -38,7 +38,7 @@ export function Header() {
             return (
               <Link
                 key={item.to}
-                to={item.to as string}
+                to={item.to as any}
                 className="text-sm text-ink/75 hover:text-primary transition-colors inline-flex items-center gap-1.5"
                 activeProps={{ className: "text-primary" }}
               >
@@ -72,7 +72,7 @@ export function Header() {
               return (
                 <Link
                   key={item.to}
-                  to={item.to as string}
+                  to={item.to as any}
                   onClick={() => setOpen(false)}
                   className="text-base text-ink/80 inline-flex items-center gap-2"
                 >
