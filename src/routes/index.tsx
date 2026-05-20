@@ -6,8 +6,6 @@ import alexReclining from "@/assets/alex-reclining.jpg";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
-import onlineImg from "@/assets/online-practice.jpg";
-import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/alex-3.jpg";
 import courseBeginner from "@/assets/alex-2.jpg";
 import courseBack from "@/assets/alex-7.jpg";
