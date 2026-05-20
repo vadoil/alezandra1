@@ -23,9 +23,7 @@ export const NAV = [
   { to: "/courses", label: "Курсы" },
   { to: "/program", label: "VIP" },
   { to: "/consultations", label: "Консультации" },
-  { to: "/online", label: "Онлайн" },
-  { to: "/offline", label: "Оффлайн" },
-  { to: "/retreats", label: "Туры" },
+  { to: "/contacts", label: "Контакты" },
   { to: "/contacts", label: "Контакты" },
 ] as const;
 
