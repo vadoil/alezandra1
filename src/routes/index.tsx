@@ -147,6 +147,16 @@ function Hero() {
               className="block w-full h-auto max-h-[160vh] object-contain mx-auto select-none"
               draggable={false}
             />
+            <div className="mt-1 flex items-center gap-3">
+              <span className="h-px flex-1 bg-ink/30" />
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none" className="text-ink/50">
+                <path d="M0 5 H7" stroke="currentColor" strokeWidth="1" />
+                <circle cx="11" cy="5" r="2.4" stroke="currentColor" strokeWidth="1" fill="none" />
+                <circle cx="11" cy="5" r="0.8" fill="currentColor" />
+                <path d="M15 5 H22" stroke="currentColor" strokeWidth="1" />
+              </svg>
+              <span className="h-px flex-1 bg-ink/30" />
+            </div>
           </div>
 
           {/* Иконки-преимущества для mobile */}
