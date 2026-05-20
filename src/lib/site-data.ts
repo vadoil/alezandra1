@@ -24,7 +24,6 @@ export const NAV = [
   { to: "/program", label: "VIP" },
   { to: "/consultations", label: "Консультации" },
   { to: "/contacts", label: "Контакты" },
-  { to: "/contacts", label: "Контакты" },
 ] as const;
 
 export const TRUST = [
