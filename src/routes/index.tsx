@@ -29,6 +29,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { SculptureOrnament } from "@/components/SculptureOrnament";
 import { BookingSchedule } from "@/components/BookingSchedule";
+import { VideoReels } from "@/components/VideoReels";
 import seaYogaImg from "@/assets/video-sea-yoga.jpg";
 
 const COURSE_IMAGES: Record<string, string> = {
@@ -78,6 +79,7 @@ function Home() {
     <>
       <Hero />
       <Programs />
+      <VideoReels />
       <Story />
       <FreeFirstBanner />
       <GalleryStrip />
