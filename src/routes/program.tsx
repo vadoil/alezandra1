@@ -55,14 +55,14 @@ function ProgramVIP() {
         <div className="container-x relative">
           <div className="max-w-3xl">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/50 rounded-full text-primary text-[11px] uppercase tracking-[0.25em] mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold/60 rounded-full text-gold text-[11px] uppercase tracking-[0.25em] mb-8">
                 <Crown size={14} /> VIP · Только по разбору
               </div>
             </Reveal>
             <Reveal delay={0.1}>
               <h1 className="h-display text-cream leading-[0.95]">
                 Архитектор<br />
-                <span className="font-serif-italic text-primary">тела</span>
+                <span className="font-serif-italic text-gold">тела</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
@@ -76,7 +76,7 @@ function ProgramVIP() {
                   Отправить анкету
                 </a>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-3xl md:text-4xl text-primary">50 000 ₽</span>
+                  <span className="font-display text-3xl md:text-4xl text-gold">50 000 ₽</span>
                   <span className="text-cream/60 text-sm">/ мес</span>
                 </div>
               </div>
@@ -114,7 +114,7 @@ function ProgramVIP() {
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08} className="bg-cream p-8 md:p-10">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-12 h-12 rounded-full bg-ink text-primary flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-ink text-gold flex items-center justify-center">
                     <p.icon size={20} />
                   </div>
                   <div>
@@ -143,8 +143,8 @@ function ProgramVIP() {
               <ol className="space-y-10">
                 {vip.stages.map((s, i) => (
                   <Reveal key={s.title} delay={i * 0.08}>
-                    <div className="border-l-2 border-primary/30 pl-8 relative">
-                      <span className="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-primary text-ink font-display text-xs flex items-center justify-center">
+                    <div className="border-l-2 border-ink/15 pl-8 relative">
+                      <span className="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gold text-ink font-display text-xs flex items-center justify-center">
                         {i + 1}
                       </span>
                       <h3 className="text-2xl md:text-3xl mb-3">{s.title.replace(/^Этап \d+ · /, "")}</h3>
@@ -162,9 +162,9 @@ function ProgramVIP() {
       <section className="py-24 md:py-32 bg-ink text-cream">
         <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
           <Reveal className="lg:col-span-5">
-            <p className="eyebrow text-primary mb-4">Результат</p>
+            <p className="eyebrow text-gold mb-4">Результат</p>
             <h2 className="h-section text-cream leading-tight">
-              Тело как <span className="font-serif-italic text-primary">точно собранный механизм</span>
+              Тело как <span className="font-serif-italic text-gold">точно собранный механизм</span>
             </h2>
           </Reveal>
           <Reveal className="lg:col-span-7" delay={0.15}>
@@ -177,7 +177,7 @@ function ProgramVIP() {
                 "Привычка владеть телом — навсегда",
               ].map((x) => (
                 <li key={x} className="flex items-start gap-4 text-lg text-cream/85 border-b border-cream/10 pb-5">
-                  <Check size={20} className="text-primary mt-1 shrink-0" />
+                  <Check size={20} className="text-gold mt-1 shrink-0" />
                   {x}
                 </li>
               ))}
@@ -201,7 +201,7 @@ function ProgramVIP() {
           <Reveal delay={0.15} className="bg-ink text-cream rounded-sm p-10 md:p-14 text-center">
             <p className="text-sm uppercase tracking-[0.25em] text-cream/50 mb-4">Стоимость наставничества</p>
             <div className="flex items-baseline justify-center gap-3 mb-8">
-              <span className="font-display text-5xl md:text-6xl text-primary">50 000 ₽</span>
+              <span className="font-display text-5xl md:text-6xl text-gold">50 000 ₽</span>
               <span className="text-cream/60">/ месяц</span>
             </div>
             <p className="text-cream/70 mb-10 max-w-md mx-auto">
