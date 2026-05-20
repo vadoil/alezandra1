@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
 
 const video1 = "/videos/video-1.mp4";
 const video2 = "/videos/video-2.mp4";
+const video3 = "/videos/video-3.mp4";
+const video4 = "/videos/video-4.mp4";
+const video5 = "/videos/video-5.mp4";
 
 type Reel = {
   src: string;
@@ -22,6 +25,24 @@ const REELS: Reel[] = [
     title: "Гибкость без перегруза",
     description:
       "Бережная мобилизация суставов и работа с дыханием — длинные мышцы, лёгкое тело.",
+  },
+  {
+    src: video3,
+    title: "Осанка и линия плеч",
+    description:
+      "Раскрытие грудного отдела и работа с лопатками — спина перестаёт ныть, шея удлиняется.",
+  },
+  {
+    src: video4,
+    title: "Лёгкий низ · сильный кор",
+    description:
+      "Глубокие мышцы живота и таза — рельеф появляется сам, когда есть правильная опора.",
+  },
+  {
+    src: video5,
+    title: "Ритуал в моменте",
+    description:
+      "Короткая практика, после которой тело собирается, а голова становится тише.",
   },
 ];
 
