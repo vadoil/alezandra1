@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contacts")({
 const CHANNELS = [
   { icon: Send, label: "Telegram", value: SITE.telegram, href: SITE.telegramUrl, hint: "Самый быстрый ответ" },
   { icon: Youtube, label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl, hint: "Практики и материалы" },
-  { icon: Instagram, label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl, hint: "Практика · истории · отзывы" },
+  { icon: Instagram, label: "GRAM", value: `@${SITE.instagram}`, href: SITE.instagramUrl, hint: "Практика · истории · отзывы" },
   { icon: MessageCircle, label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl, hint: "Сообщения ВК" },
   { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, hint: "Для подробных вопросов" },
 ];

@@ -115,13 +115,13 @@ function Hero() {
 
         <div className="grid lg:grid-cols-12 gap-2 lg:gap-8 items-stretch relative flex-1">
           {/* Левая колонка — заголовок */}
-          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-3 lg:gap-8">
+          <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-2 lg:gap-8">
             <h1
-              className="font-display font-bold text-[2.1rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full"
+              className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full space-y-1 md:space-y-2"
             >
               <span className="block">Сила.</span>
-              <span className="block mt-2 md:mt-3">Гибкость.</span>
-              <span className="block mt-2 md:mt-3">Тело, которое диктует правила.</span>
+              <span className="block">Гибкость.</span>
+              <span className="block">Тело, которое диктует правила.</span>
             </h1>
             <ul className="hidden lg:flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
               {[
@@ -197,8 +197,8 @@ function Hero() {
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
               </svg>
-              <span className="group-hover:hidden">Instagram</span>
-              <span className="hidden group-hover:inline">Нельзягарм</span>
+              <span className="group-hover:hidden">GRAM</span>
+              <span className="hidden group-hover:inline">GRAM</span>
             </a>
           </div>
 
@@ -865,7 +865,7 @@ function ContactsSection() {
   const items = [
     { label: "Telegram", value: "@alexandramarchenkoo", href: SITE.telegramUrl },
     { label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl },
-    { label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
+    { label: "GRAM", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
     { label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl },
   ];
   return (

@@ -19,7 +19,7 @@ export function FloatingContacts() {
     { label: "Telegram", href: SITE.telegramUrl, color: "#229ED9", icon: <Send size={16} /> },
     { label: "YouTube", href: SITE.youtubeUrl, color: "#FF0000", icon: <Youtube size={16} /> },
     {
-      label: "Нельзягарм",
+      label: "GRAM",
       href: SITE.instagramUrl,
       color: "#1a1a1a",
       icon: (
