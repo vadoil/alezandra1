@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
 import video1 from "/videos/video-1.mp4?url";
 import video2 from "/videos/video-2.mp4?url";
@@ -129,7 +129,7 @@ export function VideoReels() {
           {/* 2 вертикальных видео справа */}
           <div className="col-span-7 grid grid-cols-2 gap-5">
             <ReelTile
-              ref={(el) => {
+              ref={(el: HTMLVideoElement | null) => {
                 videoRefs.current[active] = el;
               }}
               key={`main-${active}`}
@@ -174,12 +174,11 @@ export function VideoReels() {
                 {REELS.map((r, i) => (
                   <div key={i} className="min-w-full px-1">
                     <ReelTile
-                      ref={(el) => {
+                      ref={(el: HTMLVideoElement | null) => {
                         videoRefs.current[i] = el;
                       }}
                       src={r.src}
                       muted={muted || i !== active}
-                      active={i === active}
                     />
                   </div>
                 ))}
@@ -246,8 +245,11 @@ type TileProps = {
   dim?: boolean;
 };
 
-const ReelTile = (() => {
-  const C = ({ src, muted, featured, dim }: TileProps, ref: React.Ref<HTMLVideoElement>) => (
+const ReelTile = forwardRef<HTMLVideoElement, TileProps>(function ReelTile(
+  { src, muted, featured, dim },
+  ref,
+) {
+  return (
     <div
       className={`relative w-full aspect-[9/16] overflow-hidden rounded-sm bg-ink/60 ${
         featured ? "shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]" : ""
@@ -260,13 +262,13 @@ const ReelTile = (() => {
         loop
         muted={muted}
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover ${dim ? "opacity-70 group-hover:opacity-100 transition-opacity" : ""}`}
+        className={`absolute inset-0 w-full h-full object-cover ${
+          dim ? "opacity-70 group-hover:opacity-100 transition-opacity" : ""
+        }`}
       />
-      {dim && <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />}
+      {dim && (
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+      )}
     </div>
   );
-  return Object.assign(
-    require("react").forwardRef<HTMLVideoElement, TileProps>(C),
-    { displayName: "ReelTile" }
-  );
-})();
+});
