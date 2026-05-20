@@ -832,10 +832,10 @@ function Pricing() {
 
 function ContactsSection() {
   const items = [
-    { label: "Telegram", value: "@alexandramarchenkoo", href: "https://t.me/alexandramarchenkoo" },
-    { label: "WhatsApp", value: "+7 927 020 41 61", href: "https://wa.me/79270204161" },
-    { label: "Instagram", value: "@alexandramarchenkoo", href: "https://instagram.com/alexandramarchenkoo" },
-    { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
+    { label: "Telegram", value: "@alexandramarchenkoo", href: SITE.telegramUrl },
+    { label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl },
+    { label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
+    { label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl },
   ];
   return (
     <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">

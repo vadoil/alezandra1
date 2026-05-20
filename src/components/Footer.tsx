@@ -32,23 +32,18 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>{SITE.studio}</li>
               <li>
-                <a href={`tel:${SITE.phoneHref}`} className="hover:text-primary transition-colors">
-                  {SITE.phone}
-                </a>
-              </li>
-              <li>
-                <a href={SITE.instagramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
-                  Instagram: @{SITE.instagram}
-                </a>
-              </li>
-              <li>
                 <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
                   Telegram: {SITE.telegram}
                 </a>
               </li>
               <li>
-                <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
-                  WhatsApp
+                <a href={SITE.youtubeUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                  YouTube: @{SITE.youtube}
+                </a>
+              </li>
+              <li>
+                <a href={SITE.instagramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                  Нельзягарм: @{SITE.instagram}
                 </a>
               </li>
               <li>
