@@ -140,7 +140,7 @@ function Hero() {
           </div>
 
           {/* Фото для mobile/tablet */}
-          <div className="lg:hidden order-2 relative z-0 -mt-3">
+          <div className="lg:hidden order-2 relative z-0 -mt-8">
             <img
               src={heroSculpture}
               alt="Александра Марченко"
