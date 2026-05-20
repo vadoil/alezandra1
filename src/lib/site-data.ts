@@ -6,7 +6,7 @@ export const SITE = {
   tagline: "Снимаю боли в спине за одну тренировку и возвращаю королевскую осанку",
   instagram: "alexandra_marchenkoo",
   instagramUrl: "https://www.instagram.com/alexandra_marchenkoo?igsh=MTBoNXV2aGNuNWIweA==",
-  instagramLabel: "Нельзягарм",
+  instagramLabel: "GRAM",
   telegram: "@alexandramarchenkoo",
   telegramUrl: "https://t.me/alexandramarchenkoo",
   vk: "alexandrramarchenko",

@@ -43,7 +43,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={SITE.instagramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
-                  Нельзягарм: @{SITE.instagram}
+                  GRAM: @{SITE.instagram}
                 </a>
               </li>
               <li>

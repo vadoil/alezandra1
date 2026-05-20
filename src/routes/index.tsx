@@ -197,8 +197,8 @@ function Hero() {
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
               </svg>
-              <span className="group-hover:hidden">Instagram</span>
-              <span className="hidden group-hover:inline">Нельзягарм</span>
+              <span className="group-hover:hidden">GRAM</span>
+              <span className="hidden group-hover:inline">GRAM</span>
             </a>
           </div>
 
@@ -865,7 +865,7 @@ function ContactsSection() {
   const items = [
     { label: "Telegram", value: "@alexandramarchenkoo", href: SITE.telegramUrl },
     { label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl },
-    { label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
+    { label: "GRAM", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
     { label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl },
   ];
   return (
