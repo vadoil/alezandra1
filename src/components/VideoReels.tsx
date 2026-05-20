@@ -1,7 +1,8 @@
 import { forwardRef, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
-import video1 from "/videos/video-1.mp4?url";
-import video2 from "/videos/video-2.mp4?url";
+
+const video1 = "/videos/video-1.mp4";
+const video2 = "/videos/video-2.mp4";
 
 type Reel = {
   src: string;
