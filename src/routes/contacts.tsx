@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, Instagram, Send, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
+import { Instagram, Send, MessageCircle, Youtube, MapPin, Mail, Clock } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 import studioSpace from "@/assets/studio-space.jpg";
 import { FinalCta } from "@/components/FinalCta";
@@ -18,10 +18,9 @@ export const Route = createFileRoute("/contacts")({
 });
 
 const CHANNELS = [
-  { icon: Phone, label: "Телефон", value: SITE.phone, href: `tel:${SITE.phoneHref}`, hint: "Звонок · 10:00–21:00" },
   { icon: Send, label: "Telegram", value: SITE.telegram, href: SITE.telegramUrl, hint: "Самый быстрый ответ" },
-  { icon: MessageCircle, label: "WhatsApp", value: SITE.phone, href: SITE.whatsappUrl, hint: "Сообщение или голосовое" },
-  { icon: Instagram, label: "Instagram", value: `@${SITE.instagram}`, href: SITE.instagramUrl, hint: "Практика · истории · отзывы" },
+  { icon: Youtube, label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl, hint: "Практики и материалы" },
+  { icon: Instagram, label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl, hint: "Практика · истории · отзывы" },
   { icon: MessageCircle, label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl, hint: "Сообщения ВК" },
   { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, hint: "Для подробных вопросов" },
 ];

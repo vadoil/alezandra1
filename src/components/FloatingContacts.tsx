@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Send, MessageCircle, Phone, X } from "lucide-react";
+import { Send, MessageCircle, Youtube, X } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 /**
@@ -17,11 +17,11 @@ export function FloatingContacts() {
 
   const items = [
     { label: "Telegram", href: SITE.telegramUrl, color: "#229ED9", icon: <Send size={16} /> },
-    { label: "WhatsApp", href: SITE.whatsappUrl, color: "#25D366", icon: <MessageCircle size={16} /> },
+    { label: "YouTube", href: SITE.youtubeUrl, color: "#FF0000", icon: <Youtube size={16} /> },
     {
-      label: "Instagram",
+      label: "Нельзягарм",
       href: SITE.instagramUrl,
-      color: "#E1306C",
+      color: "#1a1a1a",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -40,7 +40,6 @@ export function FloatingContacts() {
         </svg>
       ),
     },
-    { label: "Позвонить", href: `tel:${SITE.phoneHref}`, color: "#C9622A", icon: <Phone size={16} /> },
   ];
 
   return (

@@ -115,9 +115,11 @@ function Hero() {
           {/* Левая колонка — заголовок */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative z-10 flex flex-col justify-start lg:justify-center gap-3 lg:gap-8">
             <h1
-              className="font-display font-bold text-[1.35rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full"
+              className="font-display font-bold text-[2.1rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-[0.01em] uppercase w-full"
             >
-              Сила. Гибкость. Тело, которое диктует правила.
+              <span className="block">Сила.</span>
+              <span className="block mt-2 md:mt-3">Гибкость.</span>
+              <span className="block mt-2 md:mt-3">Тело, которое диктует правила.</span>
             </h1>
             <ul className="hidden lg:flex flex-col gap-3 text-xs md:text-sm uppercase tracking-[0.26em] text-ink/80">
               {[
@@ -169,6 +171,33 @@ function Hero() {
               className="w-full h-auto object-cover select-none rounded-sm"
               draggable={false}
             />
+          </div>
+
+          {/* Соцсети-кнопки для mobile */}
+          <div className="lg:hidden order-3 mt-3 grid grid-cols-2 gap-3">
+            <a
+              href={SITE.youtubeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-[#FF0000] text-white text-xs uppercase tracking-[0.2em] font-medium transition-transform hover:scale-[1.02]"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+              YouTube
+            </a>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-ink text-cream text-xs uppercase tracking-[0.2em] font-medium grayscale hover:grayscale-0 hover:bg-gradient-to-tr hover:from-[#feda75] hover:via-[#d62976] hover:to-[#4f5bd5] transition-all duration-500"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+              </svg>
+              <span className="group-hover:hidden">Instagram</span>
+              <span className="hidden group-hover:inline">Нельзягарм</span>
+            </a>
           </div>
 
           {/* Фото — по центру экрана, привязано к нижней линии */}
@@ -832,10 +861,10 @@ function Pricing() {
 
 function ContactsSection() {
   const items = [
-    { label: "Telegram", value: "@alexandramarchenkoo", href: "https://t.me/alexandramarchenkoo" },
-    { label: "WhatsApp", value: "+7 927 020 41 61", href: "https://wa.me/79270204161" },
-    { label: "Instagram", value: "@alexandramarchenkoo", href: "https://instagram.com/alexandramarchenkoo" },
-    { label: "Телефон", value: "+7 927 020 41 61", href: "tel:+79270204161" },
+    { label: "Telegram", value: "@alexandramarchenkoo", href: SITE.telegramUrl },
+    { label: "YouTube", value: `@${SITE.youtube}`, href: SITE.youtubeUrl },
+    { label: "Нельзягарм", value: `@${SITE.instagram}`, href: SITE.instagramUrl },
+    { label: "ВКонтакте", value: SITE.vk, href: SITE.vkUrl },
   ];
   return (
     <section id="contacts" className="relative overflow-hidden py-14 md:py-20 bg-ink text-cream">
