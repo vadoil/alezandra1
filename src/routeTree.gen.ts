@@ -9,10 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as RetreatsRouteImport } from './routes/retreats'
 import { Route as ProgramRouteImport } from './routes/program'
-import { Route as OnlineRouteImport } from './routes/online'
-import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as DirectionsRouteImport } from './routes/directions'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as ContactsRouteImport } from './routes/contacts'
@@ -22,24 +19,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
 import { Route as CoursesSlugRouteImport } from './routes/courses.$slug'
 
-const RetreatsRoute = RetreatsRouteImport.update({
-  id: '/retreats',
-  path: '/retreats',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProgramRoute = ProgramRouteImport.update({
   id: '/program',
   path: '/program',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OnlineRoute = OnlineRouteImport.update({
-  id: '/online',
-  path: '/online',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OfflineRoute = OfflineRouteImport.update({
-  id: '/offline',
-  path: '/offline',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DirectionsRoute = DirectionsRouteImport.update({
@@ -90,10 +72,7 @@ export interface FileRoutesByFullPath {
   '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
-  '/offline': typeof OfflineRoute
-  '/online': typeof OnlineRoute
   '/program': typeof ProgramRoute
-  '/retreats': typeof RetreatsRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
 }
@@ -104,10 +83,7 @@ export interface FileRoutesByTo {
   '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
-  '/offline': typeof OfflineRoute
-  '/online': typeof OnlineRoute
   '/program': typeof ProgramRoute
-  '/retreats': typeof RetreatsRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
 }
@@ -119,10 +95,7 @@ export interface FileRoutesById {
   '/contacts': typeof ContactsRoute
   '/courses': typeof CoursesRouteWithChildren
   '/directions': typeof DirectionsRoute
-  '/offline': typeof OfflineRoute
-  '/online': typeof OnlineRoute
   '/program': typeof ProgramRoute
-  '/retreats': typeof RetreatsRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
 }
@@ -135,10 +108,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/courses'
     | '/directions'
-    | '/offline'
-    | '/online'
     | '/program'
-    | '/retreats'
     | '/courses/$slug'
     | '/programs/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -149,10 +119,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/courses'
     | '/directions'
-    | '/offline'
-    | '/online'
     | '/program'
-    | '/retreats'
     | '/courses/$slug'
     | '/programs/$slug'
   id:
@@ -163,10 +130,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/courses'
     | '/directions'
-    | '/offline'
-    | '/online'
     | '/program'
-    | '/retreats'
     | '/courses/$slug'
     | '/programs/$slug'
   fileRoutesById: FileRoutesById
@@ -178,41 +142,17 @@ export interface RootRouteChildren {
   ContactsRoute: typeof ContactsRoute
   CoursesRoute: typeof CoursesRouteWithChildren
   DirectionsRoute: typeof DirectionsRoute
-  OfflineRoute: typeof OfflineRoute
-  OnlineRoute: typeof OnlineRoute
   ProgramRoute: typeof ProgramRoute
-  RetreatsRoute: typeof RetreatsRoute
   ProgramsSlugRoute: typeof ProgramsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/retreats': {
-      id: '/retreats'
-      path: '/retreats'
-      fullPath: '/retreats'
-      preLoaderRoute: typeof RetreatsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/program': {
       id: '/program'
       path: '/program'
       fullPath: '/program'
       preLoaderRoute: typeof ProgramRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/online': {
-      id: '/online'
-      path: '/online'
-      fullPath: '/online'
-      preLoaderRoute: typeof OnlineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/offline': {
-      id: '/offline'
-      path: '/offline'
-      fullPath: '/offline'
-      preLoaderRoute: typeof OfflineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/directions': {
@@ -292,10 +232,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactsRoute: ContactsRoute,
   CoursesRoute: CoursesRouteWithChildren,
   DirectionsRoute: DirectionsRoute,
-  OfflineRoute: OfflineRoute,
-  OnlineRoute: OnlineRoute,
   ProgramRoute: ProgramRoute,
-  RetreatsRoute: RetreatsRoute,
   ProgramsSlugRoute: ProgramsSlugRoute,
 }
 export const routeTree = rootRouteImport

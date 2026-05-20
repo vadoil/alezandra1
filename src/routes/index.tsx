@@ -6,8 +6,6 @@ import alexReclining from "@/assets/alex-reclining.jpg";
 import heroImg from "@/assets/alex-1.jpg";
 import aboutImg from "@/assets/alex-10.jpg";
 import statueAesthetic from "@/assets/statue-aesthetic.png";
-import onlineImg from "@/assets/online-practice.jpg";
-import offlineImg from "@/assets/offline-class.jpg";
 import consultationImg from "@/assets/alex-3.jpg";
 import courseBeginner from "@/assets/alex-2.jpg";
 import courseBack from "@/assets/alex-7.jpg";
@@ -147,18 +145,8 @@ function Hero() {
               className="block w-full h-auto max-h-[160vh] object-contain mx-auto select-none -mb-px"
               draggable={false}
             />
-            <div className="relative h-[3px] bg-ink w-full">
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream px-3 flex items-center gap-2 text-ink">
-                <svg width="48" height="12" viewBox="0 0 48 12" fill="none">
-                  <path d="M0 6 H16" stroke="currentColor" strokeWidth="1.2" />
-                  <circle cx="20" cy="6" r="1.2" fill="currentColor" />
-                  <circle cx="24" cy="6" r="3" stroke="currentColor" strokeWidth="1.2" fill="none" />
-                  <circle cx="24" cy="6" r="1" fill="currentColor" />
-                  <circle cx="28" cy="6" r="1.2" fill="currentColor" />
-                  <path d="M32 6 H48" stroke="currentColor" strokeWidth="1.2" />
-                </svg>
-              </span>
-            </div>
+            <div className="h-px bg-ink/70 w-full" />
+
           </div>
 
           {/* Иконки-преимущества для mobile */}
@@ -580,75 +568,6 @@ function Consultations() {
   );
 }
 
-function Formats() {
-  return (
-    <section className="py-14 md:py-20">
-      <div className="container-x">
-        <div className="max-w-2xl mb-16">
-          <p className="eyebrow mb-4">Формат</p>
-          <h2 className="h-section">Онлайн или в «Сфере»</h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Можно выбрать одно. Можно совмещать. Я помогу подобрать ритм.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Reveal>
-            <div className="bg-cream border border-ink/5 rounded-sm overflow-hidden flex flex-col h-full">
-              <img
-                src={onlineImg}
-                alt="Онлайн-практика"
-                loading="lazy"
-                width={1280}
-                height={960}
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-2xl mb-3">Онлайн</h3>
-                <p className="text-muted-foreground mb-6">
-                  Живые встречи и записи. Свобода ритма и места.
-                </p>
-                <ul className="space-y-2 mb-8 text-sm">
-                  <li>· Удобно из любой точки</li>
-                  <li>· Записи остаются у вас</li>
-                  <li>· Поддержка между встречами</li>
-                </ul>
-                <Link to="/online" className="btn-outline self-start mt-auto">
-                  Подробнее об онлайн
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="bg-cream border border-ink/5 rounded-sm overflow-hidden flex flex-col h-full">
-              <img
-                src={offlineImg}
-                alt="Оффлайн в «Сфере»"
-                loading="lazy"
-                width={1600}
-                height={1067}
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-2xl mb-3">Оффлайн в «Сфере»</h3>
-                <p className="text-muted-foreground mb-6">
-                  Живая практика, контакт и пространство для глубины.
-                </p>
-                <ul className="space-y-2 mb-8 text-sm">
-                  <li>· Личная коррекция от Александры</li>
-                  <li>· Атмосфера центра «Сфера»</li>
-                  <li>· Группы и индивидуальные классы</li>
-                </ul>
-                <Link to="/offline" className="btn-outline self-start mt-auto">
-                  Расписание оффлайн
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Testimonials() {
   return (

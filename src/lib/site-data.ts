@@ -23,9 +23,6 @@ export const NAV = [
   { to: "/courses", label: "Курсы" },
   { to: "/program", label: "VIP" },
   { to: "/consultations", label: "Консультации" },
-  { to: "/online", label: "Онлайн" },
-  { to: "/offline", label: "Оффлайн" },
-  { to: "/retreats", label: "Туры" },
   { to: "/contacts", label: "Контакты" },
 ] as const;
 
@@ -64,13 +61,13 @@ export const SEGMENTS = [
     title: "Мне нужен онлайн",
     text: "Хочу заниматься из дома, в своём ритме, но с качественной методикой.",
     cta: "Онлайн-формат",
-    to: "/online",
+    to: "/directions",
   },
   {
     title: "Хочу оффлайн в «Сфере»",
     text: "Важны живая практика, пространство и контакт с преподавателем.",
     cta: "Оффлайн-классы",
-    to: "/offline",
+    to: "/directions",
   },
 ];
 
