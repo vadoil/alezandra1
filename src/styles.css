@@ -32,6 +32,7 @@
   --color-sand: var(--sand);
   --color-clay: var(--clay);
   --color-ink: var(--ink);
+  --color-gold: var(--gold);
   --font-display: 'Montserrat', system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Montserrat', system-ui, sans-serif;
@@ -45,6 +46,7 @@
   --sand: oklch(0.96 0 0);                 /* off-white секции */
   --clay: oklch(0.98 0 0);                 /* почти белый */
   --ink: oklch(0.12 0 0);                  /* почти чёрный */
+  --gold: oklch(0.78 0.13 78);             /* акцент VIP */
 
   --background: var(--cream);
   --foreground: var(--ink);
