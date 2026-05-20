@@ -144,18 +144,20 @@ function Hero() {
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="block w-full h-auto max-h-[160vh] object-contain mx-auto select-none"
+              className="block w-full h-auto max-h-[160vh] object-contain mx-auto select-none -mb-px"
               draggable={false}
             />
-            <div className="mt-1 flex items-center gap-3">
-              <span className="h-px flex-1 bg-ink/30" />
-              <svg width="22" height="10" viewBox="0 0 22 10" fill="none" className="text-ink/50">
-                <path d="M0 5 H7" stroke="currentColor" strokeWidth="1" />
-                <circle cx="11" cy="5" r="2.4" stroke="currentColor" strokeWidth="1" fill="none" />
-                <circle cx="11" cy="5" r="0.8" fill="currentColor" />
-                <path d="M15 5 H22" stroke="currentColor" strokeWidth="1" />
-              </svg>
-              <span className="h-px flex-1 bg-ink/30" />
+            <div className="relative h-[3px] bg-ink w-full">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream px-3 flex items-center gap-2 text-ink">
+                <svg width="48" height="12" viewBox="0 0 48 12" fill="none">
+                  <path d="M0 6 H16" stroke="currentColor" strokeWidth="1.2" />
+                  <circle cx="20" cy="6" r="1.2" fill="currentColor" />
+                  <circle cx="24" cy="6" r="3" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                  <circle cx="24" cy="6" r="1" fill="currentColor" />
+                  <circle cx="28" cy="6" r="1.2" fill="currentColor" />
+                  <path d="M32 6 H48" stroke="currentColor" strokeWidth="1.2" />
+                </svg>
+              </span>
             </div>
           </div>
 
