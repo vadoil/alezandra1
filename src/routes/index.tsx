@@ -77,15 +77,15 @@ function Home() {
   return (
     <>
       <Hero />
+      <Programs />
+      <Story />
       <FreeFirstBanner />
       <GalleryStrip />
       {/* <Courses /> — временно скрыт */}
-      <Programs />
       {/* <BookingSchedule /> — в архив */}
       {/* <VideoBlock /> — в архив */}
       {/* <Pricing /> — временно скрыт */}
       <TrustBar />
-      {/* <Story /> — в архив */}
       <Segments />
       <Directions />
       <Consultations />
