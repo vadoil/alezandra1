@@ -17,14 +17,17 @@ export const SITE = {
   studio: "Центр «Сфера», Санкт-Петербург",
 };
 
-export const NAV = [
+type NavItem = { to: string; label: string; icon?: "home" | "crown" };
+
+export const NAV: NavItem[] = [
+  { to: "/", label: "Главная", icon: "home" },
   { to: "/about", label: "Обо мне" },
   { to: "/directions", label: "Направления" },
   { to: "/courses", label: "Курсы" },
-  { to: "/program", label: "VIP" },
+  { to: "/program", label: "VIP", icon: "crown" },
   { to: "/consultations", label: "Консультации" },
   { to: "/contacts", label: "Контакты" },
-] as const;
+];
 
 export const TRUST = [
   { kicker: "Опыт", value: "8 лет практики в йоге и фитнесе" },

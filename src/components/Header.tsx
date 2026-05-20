@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Crown } from "lucide-react";
 import { NAV, SITE } from "@/lib/site-data";
 
 export function Header() {
@@ -33,16 +33,20 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-5 xl:gap-7 mr-6 whitespace-nowrap">
-          {NAV.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="text-sm text-ink/75 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV.map((item) => {
+            const Icon = item.icon === "home" ? Home : item.icon === "crown" ? Crown : null;
+            return (
+              <Link
+                key={item.to}
+                to={item.to as any}
+                className="text-sm text-ink/75 hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                activeProps={{ className: "text-primary" }}
+              >
+                {Icon && <Icon size={item.icon === "crown" ? 15 : 16} className={item.icon === "crown" ? "text-primary" : ""} />}
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden lg:block">
@@ -63,16 +67,20 @@ export function Header() {
       {open && (
         <div className="lg:hidden bg-cream border-t border-ink/5">
           <div className="container-x py-6 flex flex-col gap-4">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="text-base text-ink/80"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV.map((item) => {
+              const Icon = item.icon === "home" ? Home : item.icon === "crown" ? Crown : null;
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to as any}
+                  onClick={() => setOpen(false)}
+                  className="text-base text-ink/80 inline-flex items-center gap-2"
+                >
+                  {Icon && <Icon size={16} className={item.icon === "crown" ? "text-primary" : ""} />}
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
               to="/consultations"
               onClick={() => setOpen(false)}

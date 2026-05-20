@@ -1,165 +1,247 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
-import studioImg from "@/assets/alex-6.jpg";
-import practiceImg from "@/assets/alex-8.jpg";
-import { FaqSection } from "@/components/FaqSection";
+import { Check, Crown, Sparkles, MessageCircle, Activity, Apple, ShieldCheck, ArrowRight } from "lucide-react";
+import heroImg from "@/assets/alex-6.jpg";
+import detailImg from "@/assets/alex-8.jpg";
+import portraitImg from "@/assets/alex-9.jpg";
+import { Reveal } from "@/components/Reveal";
 import { FinalCta } from "@/components/FinalCta";
-import { TESTIMONIALS } from "@/lib/site-data";
+import { PROGRAMS, SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/program")({
   head: () => ({
     meta: [
-      { title: "«Полный путь» — флагманская программа Александры Марченко" },
-      { name: "description", content: "12 недель сопровождения: онлайн + оффлайн в «Сфере». Самая глубокая программа практики и восстановления." },
-      { property: "og:title", content: "Полный путь: онлайн + оффлайн" },
-      { property: "og:description", content: "Флагманская программа Александры Марченко — 12 недель сопровождения." },
+      { title: "VIP «Архитектор тела» — наставничество Александры Марченко" },
+      { name: "description", content: "Тотальное наставничество: инженерный аудит и пересборка тела. 10 персональных сессий в месяц, личный контакт 24/7 и протокол питания." },
+      { property: "og:title", content: "VIP «Архитектор тела»" },
+      { property: "og:description", content: "Персональное наставничество. 50 000 ₽ / мес. Доступ после предварительного разбора." },
+      { property: "og:image", content: heroImg },
     ],
   }),
-  component: Program,
+  component: ProgramVIP,
 });
 
-function Program() {
+function ProgramVIP() {
+  const vip = PROGRAMS.find((p) => p.slug === "vip-architect")!;
+
+  const pillars = [
+    {
+      icon: Activity,
+      title: "Инженерная диагностика",
+      text: "Находим истинные причины зажимов и болей, а не просто тянем мышцы.",
+    },
+    {
+      icon: Sparkles,
+      title: "10 персональных сессий / мес",
+      text: "Прямой эфир с коррекцией каждого миллиметра движения.",
+    },
+    {
+      icon: MessageCircle,
+      title: "Личный контакт 24/7",
+      text: "Мой прямой контакт в твоём доступе. Твой прогресс — моя ответственность.",
+    },
+    {
+      icon: Apple,
+      title: "Протокол питания",
+      text: "Под твои реальные потребности, ритм и цели.",
+    },
+  ];
+
   return (
     <>
-      <section
-        className="pt-24 pb-24 md:py-40 bg-ink text-cream relative overflow-hidden"
-      >
-        <img src={studioImg} alt="" loading="lazy" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-25" />
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-ink text-cream pt-32 pb-24 md:pt-40 md:pb-32">
+        <img src={heroImg} alt="" loading="eager" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/70 to-ink" />
         <div className="container-x relative">
           <div className="max-w-3xl">
-            <p className="eyebrow text-primary mb-6">Флагманская программа</p>
-            <h1 className="h-display text-cream">
-              Полный путь: <br />
-              <span className="font-serif-italic text-primary">онлайн + оффлайн</span>
-            </h1>
-            <p className="mt-7 text-xl text-cream/75 leading-relaxed">
-              12 недель сопровождения. Самая глубокая программа Александры — для тех, кто готов вложиться в системную и зрелую практику.
+            <Reveal>
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/50 rounded-full text-primary text-[11px] uppercase tracking-[0.25em] mb-8">
+                <Crown size={14} /> VIP · Только по разбору
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h1 className="h-display text-cream leading-[0.95]">
+                Архитектор<br />
+                <span className="font-serif-italic text-primary">тела</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mt-8 text-xl md:text-2xl text-cream/80 leading-relaxed max-w-2xl">
+                Тотальное наставничество — инженерный аудит и пересборка твоего тела.
+              </p>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="mt-12 flex flex-wrap items-center gap-6">
+                <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className="btn-primary">
+                  Отправить анкету
+                </a>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-3xl md:text-4xl text-primary">50 000 ₽</span>
+                  <span className="text-cream/60 text-sm">/ мес</span>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* POSITIONING */}
+      <section className="py-24 md:py-32 bg-cream">
+        <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <Reveal className="lg:col-span-7">
+            <p className="eyebrow mb-5">Позиционирование</p>
+            <h2 className="h-section leading-tight">
+              Для тех, кто понимает: тело — <span className="font-serif-italic text-primary">фундамент личной власти</span> и успеха.
+            </h2>
+            <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+              {vip.diff}
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link to="/consultations" className="btn-primary">Оставить заявку</Link>
-              <a href="#about-program" className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-medium rounded-sm border border-cream/20 text-cream hover:border-primary hover:text-primary transition-all">Подробнее</a>
+          </Reveal>
+          <Reveal className="lg:col-span-5" delay={0.15}>
+            <img src={portraitImg} alt="Александра Марченко" width={900} height={1100} className="w-full aspect-[4/5] object-cover rounded-sm" />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PILLARS — 4 ключевых блока */}
+      <section className="py-24 md:py-32 bg-clay">
+        <div className="container-x">
+          <Reveal className="max-w-2xl mb-16">
+            <p className="eyebrow mb-4">Что внутри</p>
+            <h2 className="h-section">Четыре опоры наставничества</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-px bg-ink/10 border border-ink/10 rounded-sm overflow-hidden">
+            {pillars.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.08} className="bg-cream p-8 md:p-10">
+                <div className="flex items-start gap-5">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-ink text-primary flex items-center justify-center">
+                    <p.icon size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl mb-3">{p.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{p.text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* STAGES — путь */}
+      <section className="py-24 md:py-32 bg-cream">
+        <div className="container-x">
+          <Reveal className="max-w-2xl mb-16">
+            <p className="eyebrow mb-4">Путь</p>
+            <h2 className="h-section">Как мы работаем</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-12 gap-10 lg:gap-16">
+            <div className="md:col-span-5">
+              <img src={detailImg} alt="Практика" loading="lazy" width={900} height={1200} className="w-full aspect-[3/4] object-cover rounded-sm sticky top-28" />
+            </div>
+            <div className="md:col-span-7">
+              <ol className="space-y-10">
+                {vip.stages.map((s, i) => (
+                  <Reveal key={s.title} delay={i * 0.08}>
+                    <div className="border-l-2 border-primary/30 pl-8 relative">
+                      <span className="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-primary text-ink font-display text-xs flex items-center justify-center">
+                        {i + 1}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl mb-3">{s.title.replace(/^Этап \d+ · /, "")}</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">{s.text}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about-program" className="py-24 md:py-32">
-        <div className="container-x grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-4">Для кого</p>
-            <h2 className="h-section">Кому подойдёт</h2>
-          </div>
-          <div className="lg:col-span-7">
-            <ul className="space-y-4 text-lg">
+      {/* RESULT — итоги */}
+      <section className="py-24 md:py-32 bg-ink text-cream">
+        <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
+          <Reveal className="lg:col-span-5">
+            <p className="eyebrow text-primary mb-4">Результат</p>
+            <h2 className="h-section text-cream leading-tight">
+              Тело как <span className="font-serif-italic text-primary">точно собранный механизм</span>
+            </h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7" delay={0.15}>
+            <ul className="space-y-5">
               {[
-                "Прошли короткие курсы и хотите глубже",
-                "Готовы к регулярной системной практике",
-                "Хотите сочетать онлайн и живую работу в «Сфере»",
-                "Ищете персональное сопровождение, а не общую программу",
-                "Цените бережный, не агрессивный подход",
+                "Уходят хронические боли — потому что устранена их причина",
+                "Осанка становится новой нормой, а не задачей",
+                "Тело двигается экономично, легко и точно",
+                "Энергия и ресурс — на твои настоящие задачи",
+                "Привычка владеть телом — навсегда",
               ].map((x) => (
-                <li key={x} className="flex items-start gap-3"><Check size={18} className="text-primary mt-1.5 shrink-0" />{x}</li>
+                <li key={x} className="flex items-start gap-4 text-lg text-cream/85 border-b border-cream/10 pb-5">
+                  <Check size={20} className="text-primary mt-1 shrink-0" />
+                  {x}
+                </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="py-24 bg-clay">
-        <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6">
-            <img src={practiceImg} alt="Восстановительная практика" loading="lazy" width={1280} height={960} className="w-full aspect-[4/3] object-cover rounded-sm" />
-          </div>
-          <div className="lg:col-span-6 lg:pl-8">
-            <p className="eyebrow mb-4">Трансформация</p>
-            <h2 className="h-section">Ключевой результат</h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Зрелая, устойчивая практика, которая остаётся с вами. Не набор упражнений, а собственный способ возвращаться к телу — на годы вперёд.
+      {/* ACCESS — условия входа */}
+      <section className="py-24 md:py-32 bg-clay">
+        <div className="container-x max-w-4xl">
+          <Reveal className="text-center mb-12">
+            <ShieldCheck className="mx-auto text-primary mb-6" size={32} />
+            <p className="eyebrow mb-4">Условия входа</p>
+            <h2 className="h-section">Доступ — только после предварительного разбора</h2>
+            <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Я работаю не со всеми. Нам обоим важно совпасть по задаче, темпу и готовности к ответственности за собственное тело.
             </p>
-            <p className="mt-4 text-muted-foreground italic">
-              Почему одного курса мало: короткий курс даёт инструменты. Полный путь — собирает их в систему, которая работает в вашей жизни.
+          </Reveal>
+
+          <Reveal delay={0.15} className="bg-ink text-cream rounded-sm p-10 md:p-14 text-center">
+            <p className="text-sm uppercase tracking-[0.25em] text-cream/50 mb-4">Стоимость наставничества</p>
+            <div className="flex items-baseline justify-center gap-3 mb-8">
+              <span className="font-display text-5xl md:text-6xl text-primary">50 000 ₽</span>
+              <span className="text-cream/60">/ месяц</span>
+            </div>
+            <p className="text-cream/70 mb-10 max-w-md mx-auto">
+              Рассрочка обсуждается индивидуально на разборе. Формат — гибкий: онлайн, оффлайн или смешанно.
             </p>
-          </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className="btn-primary inline-flex items-center gap-2">
+                Отправить анкету <ArrowRight size={16} />
+              </a>
+              <Link to="/consultations" className="btn-outline border-cream text-cream hover:bg-cream hover:text-ink">
+                Сначала консультация
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
-        <div className="container-x">
-          <div className="max-w-2xl mb-16">
-            <p className="eyebrow mb-4">Что входит</p>
-            <h2 className="h-section">Структура программы</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { t: "Онлайн-компонент", d: "Еженедельные живые сессии, записи, короткие практики на каждый день, поддержка в чате." },
-              { t: "Оффлайн в «Сфере»", d: "Глубокие живые занятия раз в две недели — для коррекции, контакта и атмосферы." },
-              { t: "Персональная поддержка", d: "Индивидуальные онлайн-сессии, корректировки и обратная связь между встречами." },
-            ].map((x) => (
-              <div key={x.t} className="bg-clay border border-ink/5 p-8 rounded-sm">
-                <h3 className="text-xl mb-3">{x.t}</h3>
-                <p className="text-muted-foreground text-sm">{x.d}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 grid md:grid-cols-4 gap-6">
-            {[
-              { n: "01", t: "Диагностика", d: "Тело, образ жизни, цели и ограничения." },
-              { n: "02", t: "Фундамент", d: "Базовые блоки и дыхание. Первые недели." },
-              { n: "03", t: "Углубление", d: "Персонализация и работа с конкретным запросом." },
-              { n: "04", t: "Интеграция", d: "Собственная устойчивая практика на выходе." },
-            ].map((s) => (
-              <div key={s.n} className="border-t border-ink/15 pt-6">
-                <p className="eyebrow mb-3">Этап {s.n}</p>
-                <h4 className="text-lg mb-2">{s.t}</h4>
-                <p className="text-sm text-muted-foreground">{s.d}</p>
-              </div>
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-cream">
+        <div className="container-x max-w-3xl">
+          <Reveal>
+            <p className="eyebrow mb-4">Частые вопросы</p>
+            <h2 className="h-section mb-10">О наставничестве</h2>
+          </Reveal>
+          <div className="space-y-4">
+            {vip.faq.map((f, i) => (
+              <Reveal key={f.q} delay={i * 0.05}>
+                <details className="bg-clay border border-ink/5 rounded-sm p-6 group">
+                  <summary className="cursor-pointer list-none flex justify-between items-start gap-4 text-base md:text-lg">
+                    <span>{f.q}</span>
+                    <span className="text-primary text-2xl leading-none group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">{f.a}</p>
+                </details>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-clay">
-        <div className="container-x grid md:grid-cols-2 gap-12">
-          <div>
-            <p className="eyebrow mb-4">Результаты</p>
-            <h2 className="h-section">Что вы получаете</h2>
-            <ul className="mt-8 space-y-3">
-              {["Меньше напряжения и больше лёгкости в теле","Понятная личная практика на каждый день","Восстановленная нервная система и сон","Уверенность и контакт с собой","Привычка, которая остаётся"].map((x) => (
-                <li key={x} className="flex items-start gap-3"><Check size={16} className="text-primary mt-1.5" />{x}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="eyebrow mb-4">Не подойдёт</p>
-            <h2 className="h-section">Кому это не нужно</h2>
-            <ul className="mt-8 space-y-3 text-muted-foreground">
-              <li>· Вы ищете быстрый результат за неделю</li>
-              <li>· Хотите силовой фитнес или интенсивную нагрузку</li>
-              <li>· Не готовы к регулярной практике 12 недель</li>
-              <li>· Ищете групповой класс без индивидуальной работы</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container-x">
-          <p className="eyebrow mb-4">Отзывы</p>
-          <h2 className="h-section mb-12 max-w-2xl">Слова учеников программы</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {TESTIMONIALS.slice(0, 2).map((t, i) => (
-              <div key={i} className="bg-clay border border-ink/5 p-8 rounded-sm">
-                <p className="font-serif-italic text-xl leading-relaxed text-ink/85 mb-6">«{t.text}»</p>
-                <p className="text-sm font-medium">{t.name}</p>
-                <p className="text-xs text-muted-foreground mt-1">{t.format}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FaqSection />
       <FinalCta />
     </>
   );
