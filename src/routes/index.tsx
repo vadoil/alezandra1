@@ -140,11 +140,11 @@ function Hero() {
           </div>
 
           {/* Фото для mobile/tablet */}
-          <div className="lg:hidden order-2 relative z-0 border-b border-ink/15 -mt-2 -mx-[5vw]">
+          <div className="lg:hidden order-2 relative z-0 border-b border-ink/15">
             <img
               src={heroSculpture}
               alt="Александра Марченко"
-              className="block w-[110vw] max-w-none h-auto object-contain mx-auto select-none"
+              className="block w-full h-auto max-h-[110vh] object-contain mx-auto select-none"
               draggable={false}
             />
           </div>
