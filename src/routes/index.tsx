@@ -176,12 +176,12 @@ function Hero() {
           </div>
 
           {/* Соцсети-кнопки для mobile */}
-          <div className="lg:hidden order-3 mt-3 grid grid-cols-2 gap-3">
+          <div className="lg:hidden order-3 mt-10 grid grid-cols-2 gap-3">
             <a
               href={SITE.youtubeUrl}
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-[#FF0000] text-white text-xs uppercase tracking-[0.2em] font-medium transition-transform hover:scale-[1.02]"
+              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-[#5a2a2a] text-white/90 text-xs uppercase tracking-[0.2em] font-medium transition-transform hover:scale-[1.02]"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
               YouTube
@@ -190,15 +190,14 @@ function Hero() {
               href={SITE.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-ink text-cream text-xs uppercase tracking-[0.2em] font-medium grayscale hover:grayscale-0 hover:bg-gradient-to-tr hover:from-[#feda75] hover:via-[#d62976] hover:to-[#4f5bd5] transition-all duration-500"
+              className="group relative flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-neutral-500 text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-gradient-to-tr hover:from-[#feda75] hover:via-[#d62976] hover:to-[#4f5bd5] transition-all duration-500"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
               </svg>
-              <span className="group-hover:hidden">GRAM</span>
-              <span className="hidden group-hover:inline">GRAM</span>
+              <span>GRAM</span>
             </a>
           </div>
 
@@ -212,8 +211,10 @@ function Hero() {
           />
 
           {/* Правая колонка — текст и CTA */}
-          <div className="lg:col-span-3 order-3 relative z-10">
-            <p className="eyebrow mb-5">Body Frame · Авторский метод</p>
+          <div className="lg:col-span-3 order-3 relative z-10 mt-10 lg:mt-0">
+            <p className="font-display text-3xl md:text-4xl leading-[1.05] uppercase tracking-tight mb-7">
+              Body Frame<br /><span className="font-serif-italic normal-case tracking-normal text-primary">авторский метод</span>
+            </p>
             <p className="text-base text-ink/75 leading-relaxed mb-7 whitespace-pre-line">
               Тело — твоя главная визитка. {"\n"}
               Я учу чувствовать каждый миллиметр каркаса, убирать зажимы и выстраивать осанку, которая заставляет оборачиваться.
