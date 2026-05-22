@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <p className="font-serif-italic text-3xl text-cream leading-tight max-w-md">
-              «Моя задача — научить вас слышать тело раньше, чем оно начнёт болеть».
+              «Моя задача — сделать тело вашим главным активом».
             </p>
             <p className="mt-6 text-sm text-cream/50">— Александра Марченко</p>
           </div>
@@ -30,7 +30,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <p className="eyebrow text-primary mb-5">Контакты</p>
             <ul className="space-y-3 text-sm">
-              <li>{SITE.studio}</li>
+              <li>Санкт-Петербург</li>
               <li>
                 <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
                   Telegram: {SITE.telegram}
