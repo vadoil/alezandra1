@@ -16,6 +16,8 @@ export function VideoReels() {
 
   const total = REELS.length;
   const go = (dir: -1 | 1) => setActive((i) => (i + dir + total) % total);
+  const goPrev = () => go(-1);
+  const goNext = () => go(1);
 
   const toggleMute = () => {
     const next = !muted;
@@ -142,19 +144,19 @@ export function VideoReels() {
                   <div key={i} className="min-w-full px-1">
                     <div className="relative w-full aspect-[9/16] overflow-hidden rounded-sm bg-ink/60">
                       <video src={r.src} autoPlay loop muted={muted || i !== active} playsInline
-                        className="absolute inset-0 w-full h-full object-cover" />
+                        className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <button type="button" onClick={() => go(-1)} aria-label="Предыдущее"
-              className="absolute z-10 left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/80 backdrop-blur border border-cream/30 flex items-center justify-center text-cream">
+            <button type="button" onClick={goPrev} onTouchEnd={goPrev} aria-label="Предыдущее"
+              className="absolute z-20 left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronLeft size={20} />
             </button>
-            <button type="button" onClick={() => go(1)} aria-label="Следующее"
-              className="absolute z-10 right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/80 backdrop-blur border border-cream/30 flex items-center justify-center text-cream">
+            <button type="button" onClick={goNext} onTouchEnd={goNext} aria-label="Следующее"
+              className="absolute z-20 right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronRight size={20} />
             </button>
           </div>
