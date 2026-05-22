@@ -5,7 +5,7 @@ import { FinalCta } from "@/components/FinalCta";
 export const Route = createFileRoute("/directions")({
   head: () => ({
     meta: [
-      { title: "Направления — йога, йогатерапия, здоровая спина | Александра Марченко" },
+      { title: "Направления | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Йога с нуля, йогатерапия, здоровая спина, антистресс, персональная практика, онлайн и оффлайн." },
       { property: "og:title", content: "Направления работы — Александра Марченко" },
       { property: "og:description", content: "Семь направлений практики: от йоги с нуля до персональной йогатерапии." },
