@@ -10,7 +10,7 @@ import { PROGRAMS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/program")({
   head: () => ({
     meta: [
-      { title: "VIP «Архитектор тела» — наставничество Александры Марченко" },
+      { title: "VIP «Архитектор тела» | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Тотальное наставничество: инженерный аудит и пересборка тела. 10 персональных сессий в месяц, личный контакт 24/7 и протокол питания." },
       { property: "og:title", content: "VIP «Архитектор тела»" },
       { property: "og:description", content: "Персональное наставничество. 50 000 ₽ / мес. Доступ после предварительного разбора." },
