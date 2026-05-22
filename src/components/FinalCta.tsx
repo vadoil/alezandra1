@@ -6,7 +6,9 @@ export function FinalCta() {
       <div className="container-x text-center max-w-3xl mx-auto">
         <p className="eyebrow text-primary mb-6">Следующий шаг</p>
         <h2 className="h-section text-cream">
-          Начните свой путь к <span className="font-serif-italic">сильному телу и прямой спине.</span>
+          Начните свой путь к
+          <br />
+          <span className="font-serif-italic">сильному телу и прямой спине.</span>
         </h2>
         <p className="mt-6 text-cream/70 text-lg">
           Запишитесь на вводную консультацию или пройдите биомеханическую диагностику — я помогу подобрать формат, который подходит именно вам.
