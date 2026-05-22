@@ -34,7 +34,7 @@ export const Route = createFileRoute("/programs/$slug")({
     if (!p) return {};
     return {
       meta: [
-        { title: `${p.title} — программа Александры Марченко` },
+        { title: `${p.title} | Александра Марченко | построение тела | body frame` },
         { name: "description", content: p.tagline },
         { property: "og:title", content: `${p.title} — Александра Марченко` },
         { property: "og:description", content: p.tagline },

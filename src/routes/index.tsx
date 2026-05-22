@@ -55,7 +55,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Александра Марченко — йога и йогатерапия в Санкт-Петербурге" },
+      { title: "Александра Марченко | построение тела | body frame" },
       {
         name: "description",
         content:

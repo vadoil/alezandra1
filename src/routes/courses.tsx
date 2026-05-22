@@ -16,7 +16,7 @@ const PROGRAM_IMAGES: Record<string, string> = {
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "Курсы и программы | Александра Марченко" },
+      { title: "Курсы | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Три формата работы с телом: Spine-reset, Body Frame и VIP «Архитектор тела»." },
       { property: "og:title", content: "Курсы — Александра Марченко" },
       { property: "og:description", content: "От быстрого онлайн-урока до личного наставничества." },

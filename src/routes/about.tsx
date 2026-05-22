@@ -7,7 +7,7 @@ import { FinalCta } from "@/components/FinalCta";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Обо мне — Александра Марченко, преподаватель йоги и йогатерапии" },
+      { title: "Обо мне | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Путь от персонального тренера к йогатерапии. Бережный, осознанный и системный подход к практике." },
       { property: "og:title", content: "Обо мне — Александра Марченко" },
       { property: "og:description", content: "Бережный, осознанный и системный подход к йоге и йогатерапии." },
