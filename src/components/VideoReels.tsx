@@ -136,27 +136,25 @@ export function VideoReels() {
 
         {/* Mobile */}
         <div className="lg:hidden">
-          <div className="relative">
-            <div className="overflow-hidden rounded-sm">
-              <div className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${active * 100}%)` }}>
-                {REELS.map((r, i) => (
-                  <div key={i} className="min-w-full px-1">
-                    <div className="relative w-full aspect-[9/16] overflow-hidden rounded-sm bg-ink/60">
-                      <video src={r.src} autoPlay loop muted={muted || i !== active} playsInline
-                        className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="relative px-1">
+            <div className="relative w-full aspect-[9/16] overflow-hidden rounded-sm bg-ink/60">
+              <video
+                key={current.src}
+                src={current.src}
+                autoPlay
+                loop
+                muted={muted}
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              />
             </div>
 
-            <button type="button" onClick={goPrev} onTouchEnd={goPrev} aria-label="Предыдущее"
-              className="absolute z-20 left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
+            <button type="button" onClick={goPrev} aria-label="Предыдущее"
+              className="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronLeft size={20} />
             </button>
-            <button type="button" onClick={goNext} onTouchEnd={goNext} aria-label="Следующее"
-              className="absolute z-20 right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
+            <button type="button" onClick={goNext} aria-label="Следующее"
+              className="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronRight size={20} />
             </button>
           </div>
