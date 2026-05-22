@@ -25,9 +25,9 @@ function Consultations() {
             <p className="eyebrow mb-5">Консультации</p>
             <h1 className="font-display font-bold uppercase tracking-[0.01em] leading-[0.95] text-4xl md:text-5xl lg:text-6xl">Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты</h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Персональная встреча онлайн. Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
+              Я провожу диагностику онлайн, оцениваю состояние вашего тела и выстраиваю персональную стратегию развития для королевской осанки и тела мечты.
             </p>
-            <ConsultationDialog trigger={<button className="btn-primary mt-10">Пройти вводную консультацию</button>} />
+            <ConsultationDialog trigger={<button className="btn-primary mt-10">Записаться на вводную консультацию · 3000 ₽</button>} />
             <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
           </div>
           <div className="lg:col-span-6">
