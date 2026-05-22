@@ -6,7 +6,7 @@ export function FinalCta() {
       <div className="container-x text-center max-w-3xl mx-auto">
         <p className="eyebrow text-primary mb-6">Следующий шаг</p>
         <h2 className="h-section text-cream">
-          Начните спокойно. <span className="font-serif-italic">Без перегруза и сравнения.</span>
+          Начните свой путь к <span className="font-serif-italic">сильному телу и прямой спине.</span>
         </h2>
         <p className="mt-6 text-cream/70 text-lg">
           Запишитесь на вводную консультацию или пройдите биомеханическую диагностику — я помогу подобрать формат, который подходит именно вам.
@@ -15,7 +15,7 @@ export function FinalCta() {
           <ConsultationDialog
             trigger={
               <button className="inline-flex items-center justify-center gap-2 bg-cream text-ink px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] rounded-none border border-cream transition-all duration-300 hover:bg-transparent hover:text-cream">
-                Пройти вводную консультацию
+                Пройти вводную консультацию · 3000 ₽
               </button>
             }
           />
