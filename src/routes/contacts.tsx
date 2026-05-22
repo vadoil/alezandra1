@@ -82,8 +82,7 @@ function Contacts() {
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-cream">{SITE.studio}</p>
-                    <p className="text-cream/50 text-xs mt-1">Адрес и проход уточняются после записи</p>
+                    <p className="text-cream/50 text-xs">Адрес и проход уточняются после записи</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
