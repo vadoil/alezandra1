@@ -30,7 +30,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <p className="eyebrow text-primary mb-5">Контакты</p>
             <ul className="space-y-3 text-sm">
-              <li>{SITE.studio}</li>
+              <li>Санкт-Петербург</li>
               <li>
                 <a href={SITE.telegramUrl} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
                   Telegram: {SITE.telegram}
