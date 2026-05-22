@@ -7,7 +7,7 @@ import { FinalCta } from "@/components/FinalCta";
 export const Route = createFileRoute("/contacts")({
   head: () => ({
     meta: [
-      { title: "Контакты — Александра Марченко · йога и йогатерапия" },
+      { title: "Контакты | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Связаться с Александрой Марченко: телефон, Telegram, WhatsApp, Instagram. Центр «Сфера», Санкт-Петербург." },
       { property: "og:title", content: "Контакты — Александра Марченко" },
       { property: "og:description", content: "Запишитесь на вводную онлайн-консультацию — 1 час, 3 000 ₽." },
