@@ -558,9 +558,12 @@ function Consultations() {
           <p className="mt-4 text-lg text-muted-foreground">
             Я слушаю запрос, оцениваю состояние вашего тела на боли и зажимы и выстраиваю вам стратегию развития.
           </p>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Я провожу диагностику онлайн, оцениваю состояние вашего тела и выстраиваю персональную стратегию развития для королевской осанки и тела мечты.
+          </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link to="/consultations" className="btn-primary">
-              Записаться на консультацию
+              Записаться на вводную консультацию · 3000 ₽
             </Link>
           </div>
           <p className="mt-5 text-xs text-muted-foreground">
