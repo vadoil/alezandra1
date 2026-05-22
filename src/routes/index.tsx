@@ -87,7 +87,7 @@ function Home() {
       {/* <Pricing /> — временно скрыт */}
       <TrustBar />
       <Segments />
-      <Directions />
+      
       <Consultations />
       <Quiz />
       {/* <Formats /> — в архив */}
