@@ -7,7 +7,7 @@ import { ConsultationDialog } from "@/components/ConsultationDialog";
 export const Route = createFileRoute("/consultations")({
   head: () => ({
     meta: [
-      { title: "Консультация по йоге и йогатерапии | Александра Марченко" },
+      { title: "Консультация | Александра Марченко | построение тела | body frame" },
       { name: "description", content: "Персональная диагностическая встреча: оценка запроса, состояния и подбор безопасного формата практики." },
       { property: "og:title", content: "Консультация — Александра Марченко" },
       { property: "og:description", content: "Вводная онлайн-консультация: 1 час персональной работы с вашим запросом за 3 000 ₽." },
