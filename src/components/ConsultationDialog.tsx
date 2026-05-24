@@ -85,10 +85,20 @@ export function ConsultationDialog({ trigger }: Props) {
             rows={3}
             className="px-4 py-3 bg-white border border-ink/15 rounded-sm focus:outline-none focus:border-primary text-sm resize-none"
           />
+          {/* honeypot */}
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            className="hidden"
+            aria-hidden="true"
+          />
         </div>
         <DialogFooter className="mt-4">
-          <button onClick={submit} className="btn-primary w-full justify-center">
-            Отправить заявку <ArrowRight size={14} />
+          <button onClick={submit} disabled={loading} className="btn-primary w-full justify-center disabled:opacity-60">
+            {loading ? <><Loader2 size={14} className="animate-spin" /> Отправляем…</> : <>Отправить заявку <ArrowRight size={14} /></>}
           </button>
         </DialogFooter>
       </DialogContent>
