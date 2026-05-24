@@ -1,40 +1,82 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Volume2, VolumeX } from "lucide-react";
 
 const REELS = [
-  { src: "/videos/video-1.mp4", title: "Body Frame · Сила", description: "Силовая статика и выравнивание — фундамент осанки, которая заставляет оборачиваться." },
-  { src: "/videos/video-2.mp4", title: "Гибкость без перегруза", description: "Бережная мобилизация суставов и работа с дыханием — длинные мышцы, лёгкое тело." },
-  { src: "/videos/video-3.mp4", title: "Осанка и линия плеч", description: "Раскрытие грудного отдела и работа с лопатками — спина перестаёт ныть, шея удлиняется." },
-  { src: "/videos/video-4.mp4", title: "Лёгкий низ · сильный кор", description: "Глубокие мышцы живота и таза — рельеф появляется сам, когда есть правильная опора." },
-  { src: "/videos/video-5.mp4", title: "Ритуал в моменте", description: "Короткая практика, после которой тело собирается, а голова становится тише." },
+  { src: "/videos/video-1.mp4", poster: "/videos/poster-1.jpg", title: "Body Frame · Сила", description: "Силовая статика и выравнивание — фундамент осанки, которая заставляет оборачиваться." },
+  { src: "/videos/video-2.mp4", poster: "/videos/poster-2.jpg", title: "Гибкость без перегруза", description: "Бережная мобилизация суставов и работа с дыханием — длинные мышцы, лёгкое тело." },
+  { src: "/videos/video-3.mp4", poster: "/videos/poster-3.jpg", title: "Осанка и линия плеч", description: "Раскрытие грудного отдела и работа с лопатками — спина перестаёт ныть, шея удлиняется." },
+  { src: "/videos/video-4.mp4", poster: "/videos/poster-4.jpg", title: "Лёгкий низ · сильный кор", description: "Глубокие мышцы живота и таза — рельеф появляется сам, когда есть правильная опора." },
+  { src: "/videos/video-5.mp4", poster: "/videos/poster-5.jpg", title: "Ритуал в моменте", description: "Короткая практика, после которой тело собирается, а голова становится тише." },
 ];
+
+type ReelPlayerProps = {
+  src: string;
+  poster: string;
+  muted: boolean;
+  active: boolean;
+  className?: string;
+};
+
+function ReelPlayer({ src, poster, muted, active, className = "" }: ReelPlayerProps) {
+  const [loaded, setLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Пауза когда слайд неактивен
+  useEffect(() => {
+    if (!active && videoRef.current) videoRef.current.pause();
+  }, [active]);
+
+  const handlePlay = () => {
+    setLoaded(true);
+    requestAnimationFrame(() => {
+      videoRef.current?.play().catch(() => {});
+    });
+  };
+
+  return (
+    <div className={`relative w-full h-full ${className}`}>
+      <img
+        src={poster}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${loaded ? "opacity-0" : "opacity-100"}`}
+      />
+      {loaded && (
+        <video
+          ref={videoRef}
+          src={src}
+          poster={poster}
+          loop
+          muted={muted}
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
+      {!loaded && (
+        <button
+          type="button"
+          onClick={handlePlay}
+          aria-label="Воспроизвести видео"
+          className="absolute inset-0 flex items-center justify-center group/play"
+        >
+          <span className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+          <span className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-cream/95 text-ink flex items-center justify-center shadow-2xl transition-transform group-hover/play:scale-110 group-active/play:scale-95">
+            <Play size={26} className="ml-1 fill-current" />
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
 
 export function VideoReels() {
   const [active, setActive] = useState(0);
   const [muted, setMuted] = useState(true);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const total = REELS.length;
   const go = (dir: -1 | 1) => setActive((i) => (i + dir + total) % total);
-  const goPrev = () => go(-1);
-  const goNext = () => go(1);
-
-  const toggleMute = () => {
-    const next = !muted;
-    setMuted(next);
-    videoRefs.current.forEach((v, i) => {
-      if (v) v.muted = next || i !== active;
-    });
-  };
-
-  // Управляем play/pause и mute при смене активного
-  useEffect(() => {
-    videoRefs.current.forEach((v, i) => {
-      if (!v) return;
-      v.muted = muted || i !== active;
-      if (i === active) v.play().catch(() => {});
-    });
-  }, [active, muted]);
 
   const current = REELS[active];
   const nextIdx = (active + 1) % total;
@@ -94,7 +136,7 @@ export function VideoReels() {
                   className="w-14 h-14 rounded-full border border-cream/30 flex items-center justify-center text-cream hover:bg-cream hover:text-ink transition-colors">
                   <ChevronRight size={20} />
                 </button>
-                <button type="button" onClick={toggleMute} aria-label={muted ? "Включить звук" : "Выключить звук"}
+                <button type="button" onClick={() => setMuted((m) => !m)} aria-label={muted ? "Включить звук" : "Выключить звук"}
                   className="ml-2 w-14 h-14 rounded-full border border-cream/30 flex items-center justify-center text-cream hover:bg-cream hover:text-ink transition-colors">
                   {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
                 </button>
@@ -103,25 +145,20 @@ export function VideoReels() {
           </div>
 
           <div className="col-span-7 grid grid-cols-2 gap-5">
-            {/* Main video — постоянно смонтирован, src не меняется */}
             <div className="relative aspect-[9/16] overflow-hidden rounded-sm bg-ink/60 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
-              {REELS.map((r, i) => (
-                <video
-                  key={r.src}
-                  ref={(el) => { videoRefs.current[i] = el; }}
-                  src={r.src}
-                  autoPlay loop muted={muted || i !== active} playsInline
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                    i === active ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
-                />
-              ))}
+              <ReelPlayer
+                key={current.src}
+                src={current.src}
+                poster={current.poster}
+                muted={muted}
+                active
+              />
             </div>
 
             <button type="button" onClick={() => setActive(nextIdx)}
               className="relative group block aspect-[9/16] overflow-hidden rounded-sm bg-ink/40"
               aria-label="Открыть следующее видео">
-              <video src={REELS[nextIdx].src} autoPlay loop muted playsInline
+              <img src={REELS[nextIdx].poster} alt="" loading="lazy" decoding="async"
                 className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
               <div className="absolute inset-0 flex items-end p-5">
@@ -138,22 +175,20 @@ export function VideoReels() {
         <div className="lg:hidden">
           <div className="relative px-1">
             <div className="relative w-full aspect-[9/16] overflow-hidden rounded-sm bg-ink/60">
-              <video
+              <ReelPlayer
                 key={current.src}
                 src={current.src}
-                autoPlay
-                loop
+                poster={current.poster}
                 muted={muted}
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                active
               />
             </div>
 
-            <button type="button" onClick={goPrev} aria-label="Предыдущее"
+            <button type="button" onClick={() => go(-1)} aria-label="Предыдущее"
               className="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronLeft size={20} />
             </button>
-            <button type="button" onClick={goNext} aria-label="Следующее"
+            <button type="button" onClick={() => go(1)} aria-label="Следующее"
               className="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink/88 border border-cream/30 flex items-center justify-center text-cream pointer-events-auto touch-manipulation active:scale-95 transition-transform">
               <ChevronRight size={20} />
             </button>
@@ -171,7 +206,7 @@ export function VideoReels() {
                     }`} />
                 ))}
               </div>
-              <button type="button" onClick={toggleMute} aria-label={muted ? "Включить звук" : "Выключить звук"}
+              <button type="button" onClick={() => setMuted((m) => !m)} aria-label={muted ? "Включить звук" : "Выключить звук"}
                 className="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center text-cream">
                 {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
               </button>
