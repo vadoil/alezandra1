@@ -29,7 +29,11 @@ function Consultations() {
               «Тело не нужно ломать. Его нужно услышать — и собрать заново, с опорой на анатомию и дыхание.»
             </blockquote>
 
-            <ul className="mt-8 space-y-3 text-base md:text-lg text-ink/80">
+            <p className="mt-8 text-base md:text-lg text-muted-foreground leading-relaxed">
+              Я провожу диагностику онлайн, оцениваю состояние вашего тела и выстраиваю персональную стратегию развития для королевской осанки и тела мечты.
+            </p>
+
+            <ul className="mt-6 space-y-3 text-base md:text-lg text-ink/80">
               <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> диагностика осанки и движения онлайн</li>
               <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> разбор запроса, ограничений и образа жизни</li>
               <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> персональная стратегия и следующий шаг</li>
