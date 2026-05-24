@@ -20,15 +20,27 @@ function Consultations() {
   return (
     <>
       <section className="pt-16 pb-24 md:py-32">
-        <div className="container-x grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6">
+        <div className="container-x grid lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-6 lg:sticky lg:top-28">
             <p className="eyebrow mb-5">Консультации</p>
             <h1 className="font-display font-bold uppercase tracking-[0.01em] leading-[0.95] text-4xl md:text-5xl lg:text-6xl">Первый <span className="font-serif-italic text-primary">шаг</span> к телу мечты</h1>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Я провожу диагностику онлайн, оцениваю состояние вашего тела и выстраиваю персональную стратегию развития для королевской осанки и тела мечты.
-            </p>
-            <ConsultationDialog trigger={<button className="btn-primary mt-10">Записаться на вводную консультацию · 3000 ₽</button>} />
-            <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · 3 000 ₽</p>
+
+            <blockquote className="mt-8 border-l-2 border-primary pl-5 font-serif-italic text-xl md:text-2xl leading-snug text-ink/85">
+              «Тело не нужно ломать. Его нужно услышать — и собрать заново, с опорой на анатомию и дыхание.»
+            </blockquote>
+
+            <ul className="mt-8 space-y-3 text-base md:text-lg text-ink/80">
+              <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> диагностика осанки и движения онлайн</li>
+              <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> разбор запроса, ограничений и образа жизни</li>
+              <li className="flex gap-3"><span className="font-serif-italic text-primary shrink-0">—</span> персональная стратегия и следующий шаг</li>
+            </ul>
+
+            <ConsultationDialog trigger={
+              <button className="btn-primary mt-10 leading-tight text-center">
+                <span>Записаться на вводную консультацию<br />3 000 ₽</span>
+              </button>
+            } />
+            <p className="mt-4 text-xs text-muted-foreground">1 час · онлайн · без давления и продаж</p>
           </div>
           <div className="lg:col-span-6">
             <img src={consultationImg} alt="Консультация" width={1280} height={1600} className="w-full aspect-[4/5] object-cover rounded-sm" />

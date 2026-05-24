@@ -562,8 +562,8 @@ function Consultations() {
             Я провожу диагностику онлайн, оцениваю состояние вашего тела и выстраиваю персональную стратегию развития для королевской осанки и тела мечты.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/consultations" className="btn-primary">
-              Записаться на вводную консультацию · 3000 ₽
+            <Link to="/consultations" className="btn-primary leading-tight text-center">
+              <span>Записаться на вводную консультацию<br />3 000 ₽</span>
             </Link>
           </div>
           <p className="mt-5 text-xs text-muted-foreground">
