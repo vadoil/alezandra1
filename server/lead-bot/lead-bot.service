@@ -1,0 +1,16 @@
+[Unit]
+Description=Alexandra Marchenko · lead bot (Telegram)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/lead-bot
+EnvironmentFile=/opt/lead-bot/.env
+ExecStart=/usr/bin/node /opt/lead-bot/index.mjs
+Restart=on-failure
+RestartSec=5
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
