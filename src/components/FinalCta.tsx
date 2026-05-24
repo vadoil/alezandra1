@@ -16,8 +16,9 @@ export function FinalCta() {
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ConsultationDialog
             trigger={
-              <button className="inline-flex items-center justify-center gap-2 bg-cream text-ink px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] rounded-none border border-cream transition-all duration-300 hover:bg-transparent hover:text-cream">
-                Пройти вводную консультацию · 3000 ₽
+              <button className="inline-flex flex-col items-center justify-center gap-1 bg-cream text-ink px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] rounded-none border border-cream transition-all duration-300 hover:bg-transparent hover:text-cream leading-tight">
+                <span>Пройти вводную консультацию</span>
+                <span>3 000 ₽</span>
               </button>
             }
           />
