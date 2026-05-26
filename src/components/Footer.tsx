@@ -55,9 +55,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-cream/40">
-          <p>© {new Date().getFullYear()} {SITE.name}. Все права защищены.</p>
-          <p>Личный бренд преподавателя йоги и йогатерапии</p>
+        <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-start gap-4 text-xs text-cream/40">
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} {SITE.name}. Все права защищены.</p>
+            <p>Личный бренд преподавателя йоги и йогатерапии</p>
+          </div>
+          <div className="space-y-1 md:text-right">
+            <p>ИП Марченко Александра Сергеевна</p>
+            <p>ИНН 632130457478</p>
+            <p>ОГРНИП 326632700082478</p>
+          </div>
         </div>
       </div>
     </footer>
